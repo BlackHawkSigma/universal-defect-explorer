@@ -1,18 +1,46 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["windows"]
+}
+
 datasource db {
-  provider = "sqlite"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = "native"
+model lack5_export {
+  sid                Int       @id @default(autoincrement()) @db.UnsignedInt
+  datum              DateTime  @db.DateTime(0)
+  uhrzeit            DateTime  @db.Time(0)
+  artikelcode        String?   @db.VarChar(13)
+  artikelbezeichnung String    @default("") @db.VarChar(50)
+  farbton            String?   @default("") @db.VarChar(25)
+  skidseite          Int?      @default(0) @db.UnsignedTinyInt
+  lackierposition    Int?      @default(0) @db.UnsignedSmallInt
+  io_notouch         Int?      @db.SmallInt
+  io_poliert         Int?      @db.SmallInt
+  nacharbeit         Int?      @db.SmallInt
+  ausschuss          Int?      @db.SmallInt
+  fehlerart_code     Int?      @db.UnsignedSmallInt
+  fehlerort_code     String?   @db.VarChar(5)
+  personalnummer     String?   @db.VarChar(60)
+  skid               Int?      @default(0) @db.UnsignedInt
+  barcode            String?   @db.VarChar(20)
+  artikelart         String?   @db.VarChar(20)
+  auslaufzeit        DateTime? @db.DateTime(0)
+  Fahrweg            Int?
+
+  @@index([barcode], name: "barcode_index")
+  @@index([datum], name: "datum_index")
+  @@index([Fahrweg, datum], name: "fahrweg_datum")
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model lack5_fehlerart {
+  fehlerart_code Int    @id @default(0) @db.UnsignedSmallInt
+  fehlerart_text String @default("") @db.VarChar(40)
+}
+
+model lack5_fehlerort {
+  fehlerort_code String  @id @db.VarChar(5)
+  fehlerort_text String? @db.VarChar(40)
 }
