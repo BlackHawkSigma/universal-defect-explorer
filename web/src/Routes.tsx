@@ -18,8 +18,8 @@ const Routes = () => {
         <Route path="/admin" page={AdminHomePage} name="adminHome" />
         <Route path="/admin/allcodes" page={AllcodesPage} name="allcodes" />
       </Set>
-      <Route prerender path="/" page={HomePage} name="home" />
-      <Route notfound prerender page={NotFoundPage} />
+      <Route path="/" page={HomePage} name="home" />
+      <Route notfound page={NotFoundPage} />
     </Router>
   )
 }
