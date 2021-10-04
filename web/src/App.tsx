@@ -6,6 +6,9 @@ import Routes from 'src/Routes'
 
 import './index.css'
 
+import '@fontsource/comfortaa'
+import '@fontsource/libre-franklin/300.css'
+
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
     <RedwoodProvider
