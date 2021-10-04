@@ -15,6 +15,7 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={AdminLayout}>
+        <Route path="/admin" page={AdminHomePage} name="adminHome" />
         <Route path="/admin/allcodes" page={AllcodesPage} name="allcodes" />
       </Set>
       <Route prerender path="/" page={HomePage} name="home" />

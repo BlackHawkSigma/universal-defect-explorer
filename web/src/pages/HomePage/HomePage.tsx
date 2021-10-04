@@ -5,19 +5,20 @@ const HomePage = () => {
   return (
     <>
       <MetaTags
-        title="Home"
+        title="Start"
         // description="Home description"
         /* you should un-comment description and add a unique description, 155 characters or less
         You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
-      <h1>HomePage</h1>
-      <p>
-        Find me in <code>./web/src/pages/HomePage/HomePage.tsx</code>
-      </p>
-      <p>
-        My default route is named <code>home</code>, link to me with `
-        <Link to={routes.home()}>Home</Link>`
-      </p>
+      <main className="max-w-2xl mx-auto p-12 mt-10 bg-white shadow rounded-b">
+        <h1 className="text-xl font-heading">
+          Defect Explorer {process.env.PLANT_NAME}
+        </h1>
+
+        <p className="underline text-blue-500 font-content">
+          <Link to={routes.adminHome()}>zum Admin Bereich</Link>
+        </p>
+      </main>
     </>
   )
 }
