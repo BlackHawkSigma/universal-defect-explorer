@@ -9,26 +9,28 @@ datasource db {
 }
 
 model Buchung {
-  sid                Int       @id @default(autoincrement()) @db.UnsignedInt
-  datum              DateTime  @db.DateTime(0)
-  uhrzeit            DateTime  @db.Time(0)
-  artikelcode        String?   @db.VarChar(13)
-  artikelbezeichnung String    @default("") @db.VarChar(50)
-  farbton            String?   @default("") @db.VarChar(25)
-  skidseite          Int?      @default(0) @db.UnsignedTinyInt
-  lackierposition    Int?      @default(0) @db.UnsignedSmallInt
-  io_notouch         Int?      @db.SmallInt
-  io_poliert         Int?      @db.SmallInt
-  nacharbeit         Int?      @db.SmallInt
-  ausschuss          Int?      @db.SmallInt
-  fehlerart_code     Int?      @db.UnsignedSmallInt
-  fehlerort_code     String?   @db.VarChar(5)
-  personalnummer     String?   @db.VarChar(60)
-  skid               Int?      @default(0) @db.UnsignedInt
-  barcode            String?   @db.VarChar(20)
-  artikelart         String?   @db.VarChar(20)
-  auslaufzeit        DateTime? @db.DateTime(0)
+  sid                Int         @id @default(autoincrement()) @db.UnsignedInt
+  datum              DateTime    @db.DateTime(0)
+  uhrzeit            DateTime    @db.Time(0)
+  artikelcode        String?     @db.VarChar(13)
+  artikelbezeichnung String      @default("") @db.VarChar(50)
+  farbton            String?     @default("") @db.VarChar(25)
+  skidseite          Int?        @default(0) @db.UnsignedTinyInt
+  lackierposition    Int?        @default(0) @db.UnsignedSmallInt
+  io_notouch         Int?        @db.SmallInt
+  io_poliert         Int?        @db.SmallInt
+  nacharbeit         Int?        @db.SmallInt
+  ausschuss          Int?        @db.SmallInt
+  fehlerart_code     Int?        @db.UnsignedSmallInt
+  fehlerort_code     String?     @db.VarChar(5)
+  personalnummer     String?     @db.VarChar(60)
+  skid               Int?        @default(0) @db.UnsignedInt
+  barcode            String?     @db.VarChar(20)
+  artikelart         String?     @db.VarChar(20)
+  auslaufzeit        DateTime?   @db.DateTime(0)
   Fahrweg            Int?
+  FehlerText         FehlerText? @relation(fields: [fehlerart_code], references: [fehlerart_code])
+  Artikel            Artikel?    @relation(fields: [artikelcode], references: [artikelcode])
 
   @@index([barcode], name: "barcode_index")
   @@index([datum], name: "datum_index")
@@ -37,8 +39,9 @@ model Buchung {
 }
 
 model FehlerText {
-  fehlerart_code Int    @id @default(0) @db.UnsignedSmallInt
-  fehlerart_text String @default("") @db.VarChar(40)
+  fehlerart_code Int       @id @default(0) @db.UnsignedSmallInt
+  fehlerart_text String    @default("") @db.VarChar(40)
+  Buchungen      Buchung[]
 
   @@map("lack5_fehlerart")
 }
@@ -48,4 +51,20 @@ model FehlerOrt {
   fehlerort_text String? @db.VarChar(40)
 
   @@map("lack5_fehlerort")
+}
+
+model Geometrie {
+  id          Int    @id @default(autoincrement())
+  Bezeichnung String
+
+  Codes Artikel[]
+}
+
+model Artikel {
+  id          Int    @id @default(autoincrement())
+  artikelcode String @unique @db.VarChar(13)
+  GeometieId  Int?
+
+  Geometrie Geometrie? @relation(fields: [GeometieId], references: [id])
+  Buchung   Buchung[]
 }
