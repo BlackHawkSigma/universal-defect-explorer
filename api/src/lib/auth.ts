@@ -16,6 +16,6 @@ export const hasRole = ({ roles }) => {
   return roles !== undefined
 }
 
-export const requireAuth = () => {
+export const requireAuth = ({ roles }) => {
   return isAuthenticated()
 }

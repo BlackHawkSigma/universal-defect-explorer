@@ -11,8 +11,8 @@ export const schema = gql`
   }
 
   type Query {
-    geometries: [Geometrie!]!
-    geometrie(id: Int!): Geometrie
+    geometries: [Geometrie!]! @skipAuth
+    geometrie(id: Int!): Geometrie @skipAuth
   }
 
   input CreateGeometrieInput {
@@ -24,8 +24,9 @@ export const schema = gql`
   }
 
   type Mutation {
-    createGeometrie(input: CreateGeometrieInput!): Geometrie!
+    createGeometrie(input: CreateGeometrieInput!): Geometrie! @skipAuth
     updateGeometrie(id: Int!, input: UpdateGeometrieInput!): Geometrie!
-    deleteGeometrie(id: Int!): Geometrie!
+      @skipAuth
+    deleteGeometrie(id: Int!): Geometrie! @skipAuth
   }
 `

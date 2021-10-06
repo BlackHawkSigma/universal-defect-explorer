@@ -5,6 +5,6 @@ export const schema = gql`
   }
 
   type Query {
-    getAllCodes: [Code!]!
+    getAllCodes: [Code!]! @skipAuth
   }
 `
