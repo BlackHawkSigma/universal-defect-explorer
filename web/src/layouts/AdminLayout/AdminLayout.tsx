@@ -21,14 +21,14 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
                 Alle Codes
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link
                 className="py-2 px-4 hover:bg-blue-600 transition duration-100 rounded"
                 to={routes.geometries()}
               >
                 Geometrien
               </Link>
-            </li> */}
+            </li>
           </ul>
         </nav>
       </header>

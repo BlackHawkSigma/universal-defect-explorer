@@ -17,9 +17,9 @@ const AdminHomePage = () => {
         <li className="underline text-blue-500 font-content">
           <Link to={routes.allcodes()}>Alle Codes auflisten</Link>
         </li>
-        {/* <li className="underline text-blue-500 font-content">
+        <li className="underline text-blue-500 font-content">
           <Link to={routes.geometries()}>Geometrien bearbeiten</Link>
-        </li> */}
+        </li>
       </ul>
     </>
   )
