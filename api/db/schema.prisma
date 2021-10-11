@@ -27,7 +27,7 @@ model Buchung {
   skid               Int?        @default(0) @db.UnsignedInt
   barcode            String?     @db.VarChar(20)
   artikelart         String?     @db.VarChar(20)
-  auslaufzeit        DateTime?   @db.Timestamp(0)
+  auslaufzeit        DateTime    @db.Timestamp(0)
   Fahrweg            Int?
   FehlerText         FehlerText? @relation(fields: [fehlerart_code], references: [fehlerart_code])
   Artikel            Artikel?    @relation(fields: [artikelcode], references: [artikelcode])
@@ -61,9 +61,10 @@ model Geometrie {
 }
 
 model Artikel {
-  id          Int    @id @default(autoincrement())
-  artikelcode String @unique @db.VarChar(13)
-  GeometieId  Int?
+  id                 Int    @id @default(autoincrement())
+  artikelcode        String @unique @db.VarChar(13)
+  artikelbezeichnung String @default("") @db.VarChar(50)
+  GeometieId         Int?
 
   Geometrie Geometrie? @relation(fields: [GeometieId], references: [id])
   Buchung   Buchung[]
