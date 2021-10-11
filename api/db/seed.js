@@ -2,6 +2,8 @@
 const { PrismaClient } = require('@prisma/client')
 const dotenv = require('dotenv')
 
+const { subHours } = require('date-fns')
+
 dotenv.config()
 const db = new PrismaClient()
 
@@ -14,26 +16,32 @@ const db = new PrismaClient()
  * @see https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
  */
 async function main() {
-  console.warn('Please define your seed data.')
+  console.log('Start seeding...')
 
-  // // Change to match your data model and seeding needs
-  // const data = [
-  //   { name: 'alice', email: 'alice@example.com' },
-  //   { name: 'mark', email: 'mark@example.com' },
-  //   { name: 'jackie', email: 'jackie@example.com' },
-  //   { name: 'bob', email: 'bob@example.com' },
-  // ]
+  const exportData = [
+    {
+      datum: new Date(),
+      artkelcode: '12345678',
+      artikelbezeichnung: 'Foo',
+    },
+  ]
 
   // // Note: if using PostgreSQL, using `createMany` to insert multiple records is much faster
   // // @see: https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#createmany
-  // return Promise.all(
-  //   data.map(async (user) => {
-  //     const record = await db.user.create({
-  //       data: { name: user.name, email: user.email },
-  //     })
-  //     console.log(record)
-  //   })
-  // )
+  return Promise.all(
+    exportData.map(async (item) => {
+      const record = await db.buchung.create({
+        data: {
+          datum: item.datum,
+          uhrzeit: item.datum,
+          artikelcode: item.artkelcode,
+          artikelbezeichnung: item.artikelbezeichnung,
+          auslaufzeit: subHours(item.datum, 1),
+        },
+      })
+      console.log(record)
+    })
+  )
 }
 
 main()
