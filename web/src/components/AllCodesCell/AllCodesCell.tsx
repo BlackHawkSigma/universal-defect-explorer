@@ -4,15 +4,15 @@ import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 export const QUERY = gql`
   query AllCodes {
     getAllCodes {
-      artikelcode
-      artikelbezeichnung
+      code: artikelcode
+      text: artikelbezeichnung
     }
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <div>Durchsuche Datenbank...</div>
 
-export const Empty = () => <div>Empty</div>
+export const Empty = () => <div>Keine Einträge gefunden</div>
 
 export const Failure = ({ error }: CellFailureProps) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
@@ -23,12 +23,16 @@ export const Success = ({
 }: CellSuccessProps<AllCodes>) => {
   return (
     <>
-      <p>{allCodes.length} Codes gefunden</p>
+      {allCodes.length === 1 ? (
+        <p>einen Code gefunden:</p>
+      ) : (
+        <p>{allCodes.length} Codes gefunden:</p>
+      )}
       <ul>
-        {allCodes.map((item) => {
+        {allCodes.map(({ code, text }) => {
           return (
-            <li key={item.artikelbezeichnung}>
-              {item.artikelbezeichnung}: ({item.artikelcode})
+            <li key={text}>
+              {text}: ({code})
             </li>
           )
         })}
