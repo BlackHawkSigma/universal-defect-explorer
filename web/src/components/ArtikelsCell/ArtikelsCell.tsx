@@ -42,7 +42,7 @@ export const Success = ({ artikels }: CellSuccessProps<ArtikelsQuery>) => {
                 to={routes.editArtikel({ id })}
                 title="bearbeiten"
               >
-                {name}: ({code}) - {geo.Bezeichnung}
+                {name}: ({code}) - {geo?.Bezeichnung}
               </Link>
             </li>
           )
