@@ -18,6 +18,8 @@ const Routes = () => {
       <Set wrap={AdminLayout}>
         <Route path="/admin" page={AdminHomePage} name="adminHome" />
         <Route path="/admin/allcodes" page={AllcodesPage} name="allcodes" />
+        <Route path="/admin/artikels/{id:Int}/edit" page={ArtikelEditArtikelPage} name="editArtikel" />
+        <Route path="/admin/artikels" page={ArtikelArtikelsPage} name="artikels" />
 
         <Set wrap={GeometriesLayout}>
           <Route path="/admin/geometries/new" page={GeometrieNewGeometriePage} name="newGeometrie" />

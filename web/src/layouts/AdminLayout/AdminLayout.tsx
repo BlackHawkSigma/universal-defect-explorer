@@ -1,4 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
+import { Toaster } from '@redwoodjs/web/toast'
 
 type AdminLayoutProps = {
   children?: React.ReactNode
@@ -7,6 +8,7 @@ type AdminLayoutProps = {
 const AdminLayout = ({ children }: AdminLayoutProps) => {
   return (
     <>
+      <Toaster />
       <header className="relative flex content-start gap-3 items-center py-4 px-8 bg-po-blue text-white font-heading">
         <h1 className="text-2xl hover:text-blue-200 transition duration-100">
           <Link to={routes.adminHome()}>Admin Bereich</Link>

@@ -1,20 +1,23 @@
 import { MetaTags } from '@redwoodjs/web'
 
-import ArtikelsCell from 'src/components/ArtikelsCell'
+import EditArtikelCell from 'src/components/Artikel/EditArtikelCell'
 
-const AllcodesPage = () => {
+type EditArtikelPageProps = {
+  id: number
+}
+
+const EditArtikelPage = ({ id }: EditArtikelPageProps) => {
   return (
     <>
       <MetaTags
-        title="Alle Codes"
-        // description="Allcodes description"
+        title="EditArtikel"
+        // description="EditArtikelPage description"
         /* you should un-comment description and add a unique description, 155 characters or less
         You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
-
-      <ArtikelsCell></ArtikelsCell>
+      <EditArtikelCell id={id} />
     </>
   )
 }
 
-export default AllcodesPage
+export default EditArtikelPage
