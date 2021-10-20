@@ -54,10 +54,14 @@ model FehlerOrt {
 }
 
 model Geometrie {
-  id          Int    @id @default(autoincrement())
-  Bezeichnung String
+  id           Int     @id @default(autoincrement())
+  Bezeichnung  String
+  scrapTaget   Decimal @default(0) @db.Decimal(3, 2)
+  partsPerSide Int     @default(1)
+  gridId       Int?
 
   Codes Artikel[]
+  grid  Grid?     @relation(fields: [gridId], references: [id])
 }
 
 model Artikel {
@@ -68,4 +72,16 @@ model Artikel {
 
   Geometrie Geometrie? @relation(fields: [GeometieId], references: [id])
   Buchung   Buchung[]
+}
+
+model Grid {
+  id       Int    @id @default(autoincrement())
+  imageUrl String
+  width    Int
+  height   Int
+  rows     Int
+  column   Int
+  pixels   Int
+
+  Geometrie Geometrie[]
 }
