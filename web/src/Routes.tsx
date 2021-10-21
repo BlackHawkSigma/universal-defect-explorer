@@ -15,6 +15,7 @@ import AdminLayout from './layouts/AdminLayout/AdminLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/auswertung" page={AuswertungPage} name="auswertung" />
       <Set wrap={AdminLayout}>
         <Route path="/admin" page={AdminHomePage} name="adminHome" />
         <Route path="/admin/allcodes" page={AllcodesPage} name="allcodes" />

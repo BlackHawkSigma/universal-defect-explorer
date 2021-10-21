@@ -1,0 +1,78 @@
+import { useState } from 'react'
+import DatePicker, { registerLocale } from 'react-datepicker'
+import de from 'date-fns/locale/de'
+
+import type { Timeframe } from 'types/timeframe'
+
+import 'react-datepicker/dist/react-datepicker.css'
+
+export type TimeframeSelectorProps = {
+  initialTimeframe: Timeframe
+  onChange: (timeframe: Timeframe) => void
+  disabled?: boolean
+}
+
+registerLocale('de', de)
+
+const TimeframeSelector = ({
+  initialTimeframe: { start: initStart, end: initEnd },
+  onChange,
+  disabled = false,
+}: TimeframeSelectorProps) => {
+  const [start, setStart] = useState<Date>(initStart)
+  const [end, setEnd] = useState<Date>(initEnd)
+
+  return (
+    <div>
+      <div>
+        <label htmlFor="start">von</label>
+        <DatePicker
+          className="disabled:opacity-50"
+          disabled={disabled}
+          locale="de"
+          dateFormat="dd.MM.yyyy HH:mm"
+          showWeekNumbers
+          showTimeSelect
+          selectsStart
+          timeIntervals={60}
+          timeCaption="Zeit"
+          startDate={start}
+          endDate={end}
+          selected={start}
+          onChange={(date: Date) => setStart(date)}
+          name="start"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="end">bis</label>
+        <DatePicker
+          className="disabled:opacity-50"
+          disabled={disabled}
+          locale="de"
+          dateFormat="dd.MM.yyyy HH:mm"
+          showWeekNumbers
+          showTimeSelect
+          selectsEnd
+          timeIntervals={60}
+          timeCaption="Zeit"
+          startDate={start}
+          endDate={end}
+          selected={end}
+          onChange={(date: Date) => setEnd(date)}
+          name="end"
+        />
+      </div>
+
+      <button
+        className="rw-button rw-button-green disabled:opacity-50 disabled:pointer-events-none"
+        disabled={disabled}
+        onClick={() => onChange({ start, end })}
+      >
+        {!disabled ? 'Zeitraum festlegen' : 'lade...'}
+      </button>
+    </div>
+  )
+}
+
+export default TimeframeSelector

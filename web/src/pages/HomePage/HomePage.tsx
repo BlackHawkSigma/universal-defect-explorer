@@ -16,6 +16,10 @@ const HomePage = () => {
         </h1>
 
         <p className="underline text-blue-500 font-content">
+          <Link to={routes.auswertung()}>zur Auswertung</Link>
+        </p>
+
+        <p className="underline text-blue-500 font-content">
           <Link to={routes.adminHome()}>zum Admin Bereich</Link>
         </p>
       </main>
