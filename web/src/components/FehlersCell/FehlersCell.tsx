@@ -1,11 +1,20 @@
 import type { FehlerInTimeframe } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
+import FehlerTable from 'src/components/FehlerTable'
+
 export const QUERY = gql`
   query FehlerInTimeframe($start: DateTime!, $end: DateTime!) {
     fehlerInTimeframe(start: $start, end: $end) {
       datum
+      auslauf
       bezeichnung
+      lack
+      skid
+      skidseite
+      skidposition
+      fehlerText
+      fehlerOrt
     }
   }
 `
@@ -21,11 +30,5 @@ export const Failure = ({ error }: CellFailureProps) => (
 export const Success = ({
   fehlerInTimeframe: fehler,
 }: CellSuccessProps<FehlerInTimeframe>) => {
-  return (
-    <ul>
-      {fehler.map((item) => {
-        return <li key={item.datum}>{JSON.stringify(item)}</li>
-      })}
-    </ul>
-  )
+  return <FehlerTable list={fehler} />
 }
