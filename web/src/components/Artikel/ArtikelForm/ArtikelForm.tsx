@@ -4,6 +4,7 @@ import {
   Label,
   TextField,
   SelectField,
+  FieldError,
   Submit,
 } from '@redwoodjs/forms'
 
@@ -67,14 +68,22 @@ const ArtikelForm = ({
           disabled={true}
         />
 
-        <Label name="geometrie" className="rw-label">
+        <Label
+          name="geometrie"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
           neue Geometrie (aktuell:{' '}
           {geometries.find((d) => d.id === artikel.GeometieId)?.Bezeichnung})
         </Label>
         <SelectField
           name="geometrie"
           className="rw-input"
-          validation={{ valueAsNumber: true }}
+          errorClassName="rw-input rw-input-error"
+          validation={{
+            valueAsNumber: true,
+            required: 'bitte Geometrie auswählen',
+          }}
           defaultValue={artikel.GeometieId}
         >
           {geometries.map(({ id, Bezeichnung }) => (
@@ -83,6 +92,7 @@ const ArtikelForm = ({
             </option>
           ))}
         </SelectField>
+        <FieldError name="geometrie" className="rw-field-error" />
 
         <div className="rw-button-group">
           <Submit disabled={loading} className="rw-button rw-button-green">
