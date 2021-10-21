@@ -23,11 +23,11 @@ const TimeframeSelector = ({
   const [end, setEnd] = useState<Date>(initEnd)
 
   return (
-    <div>
-      <div>
+    <div className="flex space-x-1">
+      <div className="flex space-x-1">
         <label htmlFor="start">von</label>
         <DatePicker
-          className="disabled:opacity-50"
+          className="border rounded border-gray-400 disabled:opacity-50"
           disabled={disabled}
           locale="de"
           dateFormat="dd.MM.yyyy HH:mm"
@@ -44,10 +44,10 @@ const TimeframeSelector = ({
         />
       </div>
 
-      <div>
+      <div className="flex space-x-1">
         <label htmlFor="end">bis</label>
         <DatePicker
-          className="disabled:opacity-50"
+          className="border rounded border-gray-400 disabled:opacity-50"
           disabled={disabled}
           locale="de"
           dateFormat="dd.MM.yyyy HH:mm"
