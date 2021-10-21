@@ -16,7 +16,7 @@ const NewGeometrie = () => {
     CREATE_GEOMETRIE_MUTATION,
     {
       onCompleted: () => {
-        toast.success('Geometrie created')
+        toast.success('Geometrie angelegt')
         navigate(routes.geometries())
       },
     }
@@ -29,7 +29,9 @@ const NewGeometrie = () => {
   return (
     <div className="rw-segment">
       <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">New Geometrie</h2>
+        <h2 className="rw-heading rw-heading-secondary">
+          Neue Geometrie anlegen
+        </h2>
       </header>
       <div className="rw-segment-main">
         <GeometrieForm onSave={onSave} loading={loading} error={error} />

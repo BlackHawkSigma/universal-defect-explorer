@@ -10,36 +10,16 @@ const DELETE_GEOMETRIE_MUTATION = gql`
   }
 `
 
-const jsonDisplay = (obj) => {
-  return (
-    <pre>
-      <code>{JSON.stringify(obj, null, 2)}</code>
-    </pre>
-  )
-}
-
-const timeTag = (datetime) => {
-  return (
-    <time dateTime={datetime} title={datetime}>
-      {new Date(datetime).toUTCString()}
-    </time>
-  )
-}
-
-const checkboxInputTag = (checked) => {
-  return <input type="checkbox" checked={checked} disabled />
-}
-
 const Geometrie = ({ geometrie }) => {
   const [deleteGeometrie] = useMutation(DELETE_GEOMETRIE_MUTATION, {
     onCompleted: () => {
-      toast.success('Geometrie deleted')
+      toast.success('Geometrie gelöscht')
       navigate(routes.geometries())
     },
   })
 
   const onDeleteClick = (id) => {
-    if (confirm('Are you sure you want to delete geometrie ' + id + '?')) {
+    if (confirm('Geometire ' + id + ' wirklich löschen?')) {
       deleteGeometrie({ variables: { id } })
     }
   }
@@ -49,7 +29,7 @@ const Geometrie = ({ geometrie }) => {
       <div className="rw-segment">
         <header className="rw-segment-header">
           <h2 className="rw-heading rw-heading-secondary">
-            Geometrie {geometrie.id} Detail
+            Geometrie &quot;{geometrie.Bezeichnung}&quot;
           </h2>
         </header>
         <table className="rw-table">
@@ -70,14 +50,14 @@ const Geometrie = ({ geometrie }) => {
           to={routes.editGeometrie({ id: geometrie.id })}
           className="rw-button rw-button-blue"
         >
-          Edit
+          Bearbeiten
         </Link>
         <button
           type="button"
           className="rw-button rw-button-red"
           onClick={() => onDeleteClick(geometrie.id)}
         >
-          Delete
+          Löschen
         </button>
       </nav>
     </>

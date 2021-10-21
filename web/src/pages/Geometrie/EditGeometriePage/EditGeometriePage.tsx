@@ -1,7 +1,7 @@
 import EditGeometrieCell from 'src/components/Geometrie/EditGeometrieCell'
 
 type GeometriePageProps = {
-  id: Int
+  id: number
 }
 
 const EditGeometriePage = ({ id }: GeometriePageProps) => {

@@ -12,9 +12,9 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <div>Lade...</div>
 
-export const Empty = () => <div>Geometrie not found</div>
+export const Empty = () => <div>Geometrie nicht gefunden</div>
 
 export const Failure = ({ error }: CellFailureProps) => (
   <div className="rw-cell-error">{error.message}</div>

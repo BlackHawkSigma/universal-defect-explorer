@@ -14,14 +14,14 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <div>Lade...</div>
 
 export const Empty = () => {
   return (
     <div className="rw-text-center">
-      {'No geometries yet. '}
+      {'Es sind noch keine Geometiren angelegt. '}
       <Link to={routes.newGeometrie()} className="rw-link">
-        {'Create one?'}
+        {'Wollen Sie eine erstellen?'}
       </Link>
     </div>
   )

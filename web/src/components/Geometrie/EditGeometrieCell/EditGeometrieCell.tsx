@@ -24,7 +24,7 @@ const UPDATE_GEOMETRIE_MUTATION = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => <div>Lade...</div>
 
 export const Failure = ({ error }: CellFailureProps) => (
   <div className="rw-cell-error">{error.message}</div>
@@ -49,7 +49,7 @@ export const Success = ({ geometrie }: CellSuccessProps<EditGeometrieById>) => {
     <div className="rw-segment">
       <header className="rw-segment-header">
         <h2 className="rw-heading rw-heading-secondary">
-          Edit Geometrie {geometrie.id}
+          Geometrie &quot;{geometrie.Bezeichnung}&quot; bearbeiten
         </h2>
       </header>
       <div className="rw-segment-main">

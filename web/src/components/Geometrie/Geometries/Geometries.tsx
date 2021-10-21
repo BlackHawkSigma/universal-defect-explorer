@@ -22,26 +22,10 @@ const truncate = (text) => {
   return output
 }
 
-const jsonTruncate = (obj) => {
-  return truncate(JSON.stringify(obj, null, 2))
-}
-
-const timeTag = (datetime) => {
-  return (
-    <time dateTime={datetime} title={datetime}>
-      {new Date(datetime).toUTCString()}
-    </time>
-  )
-}
-
-const checkboxInputTag = (checked) => {
-  return <input type="checkbox" checked={checked} disabled />
-}
-
 const GeometriesList = ({ geometries }) => {
   const [deleteGeometrie] = useMutation(DELETE_GEOMETRIE_MUTATION, {
     onCompleted: () => {
-      toast.success('Geometrie deleted')
+      toast.success('Geometrie gelöscht')
     },
     // This refetches the query on the list page. Read more about other ways to
     // update the cache over here:
@@ -51,7 +35,7 @@ const GeometriesList = ({ geometries }) => {
   })
 
   const onDeleteClick = (id) => {
-    if (confirm('Are you sure you want to delete geometrie ' + id + '?')) {
+    if (confirm('Geometire ' + id + ' wirklich löschen?')) {
       deleteGeometrie({ variables: { id } })
     }
   }
@@ -78,14 +62,14 @@ const GeometriesList = ({ geometries }) => {
                     title={'Show geometrie ' + geometrie.id + ' detail'}
                     className="rw-button rw-button-small"
                   >
-                    Show
+                    Details
                   </Link>
                   <Link
                     to={routes.editGeometrie({ id: geometrie.id })}
                     title={'Edit geometrie ' + geometrie.id}
                     className="rw-button rw-button-small rw-button-blue"
                   >
-                    Edit
+                    Bearbeiten
                   </Link>
                   <button
                     type="button"
@@ -93,7 +77,7 @@ const GeometriesList = ({ geometries }) => {
                     className="rw-button rw-button-small rw-button-red"
                     onClick={() => onDeleteClick(geometrie.id)}
                   >
-                    Delete
+                    Löschen
                   </button>
                 </nav>
               </td>

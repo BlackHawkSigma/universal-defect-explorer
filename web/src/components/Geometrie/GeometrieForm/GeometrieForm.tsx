@@ -7,12 +7,6 @@ import {
   Submit,
 } from '@redwoodjs/forms'
 
-const formatDatetime = (value) => {
-  if (value) {
-    return value.replace(/:\d{2}\.\d{3}\w/, '')
-  }
-}
-
 const GeometrieForm = (props) => {
   const onSubmit = (data) => {
     props.onSave(data, props?.geometrie?.id)
@@ -46,7 +40,7 @@ const GeometrieForm = (props) => {
 
         <div className="rw-button-group">
           <Submit disabled={props.loading} className="rw-button rw-button-blue">
-            Save
+            Speichern
           </Submit>
         </div>
       </Form>

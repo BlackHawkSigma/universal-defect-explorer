@@ -1,7 +1,7 @@
 import GeometrieCell from 'src/components/Geometrie/GeometrieCell'
 
 type GeometriePageProps = {
-  id: Int
+  id: number
 }
 
 const GeometriePage = ({ id }: GeometriePageProps) => {
