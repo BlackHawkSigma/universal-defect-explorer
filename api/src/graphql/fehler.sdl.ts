@@ -4,9 +4,9 @@ export const schema = gql`
     datum: DateTime!
     auslauf: DateTime!
     lack: String!
-    skid: Int!
-    skidseite: Int!
-    skidposition: Int!
+    skid: Int
+    skidseite: Int
+    skidposition: Int
     fehlerText: String!
     fehlerOrt: String
   }
