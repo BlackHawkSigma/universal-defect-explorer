@@ -23,7 +23,7 @@ const TimeframeSelector = ({
   const [end, setEnd] = useState<Date>(initEnd)
 
   return (
-    <div className="flex space-x-1">
+    <div className="flex items-baseline space-x-1">
       <div className="flex space-x-1">
         <label htmlFor="start">von</label>
         <DatePicker

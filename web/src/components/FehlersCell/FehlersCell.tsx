@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import type { FehlerInTimeframe } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
@@ -19,7 +21,20 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Lade...</div>
+export const beforeQuery = ({ setIsLoading, ...props }) => {
+  return {
+    variables: props,
+    onCompleted: () => setIsLoading(false),
+  }
+}
+
+export const Loading = ({ setIsLoading }) => {
+  useEffect(() => {
+    setIsLoading(true)
+  }, [setIsLoading])
+
+  return <div>Lade...</div>
+}
 
 export const Empty = () => <div>keine Daten für diesen Zeitraum</div>
 

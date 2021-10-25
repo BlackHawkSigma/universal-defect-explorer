@@ -1,15 +1,17 @@
 import { MetaTags } from '@redwoodjs/web'
 import { useState } from 'react'
+
 import FehlersCell from 'src/components/FehlersCell'
 import TimeframeSelector from 'src/components/TimeframeSelector'
+import { setInitalTime } from 'src/utils/timeframe'
 
 import type { Timeframe } from 'types/timeframe'
 
 const AuswertungPage = () => {
-  const [timeframe, setTimeframe] = useState<Timeframe>(() => ({
-    start: new Date(),
-    end: new Date(),
-  }))
+  const [timeframe, setTimeframe] = useState<Timeframe>(() =>
+    setInitalTime(new Date())
+  )
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   return (
     <>
@@ -22,7 +24,8 @@ const AuswertungPage = () => {
       <h1>Auswertung</h1>
       <div>
         <TimeframeSelector
-          initialTimeframe={timeframe}
+          initialTimeframe={setInitalTime(new Date())}
+          disabled={isLoading}
           onChange={setTimeframe}
         />
       </div>
@@ -31,6 +34,7 @@ const AuswertungPage = () => {
         <FehlersCell
           start={timeframe.start.toISOString()}
           end={timeframe.end.toISOString()}
+          setIsLoading={setIsLoading}
         />
       </main>
     </>
