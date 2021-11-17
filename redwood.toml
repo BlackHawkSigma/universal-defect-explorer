@@ -8,12 +8,9 @@
 [web]
   title = "Defect Explorer"
   port = 8910
-  apiProxyPath = "/api"
+  apiUrl = "/api"
   includeEnvironmentVariables = ["PLANT_NAME"] # any ENV vars that should be available to the web side, see https://redwoodjs.com/docs/environment-variables#web
 [api]
   port = 8911
 [browser]
   open = true
-[experimental]
-  esbuild = true
-  useEnvelop = true
