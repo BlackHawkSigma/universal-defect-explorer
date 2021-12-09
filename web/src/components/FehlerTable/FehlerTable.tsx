@@ -1,19 +1,7 @@
-import type { Maybe } from 'types/graphql'
-
-type Fehler = {
-  datum: string
-  auslauf: string
-  bezeichnung: string
-  lack: string
-  skid: Maybe<number>
-  skidseite: Maybe<number>
-  skidposition: Maybe<number>
-  fehlerText: string
-  fehlerOrt?: string
-}
+import type { Record } from 'types/Record'
 
 export type FehlerTablePros = {
-  list: Fehler[]
+  list: Record[]
 }
 
 const timeTag = (datetime: string) => {
@@ -42,7 +30,7 @@ const FehlerTable = ({ list }: FehlerTablePros) => {
           </tr>
         </thead>
         <tbody>
-          {list.map((row: Fehler, index) => (
+          {list.map((row: Record, index) => (
             <tr
               key={index}
               className="text-center hover:brightness-75 odd:bg-gray-100 even:bg-gray-200"
