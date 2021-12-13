@@ -11,16 +11,20 @@ const ArtikelGrouping = ({ list }: GroupingProps) => {
 
   const data = first.map(([toplevel, records]) => {
     const second = groupByFehler(records)
+    const count = second.reduce(
+      (acc, [_label, current]) => acc + current.length,
+      0
+    )
 
-    return { toplevel, records: second }
+    return { toplevel, count, records: second }
   })
 
   return (
     <div>
-      {data.map(({ toplevel, records }) => (
+      {data.map(({ toplevel, count, records }) => (
         <details key={toplevel}>
           <summary>
-            {records.length}x {toplevel}
+            {count}x {toplevel}
           </summary>
           <ol>
             {records.map(([secondlevel, records]) => (
