@@ -8,6 +8,10 @@ export const QUERY = gql`
     geometrie: geometrie(id: $id) {
       id
       Bezeichnung
+      image
+      rows
+      columns
+      pixels
     }
   }
 `

@@ -7,6 +7,10 @@ export const schema = gql`
   type Geometrie {
     id: Int!
     Bezeichnung: String!
+    image: String
+    rows: Int!
+    columns: Int!
+    pixels: Int!
     Codes: [Artikel]!
   }
 
@@ -17,10 +21,18 @@ export const schema = gql`
 
   input CreateGeometrieInput {
     Bezeichnung: String!
+    image: String!
+    rows: Int!
+    columns: Int!
+    pixels: Int!
   }
 
   input UpdateGeometrieInput {
     Bezeichnung: String
+    image: String
+    rows: Int
+    columns: Int
+    pixels: Int
   }
 
   type Mutation {

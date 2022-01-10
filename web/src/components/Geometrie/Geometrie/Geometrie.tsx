@@ -42,6 +42,24 @@ const Geometrie = ({ geometrie }) => {
               <th>Bezeichnung</th>
               <td>{geometrie.Bezeichnung}</td>
             </tr>
+            <tr>
+              <th>Zeilen</th>
+              <td>{geometrie.rows}</td>
+            </tr>
+            <tr>
+              <th>Spalten</th>
+              <td>{geometrie.columns}</td>
+            </tr>
+            <tr>
+              <th>Pixel</th>
+              <td>{geometrie.pixels}</td>
+            </tr>
+            <tr>
+              <th>Grafik</th>
+              <td>
+                <img src={geometrie.image} alt={geometrie.Bezeichnung} />
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
