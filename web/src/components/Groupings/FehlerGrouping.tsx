@@ -1,12 +1,14 @@
 import { groupByArtikel, groupByFehler } from './groupData'
 
 import type { Record } from 'types/Record'
+import type { FilterAction } from '../Auswertung/Auswertung'
 
 export type FehlerGroupingProps = {
   list: Record[]
+  setFilter: (payload: FilterAction) => void
 }
 
-const FehlerGrouping = ({ list }: FehlerGroupingProps) => {
+const FehlerGrouping = ({ list, setFilter }: FehlerGroupingProps) => {
   const first = groupByFehler(list)
 
   const data = first.map(([toplevel, records]) => {
@@ -24,12 +26,32 @@ const FehlerGrouping = ({ list }: FehlerGroupingProps) => {
       {data.map(({ toplevel, count, records }) => (
         <details key={toplevel}>
           <summary>
-            {count}x {toplevel}
+            <span
+              role={'button'}
+              tabIndex={0}
+              onKeyDown={() =>
+                setFilter({ type: 'setFehler', fehler: toplevel })
+              }
+              onClick={() => setFilter({ type: 'setFehler', fehler: toplevel })}
+            >
+              {count}x {toplevel}
+            </span>
           </summary>
           <ol>
             {records.map(([secondlevel, records]) => (
               <li key={secondlevel}>
-                {records.length}x {secondlevel}
+                <span
+                  role={'button'}
+                  tabIndex={0}
+                  onKeyDown={() =>
+                    setFilter({ type: 'setArtikel', artikel: secondlevel })
+                  }
+                  onClick={() =>
+                    setFilter({ type: 'setArtikel', artikel: secondlevel })
+                  }
+                >
+                  {records.length}x {secondlevel}
+                </span>
               </li>
             ))}
           </ol>
