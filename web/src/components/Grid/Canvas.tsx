@@ -30,14 +30,12 @@ const Canvas = ({
 }: CanvasProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
-  // const [imgWidth, setImgWidth] = useState(0)
-  // const [imgHeight, setImgHeight] = useState(0)
-  const canvasHeight = grid.pixels * grid.rows + 1
   const canvasWidth = grid.pixels * grid.columns + 1
+  const canvasHeight = grid.pixels * grid.rows + 1
 
   const handleClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect()
-    const { clientX, clientY } = e
+    const { clientX, clientY, ctrlKey: _add, shiftKey: _range } = e
 
     const x = ((clientX - left) * canvasWidth) / width
     const y = ((clientY - top) * canvasHeight) / height
@@ -60,10 +58,6 @@ const Canvas = ({
 
     // Main operation
     image.onload = () => {
-      // const { width, height } = image
-      // setImgWidth(width)
-      // setImgHeight(height)
-
       // fill background white
       ctx.fillStyle = 'white'
       ctx.fillRect(0, 0, canvasWidth, canvasHeight)
