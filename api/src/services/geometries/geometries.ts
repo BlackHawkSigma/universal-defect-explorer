@@ -7,7 +7,7 @@ export const geometries = () => {
   return db.geometrie.findMany()
 }
 
-export const geometrie = ({ id }: Prisma.GeometrieWhereUniqueInput) => {
+export const geometrieById = ({ id }: Prisma.GeometrieWhereUniqueInput) => {
   return db.geometrie.findUnique({
     where: { id },
     include: { Codes: true },

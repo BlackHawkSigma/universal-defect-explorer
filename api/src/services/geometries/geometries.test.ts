@@ -1,6 +1,6 @@
 import {
   geometries,
-  geometrie,
+  geometrieById,
   createGeometrie,
   updateGeometrie,
   deleteGeometrie,
@@ -15,7 +15,7 @@ describe('geometries', () => {
   })
 
   scenario('returns a single geometrie', async (scenario: StandardScenario) => {
-    const result = await geometrie({ id: scenario.geometrie.one.id })
+    const result = await geometrieById({ id: scenario.geometrie.one.id })
 
     expect(result).toEqual(scenario.geometrie.one)
   })
@@ -29,7 +29,7 @@ describe('geometries', () => {
   })
 
   scenario('updates a geometrie', async (scenario: StandardScenario) => {
-    const original = await geometrie({ id: scenario.geometrie.one.id })
+    const original = await geometrieById({ id: scenario.geometrie.one.id })
     const result = await updateGeometrie({
       id: original.id,
       input: { Bezeichnung: 'String2' },
@@ -40,7 +40,7 @@ describe('geometries', () => {
 
   scenario('deletes a geometrie', async (scenario: StandardScenario) => {
     const original = await deleteGeometrie({ id: scenario.geometrie.one.id })
-    const result = await geometrie({ id: original.id })
+    const result = await geometrieById({ id: original.id })
 
     expect(result).toEqual(null)
   })

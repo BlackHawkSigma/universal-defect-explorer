@@ -5,7 +5,7 @@ import Geometrie from 'src/components/Geometrie/Geometrie'
 
 export const QUERY = gql`
   query FindGeometrieById($id: Int!) {
-    geometrie: geometrie(id: $id) {
+    geometrie: geometrieById(id: $id) {
       id
       Bezeichnung
       image

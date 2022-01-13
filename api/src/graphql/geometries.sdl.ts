@@ -16,7 +16,7 @@ export const schema = gql`
 
   type Query {
     geometries: [Geometrie!]! @skipAuth
-    geometrie(id: Int!): Geometrie @skipAuth
+    geometrieById(id: Int!): Geometrie @skipAuth
   }
 
   input CreateGeometrieInput {

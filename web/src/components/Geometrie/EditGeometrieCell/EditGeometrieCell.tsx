@@ -9,7 +9,7 @@ import GeometrieForm from 'src/components/Geometrie/GeometrieForm'
 
 export const QUERY = gql`
   query EditGeometrieById($id: Int!) {
-    geometrie: geometrie(id: $id) {
+    geometrie: geometrieById(id: $id) {
       id
       Bezeichnung
       image
