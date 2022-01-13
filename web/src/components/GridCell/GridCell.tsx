@@ -2,10 +2,11 @@ import type { FindGeometrieByName } from 'types/graphql'
 import type { CellSuccessProps } from '@redwoodjs/web'
 
 import Grid from 'src/components/Grid'
-import { GridData } from 'types/grid'
+import { Record } from 'types/Record'
+import { convertRaw } from 'src/utils/convertRawData'
 
 export type GridCellProps = {
-  list: GridData[]
+  list: Record[]
 }
 
 export const QUERY = gql`
@@ -43,5 +44,7 @@ export const Success = ({
   geometrie: { image, rows, columns, pixels },
 }: SuccessProps) => {
   const props = { image, grid: { rows, columns, pixels } }
-  return <Grid data={list} {...props} />
+  const data = convertRaw(list)
+
+  return <Grid data={data} {...props} />
 }

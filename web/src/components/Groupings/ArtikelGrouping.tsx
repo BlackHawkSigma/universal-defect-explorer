@@ -1,14 +1,15 @@
 import { groupByArtikel, groupByFehler } from './groupData'
 
 import type { Record } from 'types/Record'
-import type { FilterAction } from '../Auswertung/Auswertung'
+import type { Filter, FilterAction } from '../Auswertung/Auswertung'
 
 export type GroupingProps = {
   list: Record[]
+  filter: Filter
   setFilter: (payload: FilterAction) => void
 }
 
-const ArtikelGrouping = ({ list, setFilter }: GroupingProps) => {
+const ArtikelGrouping = ({ list, filter, setFilter }: GroupingProps) => {
   const first = groupByArtikel(list)
 
   const data = first.map(([toplevel, records]) => {
@@ -34,6 +35,9 @@ const ArtikelGrouping = ({ list, setFilter }: GroupingProps) => {
         <details key={toplevel}>
           <summary>
             <span
+              className={
+                toplevel === filter.artikel ? 'font-bold' : 'font-thin'
+              }
               role={'button'}
               tabIndex={0}
               onKeyDown={() => handleToplevel(toplevel)}
@@ -46,6 +50,9 @@ const ArtikelGrouping = ({ list, setFilter }: GroupingProps) => {
             {records.map(([secondlevel, records]) => (
               <li key={secondlevel}>
                 <span
+                  className={
+                    secondlevel === filter.fehler ? 'font-bold' : 'font-thin'
+                  }
                   role={'button'}
                   tabIndex={0}
                   onKeyDown={() => handleSecondlevel(toplevel, secondlevel)}

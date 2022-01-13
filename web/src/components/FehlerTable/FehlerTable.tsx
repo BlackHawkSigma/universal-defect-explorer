@@ -1,9 +1,7 @@
 import type { Record } from 'types/Record'
-import type { Filter } from 'src/components/Auswertung/Auswertung'
 
 export type FehlerTablePros = {
   list: Record[]
-  filter: Filter
 }
 
 const timeTag = (datetime: string) => {
@@ -14,9 +12,7 @@ const timeTag = (datetime: string) => {
   )
 }
 
-const FehlerTable = ({ list, filter }: FehlerTablePros) => {
-  console.log(filter)
-
+const FehlerTable = ({ list }: FehlerTablePros) => {
   return (
     <div className="flex">
       <table className="w-full table-auto border-collapse border border-solid border-gray-200">
@@ -34,27 +30,22 @@ const FehlerTable = ({ list, filter }: FehlerTablePros) => {
           </tr>
         </thead>
         <tbody>
-          {list
-            .filter(
-              ({ bezeichnung, fehlerText }) =>
-                bezeichnung === filter.artikel && fehlerText === filter.fehler
-            )
-            .map((row: Record, index) => (
-              <tr
-                key={index}
-                className="text-center hover:brightness-75 odd:bg-gray-100 even:bg-gray-200"
-              >
-                <td>{timeTag(row.auslauf)}</td>
-                <td>{timeTag(row.datum)}</td>
-                <td>{row.bezeichnung}</td>
-                <td>{row.lack}</td>
-                <td>{row.skid}</td>
-                <td>{row.skidseite}</td>
-                <td>{row.skidposition}</td>
-                <td>{row.fehlerText}</td>
-                <td>{row.fehlerOrt}</td>
-              </tr>
-            ))}
+          {list.map((row: Record, index) => (
+            <tr
+              key={index}
+              className="text-center hover:brightness-75 odd:bg-gray-100 even:bg-gray-200"
+            >
+              <td>{timeTag(row.auslauf)}</td>
+              <td>{timeTag(row.datum)}</td>
+              <td>{row.bezeichnung}</td>
+              <td>{row.lack}</td>
+              <td>{row.skid}</td>
+              <td>{row.skidseite}</td>
+              <td>{row.skidposition}</td>
+              <td>{row.fehlerText}</td>
+              <td>{row.fehlerOrt}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
