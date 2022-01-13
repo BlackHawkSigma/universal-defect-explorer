@@ -8,7 +8,7 @@ export type GridProps = {
   grid: GridConfig
   image: string
   active?: { row: number; col: number }
-  onClick: (data: Selection) => void
+  onClick?: (data: Selection) => void
 }
 
 const Grid = (props: GridProps) => {

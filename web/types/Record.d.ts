@@ -5,9 +5,9 @@ export type Record = {
   auslauf: string
   bezeichnung: string
   lack: string
-  skid: Maybe<number>
-  skidseite: Maybe<number>
-  skidposition: Maybe<number>
+  skid?: Maybe<number>
+  skidseite?: Maybe<number>
+  skidposition?: Maybe<number>
   fehlerText: string
   fehlerOrt?: string
 }

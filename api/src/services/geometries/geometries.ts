@@ -14,6 +14,14 @@ export const geometrieById = ({ id }: Prisma.GeometrieWhereUniqueInput) => {
   })
 }
 
+export const geometrieByName = ({
+  Bezeichnung,
+}: Prisma.GeometrieWhereInput) => {
+  return db.geometrie.findFirst({
+    where: { Bezeichnung },
+    include: { Codes: true },
+  })
+}
 interface CreateGeometrieArgs {
   input: Prisma.GeometrieCreateInput
 }
@@ -42,6 +50,6 @@ export const deleteGeometrie = ({ id }: Prisma.GeometrieWhereUniqueInput) => {
 }
 
 export const Geometrie = {
-  Codes: (_obj, { root }: ResolverArgs<ReturnType<typeof geometrie>>) =>
+  Codes: (_obj, { root }: ResolverArgs<ReturnType<typeof geometrieById>>) =>
     db.geometrie.findUnique({ where: { id: root.id } }).Codes(),
 }

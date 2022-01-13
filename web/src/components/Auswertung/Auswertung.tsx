@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 
 import FehlerTable from 'src/components/FehlerTable'
-// import Grid from 'src/components/Grid'
+import GridCell from 'src/components/GridCell'
 import Artikel from 'src/components/Groupings/ArtikelGrouping'
 import Fehler from 'src/components/Groupings/FehlerGrouping'
 
@@ -36,19 +36,22 @@ const Auswertung = ({ list }: AuswertungProps) => {
   const [filter, setFilter] = useReducer(filterReducer, initialFilter)
 
   return (
-    <div className="grid">
-      <div className="flex justify-around">
-        <div>
-          <h2 className="text-xl font-bold">nach Artikel</h2>
-          <Artikel list={list} setFilter={(filter) => setFilter(filter)} />
-        </div>
-        <div>
-          <h2 className="text-xl font-bold">nach Fehler</h2>
-          <Fehler list={list} setFilter={(filter) => setFilter(filter)} />
-        </div>
-      </div>
-      {/* <Grid data={[]} /> */}
+    <div className="grid grid-cols-4 gap-5 justify-items-stretch">
       <div>
+        <h2 className="text-xl font-bold">nach Artikel</h2>
+        <Artikel list={list} setFilter={(filter) => setFilter(filter)} />
+      </div>
+
+      <div className="col-span-2 object-center">
+        <GridCell name={filter.artikel} list={[]} />
+      </div>
+
+      <div>
+        <h2 className="text-xl font-bold">nach Fehler</h2>
+        <Fehler list={list} setFilter={(filter) => setFilter(filter)} />
+      </div>
+
+      <div className="col-span-full">
         <FehlerTable list={list} filter={filter} />
       </div>
     </div>

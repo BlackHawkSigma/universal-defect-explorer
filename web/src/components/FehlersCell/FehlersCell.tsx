@@ -4,7 +4,7 @@ import type { FehlerInTimeframe } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Loader from 'src/components/Loader/loader'
-import FehlerTable from 'src/components/FehlerTable'
+import Auswertung from 'src/components/Auswertung'
 
 export const QUERY = gql`
   query FehlerInTimeframe($start: DateTime!, $end: DateTime!) {
@@ -25,6 +25,7 @@ export const QUERY = gql`
 export const beforeQuery = ({ setIsLoading, ...props }) => {
   return {
     variables: props,
+    fetchPolicy: 'network-only',
     onCompleted: () => setIsLoading(false),
   }
 }
@@ -46,5 +47,5 @@ export const Failure = ({ error }: CellFailureProps) => (
 export const Success = ({
   fehlerInTimeframe: fehler,
 }: CellSuccessProps<FehlerInTimeframe>) => {
-  return <FehlerTable list={fehler} />
+  return <Auswertung list={fehler} />
 }
