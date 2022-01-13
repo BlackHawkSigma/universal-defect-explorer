@@ -21,6 +21,13 @@ const ArtikelGrouping = ({ list, setFilter }: GroupingProps) => {
     return { toplevel, count, records: second }
   })
 
+  const handleToplevel = (artikel: string) =>
+    setFilter({ type: 'setArtikel', artikel })
+  const handleSecondlevel = (artikel: string, fehler: string) => {
+    setFilter({ type: 'setFehler', fehler })
+    setFilter({ type: 'setArtikel', artikel })
+  }
+
   return (
     <div>
       {data.map(({ toplevel, count, records }) => (
@@ -29,12 +36,8 @@ const ArtikelGrouping = ({ list, setFilter }: GroupingProps) => {
             <span
               role={'button'}
               tabIndex={0}
-              onKeyDown={() =>
-                setFilter({ type: 'setArtikel', artikel: toplevel })
-              }
-              onClick={() =>
-                setFilter({ type: 'setArtikel', artikel: toplevel })
-              }
+              onKeyDown={() => handleToplevel(toplevel)}
+              onClick={() => handleToplevel(toplevel)}
             >
               {count}x {toplevel}
             </span>
@@ -45,12 +48,8 @@ const ArtikelGrouping = ({ list, setFilter }: GroupingProps) => {
                 <span
                   role={'button'}
                   tabIndex={0}
-                  onKeyDown={() =>
-                    setFilter({ type: 'setFehler', fehler: secondlevel })
-                  }
-                  onClick={() =>
-                    setFilter({ type: 'setFehler', fehler: secondlevel })
-                  }
+                  onKeyDown={() => handleSecondlevel(toplevel, secondlevel)}
+                  onClick={() => handleSecondlevel(toplevel, secondlevel)}
                 >
                   {records.length}x {secondlevel}
                 </span>

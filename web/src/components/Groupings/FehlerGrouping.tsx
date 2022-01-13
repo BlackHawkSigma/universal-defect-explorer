@@ -20,6 +20,13 @@ const FehlerGrouping = ({ list, setFilter }: FehlerGroupingProps) => {
 
     return { toplevel, count, records: second }
   })
+  const handleToplevel = (fehler: string) =>
+    setFilter({ type: 'setFehler', fehler })
+
+  const handleSecondlevel = (fehler: string, artikel: string) => {
+    setFilter({ type: 'setArtikel', artikel })
+    setFilter({ type: 'setFehler', fehler })
+  }
 
   return (
     <div>
@@ -29,10 +36,8 @@ const FehlerGrouping = ({ list, setFilter }: FehlerGroupingProps) => {
             <span
               role={'button'}
               tabIndex={0}
-              onKeyDown={() =>
-                setFilter({ type: 'setFehler', fehler: toplevel })
-              }
-              onClick={() => setFilter({ type: 'setFehler', fehler: toplevel })}
+              onKeyDown={() => handleToplevel(toplevel)}
+              onClick={() => handleToplevel(toplevel)}
             >
               {count}x {toplevel}
             </span>
@@ -43,12 +48,8 @@ const FehlerGrouping = ({ list, setFilter }: FehlerGroupingProps) => {
                 <span
                   role={'button'}
                   tabIndex={0}
-                  onKeyDown={() =>
-                    setFilter({ type: 'setArtikel', artikel: secondlevel })
-                  }
-                  onClick={() =>
-                    setFilter({ type: 'setArtikel', artikel: secondlevel })
-                  }
+                  onKeyDown={() => handleSecondlevel(toplevel, secondlevel)}
+                  onClick={() => handleSecondlevel(toplevel, secondlevel)}
                 >
                   {records.length}x {secondlevel}
                 </span>
