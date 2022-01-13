@@ -24,5 +24,6 @@
   "scripts": {
     "build": "yarn install && yarn rw build && yarn rw prisma migrate deploy",
     "start": "node -r dotenv/config node_modules/@redwoodjs/api-server/dist/index.js -f api/dist/functions --port 8911"
-  }
+  },
+  "version": "1.0.0"
 }
