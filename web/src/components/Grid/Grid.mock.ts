@@ -1,6 +1,6 @@
 import type { GridProps } from './Grid'
 
-export const standart = (): GridProps => ({
+export const standard = (): GridProps => ({
   image,
   grid: {
     rows: 7,

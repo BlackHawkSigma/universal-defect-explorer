@@ -11,3 +11,5 @@ export const standard = (/* vars, { ctx, req } */): AllCodes => ({
 export const singleCode = (): AllCodes => ({
   getAllCodes: [{ code: '1', text: 'Single' }],
 })
+
+mockGraphQLQuery('AllCodes', standard())

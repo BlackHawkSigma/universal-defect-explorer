@@ -1,6 +1,6 @@
 import Grid from './Grid'
-import { standart } from './Grid.mock'
+import { standard } from './Grid.mock'
 
-export const generated = () => <Grid {...standart()} />
+export const generated = () => <Grid {...standard()} />
 
 export default { title: 'Components/Grid' }
