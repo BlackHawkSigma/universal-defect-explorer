@@ -8,4 +8,8 @@ export default {
   component: Loader,
 } as Meta
 
-export const Dots: Story = () => <Loader />
+export const Dots: Story = () => (
+  <div className="w-64 h-64 shadow-2xl">
+    <Loader />
+  </div>
+)
