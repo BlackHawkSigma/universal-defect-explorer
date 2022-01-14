@@ -16,8 +16,8 @@ export type CanvasProps = {
 
 const styles: CSSProperties = {
   cursor: 'pointer',
-  width: 'fit-content',
-  height: 'fit-content',
+  width: '-webkit-fill-available',
+  maxWidth: 'fit-content',
   imageRendering: 'crisp-edges',
 }
 
