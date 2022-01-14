@@ -1,5 +1,7 @@
 import type { FehlerTablePros } from './FehlerTable'
 
-export const standart = (): FehlerTablePros => ({
-  list: [],
-})
+export const standart = (): FehlerTablePros => {
+  return {
+    list: [],
+  }
+}
