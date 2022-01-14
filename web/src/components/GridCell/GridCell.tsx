@@ -19,23 +19,19 @@ export const QUERY = gql`
     }
   }
 `
-export const Loading = () => (
+
+const Placeholder = ({ text }: { text: string }) => (
   <div
-    className="flex justify-center items-center shadow-md"
-    style={{ width: '700px', height: '420px' }}
+    className="flex justify-center items-center shadow-md px-16"
+    style={{ maxWidth: '700px', height: '420px' }}
   >
-    <div className="text-4xl">lade Raster ...</div>
+    <div className="text-4xl">{text}</div>
   </div>
 )
 
-export const Empty = () => (
-  <div
-    className="flex justify-center items-center shadow-md"
-    style={{ width: '700px', height: '420px' }}
-  >
-    <div className="text-4xl">keine Geometrie gefunden</div>
-  </div>
-)
+export const Loading = () => <Placeholder text="lade Raster ..." />
+
+export const Empty = () => <Placeholder text="keine Geometrie gefunden" />
 
 type SuccessProps = CellSuccessProps<FindGeometrieByName> & GridCellProps
 
@@ -47,12 +43,7 @@ export const Success = ({
   const data = convertRaw(list)
 
   return image === '' ? (
-    <div
-      className="flex justify-center items-center shadow-md"
-      style={{ width: '700px', height: '420px' }}
-    >
-      <div className="text-4xl">keine Grafik vorhanden</div>
-    </div>
+    <Placeholder text="keine Grafik vorhanden" />
   ) : (
     <Grid data={data} {...props} />
   )

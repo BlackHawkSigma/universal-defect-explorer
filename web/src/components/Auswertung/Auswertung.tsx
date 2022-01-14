@@ -43,13 +43,13 @@ const Auswertung = ({ list }: AuswertungProps) => {
   return (
     <div className="grid grid-cols-4 gap-5 justify-items-stretch">
       <div className="col-span-full">
-        <h1 className="text-2xl text-center">
+        <h1 className="text-2xl text-center font-heading">
           {filter.artikel} - {filter.fehler}
         </h1>
       </div>
 
       <div>
-        <h2 className="text-xl font-bold">nach Artikel</h2>
+        <h2 className="text-xl font-bold font-content">nach Artikel</h2>
         <Artikel
           list={list}
           filter={filter}
@@ -62,7 +62,7 @@ const Auswertung = ({ list }: AuswertungProps) => {
       </div>
 
       <div>
-        <h2 className="text-xl font-bold">nach Fehler</h2>
+        <h2 className="text-xl font-bold font-content">nach Fehler</h2>
         <Fehler
           list={list}
           filter={filter}
