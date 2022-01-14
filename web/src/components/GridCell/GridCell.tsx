@@ -33,7 +33,7 @@ export const Empty = () => (
     className="flex justify-center items-center shadow-md"
     style={{ width: '700px', height: '420px' }}
   >
-    <div className="text-4xl">keine Grafik vorhanden</div>
+    <div className="text-4xl">keine Geometrie gefunden</div>
   </div>
 )
 
@@ -46,5 +46,14 @@ export const Success = ({
   const props = { image, grid: { rows, columns, pixels } }
   const data = convertRaw(list)
 
-  return <Grid data={data} {...props} />
+  return image === '' ? (
+    <div
+      className="flex justify-center items-center shadow-md"
+      style={{ width: '700px', height: '420px' }}
+    >
+      <div className="text-4xl">keine Grafik vorhanden</div>
+    </div>
+  ) : (
+    <Grid data={data} {...props} />
+  )
 }
