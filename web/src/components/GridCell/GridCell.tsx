@@ -22,7 +22,7 @@ export const QUERY = gql`
 
 const Placeholder = ({ text }: { text: string }) => (
   <div
-    className="flex justify-center items-center shadow-md px-16"
+    className="flex justify-center items-center shadow-md px-16 m-auto"
     style={{ maxWidth: '700px', height: '420px' }}
   >
     <div className="text-4xl">{text}</div>

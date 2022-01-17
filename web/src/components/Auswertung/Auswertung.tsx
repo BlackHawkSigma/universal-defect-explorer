@@ -57,7 +57,7 @@ const Auswertung = ({ list }: AuswertungProps) => {
         />
       </div>
 
-      <div className="col-span-2 object-center">
+      <div className="col-span-2">
         <GridCell name={filter.artikel} list={filteredList} />
       </div>
 
