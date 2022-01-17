@@ -12,9 +12,7 @@ import '@fontsource/libre-franklin/300.css'
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider
-      titleTemplate={`%PageTitle | %AppTitle - ${process.env.PLANT_NAME}`}
-    >
+    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <RedwoodApolloProvider>
         <Routes />
       </RedwoodApolloProvider>
