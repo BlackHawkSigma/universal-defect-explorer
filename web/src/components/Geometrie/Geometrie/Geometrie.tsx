@@ -57,12 +57,14 @@ const Geometrie = ({
             <tr>
               <th>Raster</th>
               <td>
-                <Grid
-                  data={[]}
-                  grid={{ rows, columns, pixels }}
-                  image={image}
-                  onClick={() => {}}
-                />
+                <div className="inline-block">
+                  <Grid
+                    data={[]}
+                    grid={{ rows, columns, pixels }}
+                    image={image}
+                    onClick={() => {}}
+                  />
+                </div>
               </td>
             </tr>
           </tbody>
