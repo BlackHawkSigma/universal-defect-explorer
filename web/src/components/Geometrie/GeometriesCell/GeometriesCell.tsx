@@ -10,6 +10,7 @@ export const QUERY = gql`
     geometries {
       id
       Bezeichnung
+      image
     }
   }
 `

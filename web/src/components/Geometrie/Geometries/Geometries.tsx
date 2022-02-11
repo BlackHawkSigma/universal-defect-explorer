@@ -2,7 +2,10 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes } from '@redwoodjs/router'
 
+import { BiImage } from 'react-icons/bi'
+
 import { QUERY } from 'src/components/Geometrie/GeometriesCell'
+import type { FindGeometries } from 'types/graphql'
 
 const DELETE_GEOMETRIE_MUTATION = gql`
   mutation DeleteGeometrieMutation($id: Int!) {
@@ -22,7 +25,7 @@ const truncate = (text) => {
   return output
 }
 
-const GeometriesList = ({ geometries }) => {
+const GeometriesList = ({ geometries }: FindGeometries) => {
   const [deleteGeometrie] = useMutation(DELETE_GEOMETRIE_MUTATION, {
     onCompleted: () => {
       toast.success('Geometrie gelöscht')
@@ -47,6 +50,7 @@ const GeometriesList = ({ geometries }) => {
           <tr>
             <th>Id</th>
             <th>Bezeichnung</th>
+            <th>Grafik</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -55,6 +59,13 @@ const GeometriesList = ({ geometries }) => {
             <tr key={geometrie.id}>
               <td>{truncate(geometrie.id)}</td>
               <td>{truncate(geometrie.Bezeichnung)}</td>
+              <td>
+                {geometrie.image?.startsWith('data:image') ? (
+                  <BiImage />
+                ) : (
+                  <></>
+                )}
+              </td>
               <td>
                 <nav className="rw-table-actions">
                   <Link
