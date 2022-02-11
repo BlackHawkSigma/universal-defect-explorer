@@ -8,9 +8,9 @@
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
 import { Router, Route, Set } from '@redwoodjs/router'
+import AdminLayout from 'src/layouts/AdminLayout/AdminLayout'
+import ArtikelsLayout from 'src/layouts/ArtikelsLayout/ArtikelsLayout'
 import GeometriesLayout from 'src/layouts/GeometriesLayout'
-
-import AdminLayout from './layouts/AdminLayout/AdminLayout'
 
 const Routes = () => {
   return (
@@ -18,9 +18,12 @@ const Routes = () => {
       <Route path="/auswertung" page={AuswertungPage} name="auswertung" />
       <Set wrap={AdminLayout}>
         <Route path="/admin" page={AdminHomePage} name="adminHome" />
-        <Route path="/admin/allcodes" page={AllcodesPage} name="allcodes" />
-        <Route path="/admin/artikels/{id:Int}/edit" page={ArtikelEditArtikelPage} name="editArtikel" />
-        <Route path="/admin/artikels" page={ArtikelArtikelsPage} name="artikels" />
+
+        <Set wrap={ArtikelsLayout}>
+          <Route path="/admin/allcodes" page={AllcodesPage} name="allcodes" />
+          <Route path="/admin/artikels/{id:Int}/edit" page={ArtikelEditArtikelPage} name="editArtikel" />
+          <Route path="/admin/artikels" page={ArtikelArtikelsPage} name="artikels" />
+        </Set>
 
         <Set wrap={GeometriesLayout}>
           <Route path="/admin/geometries/new" page={GeometrieNewGeometriePage} name="newGeometrie" />

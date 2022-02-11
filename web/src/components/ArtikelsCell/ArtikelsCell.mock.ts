@@ -4,7 +4,12 @@ import type { ArtikelsQuery } from 'types/graphql'
 export const standard = (): ArtikelsQuery => {
   return {
     artikels: [
-      { id: 1, code: '12345678', name: 'Foo', geo: null },
+      {
+        id: 1,
+        code: '12345678',
+        name: 'Foo',
+        geo: { id: 1, Bezeichnung: 'Foo-Geo' },
+      },
       { id: 2, code: '987654', name: 'Bar', geo: null },
       { id: 3, code: '654789', name: 'Heck', geo: null },
     ],
