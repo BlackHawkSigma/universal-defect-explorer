@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "yarn install && yarn rw build && yarn rw prisma migrate deploy",
+    "update": "git pull && yarn build && yarn start",
     "serve": "yarn rw dev",
     "start": "yarn rw serve"
   },
