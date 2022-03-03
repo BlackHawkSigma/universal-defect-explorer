@@ -15,6 +15,14 @@ export const QUERY = gql`
   }
 `
 
+export const beforeQuery = (props) => {
+  return {
+    variables: props,
+    fetchPolicy: 'cache-and-network',
+    pollInterval: 5_000,
+  }
+}
+
 export const Loading = () => <div>Lade...</div>
 
 export const Empty = () => {
