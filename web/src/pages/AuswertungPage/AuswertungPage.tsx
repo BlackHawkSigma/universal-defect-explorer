@@ -32,7 +32,7 @@ const AuswertungPage = () => {
         />
       </div>
 
-      <main className="max-w-screen-2xl mx-auto p-12 bg-white shadow rounded-b">
+      <main className="mx-auto pt-4 px-12 bg-white shadow rounded-b">
         <FehlersCell
           start={timeframe.start.toISOString()}
           end={timeframe.end.toISOString()}

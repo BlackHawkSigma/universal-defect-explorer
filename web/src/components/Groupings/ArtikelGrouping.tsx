@@ -30,7 +30,7 @@ const ArtikelGrouping = ({ list, filter, setFilter }: GroupingProps) => {
   }
 
   return (
-    <div>
+    <div className="overflow-y-scroll">
       {data.map(({ toplevel, count, records }) => (
         <details key={toplevel}>
           <summary>

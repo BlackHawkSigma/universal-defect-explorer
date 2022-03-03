@@ -30,7 +30,7 @@ const FehlerGrouping = ({ list, filter, setFilter }: FehlerGroupingProps) => {
   }
 
   return (
-    <div>
+    <div className="overflow-y-scroll">
       {data.map(({ toplevel, count, records }) => (
         <details key={toplevel}>
           <summary>
