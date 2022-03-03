@@ -1,8 +1,9 @@
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 
 import type { FehlerInTimeframe } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
+import { AuswertungContext } from 'src/providers/context/AuswertungContext'
 import Loader from 'src/components/Loader/loader'
 import Auswertung from 'src/components/Auswertung'
 
@@ -22,17 +23,18 @@ export const QUERY = gql`
   }
 `
 
-export const beforeQuery = ({ setIsLoading, ...props }) => {
+export const beforeQuery = (props) => {
   return {
     variables: props,
     fetchPolicy: 'no-cache',
-    onCompleted: () => setIsLoading(false),
   }
 }
 
-export const Loading = ({ setIsLoading }) => {
+export const Loading = () => {
+  const { setIsLoading } = useContext(AuswertungContext)
   useEffect(() => {
     setIsLoading(true)
+    return () => setIsLoading(false)
   }, [setIsLoading])
 
   return <Loader />

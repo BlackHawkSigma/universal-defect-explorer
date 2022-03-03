@@ -12,10 +12,15 @@ import AdminLayout from 'src/layouts/AdminLayout/AdminLayout'
 import ArtikelsLayout from 'src/layouts/ArtikelsLayout/ArtikelsLayout'
 import GeometriesLayout from 'src/layouts/GeometriesLayout'
 
+import { AuswertungContextProvider } from './providers/context/AuswertungContext'
+
 const Routes = () => {
   return (
     <Router>
-      <Route path="/auswertung" page={AuswertungPage} name="auswertung" />
+      <Set wrap={AuswertungContextProvider}>
+        <Route path="/auswertung" page={AuswertungPage} name="auswertung" />
+      </Set>
+
       <Set wrap={AdminLayout}>
         <Route path="/admin" page={AdminHomePage} name="adminHome" />
 
