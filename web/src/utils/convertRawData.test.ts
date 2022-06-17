@@ -8,13 +8,15 @@ describe('Util um Cosmino Daten zusammen zu fassen', () => {
   })
 
   test('handle double digit rows', () => {
-    expect(convertRaw([{ fehlerOrt: 'A1001', fehlerText: 'Foo' }]))
-    .toStrictEqual([{ row: 10, col: 1, label: '1' }])
+    expect(
+      convertRaw([{ fehlerOrt: 'A1001', fehlerText: 'Foo' }] as Record[])
+    ).toStrictEqual([{ row: 10, col: 1, label: '1' }])
   })
 
   test('handle double digit columns', () => {
-    expect(convertRaw([{ fehlerOrt: 'A0110', fehlerText: 'Foo' }]))
-    .toStrictEqual([{ row: 1, col: 10, label: '1' }])
+    expect(
+      convertRaw([{ fehlerOrt: 'A0110', fehlerText: 'Foo' }] as Record[])
+    ).toStrictEqual([{ row: 1, col: 10, label: '1' }])
   })
 })
 
