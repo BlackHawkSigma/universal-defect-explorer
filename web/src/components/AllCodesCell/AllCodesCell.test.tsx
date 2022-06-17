@@ -1,4 +1,4 @@
-import { render, screen } from '@redwoodjs/testing/web'
+import { render } from '@redwoodjs/testing/web'
 import { Loading, Empty, Failure, Success } from './AllCodesCell'
 import { standard } from './AllCodesCell.mock'
 
@@ -29,7 +29,7 @@ describe('AllCodesCell', () => {
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success allCodes={standard().allCodes} />)
+      render(<Success getAllCodes={standard().getAllCodes} />)
     }).not.toThrow()
   })
 })
