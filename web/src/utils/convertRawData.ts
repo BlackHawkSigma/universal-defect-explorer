@@ -20,7 +20,7 @@ export const convertRaw = (list: Record[]): GridData[] => {
 
 export const codeToCoords = (code: string): { row: number; col: number } => {
   const row = +code.slice(1, 3)
-  const col = +code.slice(4, 5)
+  const col = +code.slice(3, 5)
 
   return { row, col }
 }
