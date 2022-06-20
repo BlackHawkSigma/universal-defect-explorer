@@ -1,11 +1,11 @@
+import { BiImage } from 'react-icons/bi'
+import type { FindGeometries } from 'types/graphql'
+
+import { Link, routes } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
-import { Link, routes } from '@redwoodjs/router'
-
-import { BiImage } from 'react-icons/bi'
 
 import { QUERY } from 'src/components/Geometrie/GeometriesCell'
-import type { FindGeometries } from 'types/graphql'
 
 const DELETE_GEOMETRIE_MUTATION = gql`
   mutation DeleteGeometrieMutation($id: Int!) {

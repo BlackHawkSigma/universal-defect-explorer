@@ -1,13 +1,14 @@
-import { MetaTags } from '@redwoodjs/web'
 import { useContext, useState } from 'react'
+
+import type { Timeframe } from 'types/timeframe'
+
+import { MetaTags } from '@redwoodjs/web'
 
 import FehlersCell from 'src/components/FehlersCell'
 import TimeframeSelector from 'src/components/TimeframeSelector'
 import { setInitalTime } from 'src/utils/timeframe'
 
 import { AuswertungContext } from '../../providers/context/AuswertungContext'
-
-import type { Timeframe } from 'types/timeframe'
 
 const AuswertungPage = () => {
   const [timeframe, setTimeframe] = useState<Timeframe>(() =>

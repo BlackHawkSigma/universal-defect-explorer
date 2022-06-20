@@ -1,8 +1,9 @@
 import type { FindGeometrieByName } from 'types/graphql'
+import { Record } from 'types/Record'
+
 import type { CellSuccessProps } from '@redwoodjs/web'
 
 import Grid from 'src/components/Grid'
-import { Record } from 'types/Record'
 import { convertRaw } from 'src/utils/convertRawData'
 
 export type GridCellProps = {

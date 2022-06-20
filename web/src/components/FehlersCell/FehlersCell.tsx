@@ -1,11 +1,12 @@
 import { useContext, useEffect } from 'react'
 
 import type { FehlerInTimeframe } from 'types/graphql'
+
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
-import { AuswertungContext } from 'src/providers/context/AuswertungContext'
-import Loader from 'src/components/Loader/loader'
 import Auswertung from 'src/components/Auswertung'
+import Loader from 'src/components/Loader/loader'
+import { AuswertungContext } from 'src/providers/context/AuswertungContext'
 
 export const QUERY = gql`
   query FehlerInTimeframe($start: DateTime!, $end: DateTime!) {

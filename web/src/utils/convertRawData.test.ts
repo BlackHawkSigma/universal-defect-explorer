@@ -1,6 +1,7 @@
-import { convertRaw } from './convertRawData'
-import type { Record } from 'types/Record'
 import type { GridData } from 'types/grid'
+import type { Record } from 'types/Record'
+
+import { convertRaw } from './convertRawData'
 
 describe('Util um Cosmino Daten zusammen zu fassen', () => {
   test('convert like expected', () => {

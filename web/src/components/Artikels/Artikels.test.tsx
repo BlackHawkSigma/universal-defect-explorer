@@ -1,7 +1,8 @@
 import { render } from '@redwoodjs/testing/web'
 
-import Artikels from './Artikels'
 import { standard } from '../ArtikelsCell/ArtikelsCell.mock'
+
+import Artikels from './Artikels'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components

@@ -1,5 +1,7 @@
-import { render, screen } from '@redwoodjs/testing/web'
+import { render } from '@redwoodjs/testing/web'
+
 import { standart } from '../ArtikelForm/ArtikelForm.mock'
+
 import { Loading, Empty, Failure, Success } from './EditArtikelCell'
 import { standard } from './EditArtikelCell.mock'
 

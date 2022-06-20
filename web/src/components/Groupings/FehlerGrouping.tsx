@@ -1,7 +1,8 @@
-import { groupByArtikel, groupByFehler } from './groupData'
-
 import type { Record } from 'types/Record'
+
 import type { Filter, FilterAction } from '../Auswertung/Auswertung'
+
+import { groupByArtikel, groupByFehler } from './groupData'
 
 export type FehlerGroupingProps = {
   list: Record[]

@@ -1,5 +1,4 @@
 import { group, descending } from 'd3-array'
-
 import type { Record } from 'types/Record'
 
 export const groupByArtikel = (list: Record[]) => {
