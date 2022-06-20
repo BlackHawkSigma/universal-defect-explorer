@@ -1,4 +1,5 @@
 import type { ArtikelsQuery } from 'types/graphql'
+
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Artikels from 'src/components/Artikels/Artikels'

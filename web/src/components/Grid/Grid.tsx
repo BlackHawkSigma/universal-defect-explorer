@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
-import Canvas from './Canvas'
 import type { GridConfig, GridData, Selection } from 'types/grid'
+
+import Canvas from './Canvas'
 
 export type GridProps = {
   data: GridData[]

@@ -1,6 +1,7 @@
+import type { FindGeometrieByName } from 'types/graphql'
+
 import { image } from 'src/components/Grid/Grid.mock'
 
-import type { FindGeometrieByName } from 'types/graphql'
 import type { GridCellProps } from './GridCell'
 
 export const standard = (): GridCellProps & FindGeometrieByName => {

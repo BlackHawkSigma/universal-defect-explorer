@@ -1,7 +1,7 @@
 import type { FindGeometries } from 'types/graphql'
-import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import { Link, routes } from '@redwoodjs/router'
+import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Geometries from 'src/components/Geometrie/Geometries'
 

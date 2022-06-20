@@ -1,7 +1,6 @@
 import { countBy } from 'lodash/fp'
-
-import type { Record } from 'types/Record'
 import type { GridData } from 'types/grid'
+import type { Record } from 'types/Record'
 
 export const convertRaw = (list: Record[]): GridData[] => {
   const counts = countBy('fehlerOrt', list)

@@ -1,5 +1,4 @@
 import { setMinutes, setHours, startOfDay, subBusinessDays } from 'date-fns'
-
 import type { Timeframe } from 'types/timeframe'
 
 export const setInitalTime = (now: Date): Timeframe => {

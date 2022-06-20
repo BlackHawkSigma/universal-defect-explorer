@@ -1,11 +1,11 @@
 import { useReducer } from 'react'
 
+import { Record } from 'types/Record'
+
 import FehlerTable from 'src/components/FehlerTable'
 import GridCell from 'src/components/GridCell'
 import Artikel from 'src/components/Groupings/ArtikelGrouping'
 import Fehler from 'src/components/Groupings/FehlerGrouping'
-
-import { Record } from 'types/Record'
 
 export type Filter = {
   artikel: string

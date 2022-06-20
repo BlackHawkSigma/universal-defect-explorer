@@ -1,4 +1,5 @@
 import type { Prisma } from '@prisma/client'
+
 import { db } from 'src/lib/db'
 
 export const artikels = () => {

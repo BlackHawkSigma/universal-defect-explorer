@@ -1,4 +1,5 @@
 import { addBusinessDays } from 'date-fns'
+
 import type { TimeframeSelectorProps } from './TimeframeSelector'
 
 export const standart = (): TimeframeSelectorProps => {

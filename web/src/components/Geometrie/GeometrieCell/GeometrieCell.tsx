@@ -1,4 +1,5 @@
 import type { FindGeometrieById } from 'types/graphql'
+
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import Geometrie from 'src/components/Geometrie/Geometrie'

@@ -3,7 +3,6 @@ import { useRef, useEffect, CSSProperties } from 'react'
 import { max } from 'd3-array'
 import { interpolateRgb } from 'd3-interpolate'
 import { scaleLinear } from 'd3-scale'
-
 import type { GridConfig, GridData, Selection } from 'types/grid'
 
 export type CanvasProps = {
