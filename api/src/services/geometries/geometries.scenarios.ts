@@ -2,7 +2,18 @@ import type { Prisma } from '@prisma/client'
 
 export const standard = defineScenario<Prisma.GeometrieCreateArgs>({
   geometrie: {
-    data: { one: { Bezeichnung: 'String' }, two: { Bezeichnung: 'String' } },
+    one: {
+      data: {
+        Bezeichnung: 'String',
+        image: '',
+        Codes: {
+          create: {
+            artikelcode: '123456789',
+          },
+        },
+      },
+      include: { Codes: true },
+    },
   },
 })
 

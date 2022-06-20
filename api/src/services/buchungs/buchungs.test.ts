@@ -1,4 +1,4 @@
-import { buchungs } from './buchungs'
+import { buchungs, getAllCodes } from './buchungs'
 import type { StandardScenario } from './buchungs.scenarios'
 
 describe('buchungs', () => {
@@ -7,4 +7,15 @@ describe('buchungs', () => {
 
     expect(result.length).toEqual(Object.keys(scenario.buchung).length)
   })
+})
+
+describe('getAllCodes', () => {
+  scenario(
+    'returns distinct "artikelcode" & "artikelbezeichnung" combinations',
+    async (_scenario: StandardScenario) => {
+      const result = await getAllCodes()
+
+      expect(result.length).toEqual(1)
+    }
+  )
 })

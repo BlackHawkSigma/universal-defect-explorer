@@ -22,7 +22,7 @@ describe('geometries', () => {
 
   scenario('creates a geometrie', async () => {
     const result = await createGeometrie({
-      input: { Bezeichnung: 'String' },
+      input: { Bezeichnung: 'String', image: '' },
     })
 
     expect(result.Bezeichnung).toEqual('String')
