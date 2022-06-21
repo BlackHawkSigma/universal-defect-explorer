@@ -14,3 +14,10 @@ api/types/graphql.d.ts
 
 .tmp
 start_local_db.sh
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
