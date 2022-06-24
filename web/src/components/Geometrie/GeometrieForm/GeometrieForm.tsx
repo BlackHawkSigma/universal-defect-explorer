@@ -26,6 +26,7 @@ const GeometrieForm = (props) => {
           listClassName="rw-form-error-list"
         />
 
+        {/* Row */}
         <Label
           name="Bezeichnung"
           className="rw-label"
@@ -42,6 +43,7 @@ const GeometrieForm = (props) => {
         />
         <FieldError name="Bezeichnung" className="rw-field-error" />
 
+        {/* Row */}
         <div className="grid grid-cols-3 gap-4">
           <div>
             <Label
@@ -101,6 +103,27 @@ const GeometrieForm = (props) => {
           </div>
         </div>
 
+        {/* Row */}
+        <div>
+          <Label
+            name="partsPerSide"
+            className="rw-label"
+            errorClassName="rw-label rw-label-error"
+          >
+            Teile pro Skid Seite
+          </Label>
+          <NumberField
+            name="partsPerSide"
+            defaultValue={props.geometrie?.partsPerSide}
+            emptyAs="undefined"
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+            min={1}
+          />
+          <FieldError name="partsPerSide" className="rw-field-error" />
+        </div>
+
+        {/* Row */}
         <Label
           name="image"
           className="rw-label"

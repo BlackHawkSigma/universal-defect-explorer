@@ -57,7 +57,7 @@ model Geometrie {
   id           Int     @id @default(autoincrement())
   Bezeichnung  String
   scrapTaget   Decimal @default(0) @db.Decimal(3, 2)
-  partsPerSide Int     @default(1)
+  partsPerSide Int?
   image        String  @db.LongText
   rows         Int     @default(0)
   columns      Int     @default(0)

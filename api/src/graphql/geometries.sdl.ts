@@ -11,6 +11,7 @@ export const schema = gql`
     rows: Int!
     columns: Int!
     pixels: Int!
+    partsPerSide: Int
     Codes: [Artikel]!
   }
 
@@ -26,6 +27,7 @@ export const schema = gql`
     rows: Int!
     columns: Int!
     pixels: Int!
+    partsPerSide: Int
   }
 
   input UpdateGeometrieInput {
@@ -34,6 +36,7 @@ export const schema = gql`
     rows: Int
     columns: Int
     pixels: Int
+    partsPerSide: Int
   }
 
   type Mutation {

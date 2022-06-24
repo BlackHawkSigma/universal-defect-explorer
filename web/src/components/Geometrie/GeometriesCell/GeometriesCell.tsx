@@ -19,7 +19,7 @@ export const beforeQuery = (props) => {
   return {
     variables: props,
     fetchPolicy: 'cache-and-network',
-    pollInterval: 5_000,
+    // pollInterval: 5_000,
   }
 }
 

@@ -16,9 +16,18 @@ export const QUERY = gql`
       rows
       columns
       pixels
+      partsPerSide
     }
   }
 `
+
+export const beforeQuery = (props) => {
+  return {
+    variables: props,
+    fetchPolicy: 'network-only',
+  }
+}
+
 const UPDATE_GEOMETRIE_MUTATION = gql`
   mutation UpdateGeometrieMutation($id: Int!, $input: UpdateGeometrieInput!) {
     updateGeometrie(id: $id, input: $input) {
