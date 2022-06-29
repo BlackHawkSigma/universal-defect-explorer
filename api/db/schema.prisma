@@ -16,7 +16,7 @@ model Buchung {
   artikelbezeichnung String      @default("") @db.VarChar(50)
   farbton            String?     @default("") @db.VarChar(25)
   skidseite          Int?        @default(0) @db.UnsignedTinyInt
-  lackierposition    Int?        @default(0) @db.UnsignedSmallInt
+  lackierposition    String?     @db.VarChar(5)
   io_notouch         Int?        @db.SmallInt
   io_poliert         Int?        @db.SmallInt
   nacharbeit         Int?        @db.SmallInt
