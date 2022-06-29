@@ -6,7 +6,7 @@ export const schema = gql`
     lack: String
     skid: Int
     skidseite: Int
-    skidposition: Int
+    skidposition: String
     fehlerText: String!
     fehlerOrt: String
   }
