@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import { Link, routes } from '@redwoodjs/router'
 
 type ArtikelsProps = {
@@ -10,6 +12,7 @@ type ArtikelsProps = {
 }
 
 const Artikels = ({ artikels }: ArtikelsProps) => {
+  const { t } = useTranslation()
   return (
     <div className="rw-segment rw-table-wrapper-responsive overflow-x-auto">
       <table className="rw-table">
@@ -34,7 +37,7 @@ const Artikels = ({ artikels }: ArtikelsProps) => {
                     title="bearbeiten"
                     className="rw-button rw-button-small rw-button-blue"
                   >
-                    zuordnen
+                    {t('zuordnen')}
                   </Link>
                 </nav>
               </td>

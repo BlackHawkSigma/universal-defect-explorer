@@ -10,8 +10,15 @@ export const standard = (): AllCodes => {
   }
 }
 
-export const singleCode = (): AllCodes => ({
+export const oneCode = (): AllCodes => ({
   getAllCodes: [{ code: '1', text: 'Single' }],
+})
+
+export const twoCodes = (): AllCodes => ({
+  getAllCodes: [
+    { code: '1234', text: 'First' },
+    { code: '5678', text: 'Second' },
+  ],
 })
 
 mockGraphQLQuery('AllCodes', standard())

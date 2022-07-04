@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import type { EditArtikelById } from 'types/graphql'
 
 import { navigate, routes } from '@redwoodjs/router'
@@ -31,7 +32,10 @@ const UPDATE_ARTIKEL_MUTATION = gql`
   }
 `
 
-export const Loading = () => <div>Durchsuche Datenbank...</div>
+export const Loading = () => {
+  const { t } = useTranslation()
+  return <div>{t('Durchsuche Datenbank...')}</div>
+}
 
 export const Empty = ({ id }) => {
   return <div>keinen Artikel mit ID &quot;{id}&quot; gefunden</div>
@@ -45,13 +49,14 @@ export const Success = ({
   artikel,
   geometries,
 }: CellSuccessProps<EditArtikelById>) => {
+  const { t } = useTranslation()
   const [updateArtikel, { loading, error }] = useMutation(
     UPDATE_ARTIKEL_MUTATION,
     {
       onCompleted: () => {
         console.log('completet')
 
-        toast.success('Geometrie aktualisiert')
+        toast.success(t('Geometrie aktualisiert'))
         navigate(routes.allcodes())
       },
     }
@@ -67,7 +72,7 @@ export const Success = ({
     <div className="rw-segment">
       <header className="rw-segment-header">
         <h2 className="rw-heading rw-heading-seconadry">
-          Geometire Zuordnung Berabeiten
+          {t('Geometire Zuordnung Berabeiten')}
         </h2>
       </header>
       <div className="rw-segment-main">
