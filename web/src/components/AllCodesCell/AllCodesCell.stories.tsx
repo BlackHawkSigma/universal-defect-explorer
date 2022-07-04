@@ -1,5 +1,5 @@
 import { Loading, Empty, Failure, Success } from './AllCodesCell'
-import { standard, singleCode } from './AllCodesCell.mock'
+import { standard, oneCode, twoCodes } from './AllCodesCell.mock'
 
 export const loading = () => {
   return Loading ? <Loading /> : null
@@ -17,7 +17,12 @@ export const success = () => {
   return Success ? <Success {...standard()} /> : null
 }
 
-export const sinlgeCode = () => {
-  return Success ? <Success {...singleCode()} /> : null
+export const singleCode = () => {
+  return Success ? <Success {...oneCode()} /> : null
 }
+
+export const multipleCodes = () => {
+  return Success ? <Success {...twoCodes()} /> : null
+}
+
 export default { title: 'Cells/AllCodesCell' }

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import type { FindGeometrieByName } from 'types/graphql'
 import { Record } from 'types/Record'
 
@@ -30,9 +31,15 @@ const Placeholder = ({ text }: { text: string }) => (
   </div>
 )
 
-export const Loading = () => <Placeholder text="lade Raster ..." />
+export const Loading = () => {
+  const { t } = useTranslation()
+  return <Placeholder text={t('lade Raster ...')} />
+}
 
-export const Empty = () => <Placeholder text="keine Geometrie gefunden" />
+export const Empty = () => {
+  const { t } = useTranslation()
+  return <Placeholder text={t('keine Geometrie gefunden')} />
+}
 
 type SuccessProps = CellSuccessProps<FindGeometrieByName> & GridCellProps
 
@@ -40,11 +47,12 @@ export const Success = ({
   list,
   geometrie: { image, rows, columns, pixels },
 }: SuccessProps) => {
+  const { t } = useTranslation()
   const props = { image, grid: { rows, columns, pixels } }
   const data = convertRaw(list)
 
   return image === '' ? (
-    <Placeholder text="keine Grafik vorhanden" />
+    <Placeholder text={t('keine Grafik vorhanden')} />
   ) : (
     <Grid data={data} {...props} />
   )

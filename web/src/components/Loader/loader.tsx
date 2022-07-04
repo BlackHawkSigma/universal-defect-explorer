@@ -1,3 +1,4 @@
+// @ts-expect-error css module
 import styles from './loader.module.css'
 
 /**

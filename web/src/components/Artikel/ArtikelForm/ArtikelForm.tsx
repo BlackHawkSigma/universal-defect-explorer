@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import {
   Form,
   FormError,
@@ -29,7 +31,7 @@ export type ArtikelFormProps = {
   artikel: Artikel
   geometries: Geometrie[]
   loading: boolean
-  error: any
+  error?: any
   onSave: (data: Data) => void
 }
 
@@ -40,6 +42,8 @@ const ArtikelForm = ({
   geometries,
   onSave,
 }: ArtikelFormProps) => {
+  const { t } = useTranslation()
+
   const onSubmit = ({ geometrie }) => {
     onSave({ artikelId: artikel.id, geoId: geometrie })
   }
@@ -49,7 +53,7 @@ const ArtikelForm = ({
       <Form onSubmit={onSubmit}>
         <FormError error={error} />
         <Label name="artikelcode" className="rw-label">
-          Arikelcode
+          {t('Arikelcode')}
         </Label>
         <TextField
           name="artikelcode"
@@ -59,7 +63,7 @@ const ArtikelForm = ({
         />
 
         <Label name="bezeichnung" className="rw-label">
-          Bezeichnung
+          {t('Bezeichnung')}
         </Label>
         <TextField
           name="bezeichnung"
@@ -82,7 +86,7 @@ const ArtikelForm = ({
           errorClassName="rw-input rw-input-error"
           validation={{
             valueAsNumber: true,
-            required: 'bitte Geometrie auswählen',
+            required: t('bitte Geometrie auswählen'),
           }}
           defaultValue={artikel.GeometieId}
         >
@@ -96,7 +100,7 @@ const ArtikelForm = ({
 
         <div className="rw-button-group">
           <Submit disabled={loading} className="rw-button rw-button-green">
-            Speichern
+            {t('Speichern')}
           </Submit>
         </div>
       </Form>

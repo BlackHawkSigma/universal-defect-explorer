@@ -1,0 +1,14 @@
+{
+  "Durchsuche Datenbank...": "searching database...",
+  "Keine Einträge gefunden": "no entries found",
+  "Codes gefunden_one": "one code found",
+  "Codes gefunden_other": "{{count}} codes found",
+  "zuordnen": "link",
+  "Speichern": "save",
+  "bitte Geometrie auswählen": "please select a geometrie",
+  "Geometrie aktualisiert": "geometry updated",
+  "Geometire Zuordnung Berabeiten": "edit geometry linking",
+  "lade Raster ...": "loading grid ...",
+  "keine Geometrie gefunden": "couldn't find a geometry",
+  "keine Grafik vorhanden": "couldn't find an image"
+}
