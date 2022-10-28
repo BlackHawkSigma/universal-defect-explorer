@@ -5,6 +5,10 @@ import { initReactI18next } from 'react-i18next'
 import de from './locales/de.json'
 import en from './locales/en.json'
 
+i18n.on('languageChanged', (lng) => {
+  document.documentElement.setAttribute('lang', lng)
+})
+
 // This is a simple i18n configuration with English and French translations.
 // You can find the translations in web/src/locales/{language}.json
 // see: https://react.i18next.com
