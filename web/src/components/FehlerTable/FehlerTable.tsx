@@ -1,4 +1,8 @@
+import { useContext } from 'react'
+
 import type { Record } from 'types/Record'
+
+import { CustomizationContext } from 'src/providers/context/CustomizationContext'
 
 export type FehlerTablePros = {
   list: Record[]
@@ -13,6 +17,8 @@ const timeTag = (datetime: string) => {
 }
 
 const FehlerTable = ({ list }: FehlerTablePros) => {
+  const { doubleSidedSkids } = useContext(CustomizationContext)
+
   return (
     <div className="flex">
       <table className="w-full table-auto border-collapse border border-solid border-gray-200">
@@ -23,7 +29,7 @@ const FehlerTable = ({ list }: FehlerTablePros) => {
             <th>Bezeichnung</th>
             <th>Farbe</th>
             <th>Skid</th>
-            <th>Seite</th>
+            {doubleSidedSkids && <th>Seite</th>}
             <th>Position</th>
             <th>Fehler</th>
             <th>Ort</th>
@@ -40,7 +46,7 @@ const FehlerTable = ({ list }: FehlerTablePros) => {
               <td>{row.bezeichnung}</td>
               <td>{row.lack}</td>
               <td>{row.skid}</td>
-              <td>{row.skidseite}</td>
+              {doubleSidedSkids && <td>{row.skidseite}</td>}
               <td>{row.skidposition}</td>
               <td>{row.fehlerText}</td>
               <td>{row.fehlerOrt}</td>
