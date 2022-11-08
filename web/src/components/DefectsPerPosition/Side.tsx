@@ -14,8 +14,8 @@ export const Side = ({
   children,
 }: SideProps) => (
   <div className={`${activeSide === side ? 'bg-blue-500' : ''}`}>
-    <p
-      className={`min-w-max px-1 text-center text-2xl ${
+    <button
+      className={`w-full min-w-max px-1 text-center text-2xl ${
         onSetSide
           ? 'cursor-pointer hover:bg-[rgb(173,216,230)]/60'
           : 'bg-blue-100/60'
@@ -23,7 +23,7 @@ export const Side = ({
       onClick={onSetSide ? () => onSetSide(side) : undefined}
     >
       Seite {side} {count ? `(${count})` : ''}
-    </p>
+    </button>
     <div className="mt-1 flex flex-col gap-1">{children}</div>
   </div>
 )
