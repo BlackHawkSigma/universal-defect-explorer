@@ -20,8 +20,6 @@ const CustomizationProvider = ({ doubleSidedSkids = null, children }) => {
     [doubleSidedSkids]
   )
 
-  console.log({ value })
-
   return (
     <CustomizationContext.Provider value={value}>
       {children}
