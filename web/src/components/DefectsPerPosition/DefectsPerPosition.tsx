@@ -38,7 +38,7 @@ const DefectsPerPosition = ({
   return (
     <>
       {doubleSidedSkids ? (
-        <div className="mt-2 mb-5 grid min-w-[260px] grid-cols-2 gap-2 bg-white p-2 shadow-xl">
+        <div className="mt-2 mb-5 grid min-w-[260px] grid-cols-2 gap-2 bg-white p-2 shadow-md">
           <Side
             side={1}
             count={sumPerSide.get(1)}
