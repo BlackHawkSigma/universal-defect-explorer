@@ -1,9 +1,9 @@
 import { useReducer } from 'react'
 
-import { Record } from 'types/Record'
+import type { Record } from 'types/Record'
 
+import AuswertungArtikelCell from 'src/components/AuswertungArtikelCell'
 import FehlerTable from 'src/components/FehlerTable'
-import GridCell from 'src/components/GridCell'
 import Artikel from 'src/components/Groupings/ArtikelGrouping'
 import Fehler from 'src/components/Groupings/FehlerGrouping'
 
@@ -58,7 +58,7 @@ const Auswertung = ({ list }: AuswertungProps) => {
       </div>
 
       <div className="col-span-2">
-        <GridCell name={filter.artikel} list={filteredList} />
+        <AuswertungArtikelCell name={filter.artikel} list={filteredList} />
       </div>
 
       <div className="flex flex-col">
