@@ -11,6 +11,7 @@ export const QUERY = gql`
       id
       Bezeichnung
       image
+      partsPerSide
     }
   }
 `

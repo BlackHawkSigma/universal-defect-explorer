@@ -6,6 +6,7 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
 import { QUERY } from 'src/components/Geometrie/GeometriesCell'
+import { CustomizationContext } from 'src/providers/context/CustomizationContext'
 
 const DELETE_GEOMETRIE_MUTATION = gql`
   mutation DeleteGeometrieMutation($id: Int!) {
@@ -15,7 +16,7 @@ const DELETE_GEOMETRIE_MUTATION = gql`
   }
 `
 
-const MAX_STRING_LENGTH = 150
+const MAX_STRING_LENGTH = 50
 
 const truncate = (text) => {
   let output = text
@@ -26,6 +27,7 @@ const truncate = (text) => {
 }
 
 const GeometriesList = ({ geometries }: FindGeometries) => {
+  const { doubleSidedSkids } = React.useContext(CustomizationContext)
   const [deleteGeometrie] = useMutation(DELETE_GEOMETRIE_MUTATION, {
     onCompleted: () => {
       toast.success('Geometrie gelöscht')
@@ -51,6 +53,7 @@ const GeometriesList = ({ geometries }: FindGeometries) => {
             <th>Id</th>
             <th>Bezeichnung</th>
             <th>Grafik</th>
+            <th>Teile pro {doubleSidedSkids ? 'Skid Seite' : 'Skid'}</th>
             <th>&nbsp;</th>
           </tr>
         </thead>
@@ -66,6 +69,7 @@ const GeometriesList = ({ geometries }: FindGeometries) => {
                   <></>
                 )}
               </td>
+              <td>{geometrie.partsPerSide}</td>
               <td>
                 <nav className="rw-table-actions">
                   <Link

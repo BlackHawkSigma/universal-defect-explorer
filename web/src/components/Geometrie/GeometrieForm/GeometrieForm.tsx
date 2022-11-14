@@ -10,8 +10,10 @@ import {
 } from '@redwoodjs/forms'
 
 import ImageUpload from 'src/components/ImageUpload/ImageUpload'
+import { CustomizationContext } from 'src/providers/context/CustomizationContext'
 
 const GeometrieForm = (props) => {
+  const { doubleSidedSkids } = React.useContext(CustomizationContext)
   const onSubmit = (data) => {
     props.onSave(data, props?.geometrie?.id)
   }
@@ -41,6 +43,22 @@ const GeometrieForm = (props) => {
           validation={{ required: 'Bitte eine Bezeichung eintragen' }}
         />
         <FieldError name="Bezeichnung" className="rw-field-error" />
+
+        <Label
+          name="partsPerSide"
+          className="rw-label"
+          errorClassName="rw-label rw-label-error"
+        >
+          Teile pro {doubleSidedSkids ? 'Skid Seite' : 'Skid'}
+        </Label>
+        <NumberField
+          name="partsPerSide"
+          defaultValue={props.geometrie?.partsPerSide}
+          className="rw-input"
+          errorClassName="rw-input rw-input-error"
+          validation={{ min: 1, required: 'Bitte Wert eintragen' }}
+        />
+        <FieldError name="partsPerSide" className="rw-field-error" />
 
         <div className="grid grid-cols-3 gap-4">
           <div>
