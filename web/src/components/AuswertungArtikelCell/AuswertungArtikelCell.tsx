@@ -49,12 +49,9 @@ export const Success = ({
   geometrie,
 }: CellSuccessProps<FindGeometrieByName> & AuswertungArtikelCellProps) => {
   return (
-    <div className="flex gap-2 flex-wrap">
+    <div className="flex gap-2 flex-wrap items-start justify-center">
       <GridContainer list={list} geometrie={geometrie} />
-      <DefectsPerPositionContainer
-        list={list}
-        partsPerSide={geometrie.partsPerSide}
-      />
+      <DefectsPerPositionContainer list={list} geometrie={geometrie} />
     </div>
   )
 }
