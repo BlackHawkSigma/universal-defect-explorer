@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import { I18nextProvider } from 'react-i18next'
 import i18n from 'web/src/i18n'
+import { CustomizationProvider } from 'web/src/providers/context/CustomizationContext'
 
 import '../src/scaffold.css'
 
@@ -16,6 +17,18 @@ export const globalTypes = {
       items: [
         { value: 'de', right: 'ᴅᴇ', title: 'Deutsch' },
         { value: 'en', right: '🇺🇸', title: 'English' },
+      ],
+    },
+  },
+  sidesPerSkid: {
+    name: 'Sides per Skid',
+    description: 'Seiten pro Skid',
+    defaultValue: 2,
+    toolbar: {
+      icon: 'cog',
+      items: [
+        { value: 1, left: '1', title: 'Einseitig' },
+        { value: 2, left: '2', title: 'Doppelseitig' },
       ],
     },
   },
@@ -44,4 +57,14 @@ const withI18n = (StoryFn, context) => {
   )
 }
 
-export const decorators = [withI18n]
+const withCustomizationProvider = (Story, context) => {
+  const doubleSidedSkids = context.globals.sidesPerSkid === 2
+
+  return (
+    <CustomizationProvider doubleSidedSkids={doubleSidedSkids}>
+      <Story />
+    </CustomizationProvider>
+  )
+}
+
+export const decorators = [withI18n, withCustomizationProvider]

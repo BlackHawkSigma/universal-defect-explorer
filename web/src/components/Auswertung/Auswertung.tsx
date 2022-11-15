@@ -1,9 +1,9 @@
 import { useReducer } from 'react'
 
-import { Record } from 'types/Record'
+import type { Record } from 'types/Record'
 
+import AuswertungArtikelCell from 'src/components/AuswertungArtikelCell'
 import FehlerTable from 'src/components/FehlerTable'
-import GridCell from 'src/components/GridCell'
 import Artikel from 'src/components/Groupings/ArtikelGrouping'
 import Fehler from 'src/components/Groupings/FehlerGrouping'
 
@@ -41,14 +41,14 @@ const Auswertung = ({ list }: AuswertungProps) => {
   )
 
   return (
-    <div className="grid grid-cols-4 gap-5 grid-rows-[auto_420px_auto] justify-items-stretch">
+    <div className="grid grid-cols-4 gap-5 justify-items-stretch">
       <div className="col-span-full">
         <h1 className="text-2xl text-center font-heading">
           {filter.artikel} - {filter.fehler}
         </h1>
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col max-h-[500px]">
         <h2 className="text-xl font-bold font-content">nach Artikel</h2>
         <Artikel
           list={list}
@@ -57,11 +57,11 @@ const Auswertung = ({ list }: AuswertungProps) => {
         />
       </div>
 
-      <div className="col-span-2">
-        <GridCell name={filter.artikel} list={filteredList} />
+      <div className="col-span-2 min-h-[420px]">
+        <AuswertungArtikelCell name={filter.artikel} list={filteredList} />
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col max-h-[500px]">
         <h2 className="text-xl font-bold font-content">nach Fehler</h2>
         <Fehler
           list={list}

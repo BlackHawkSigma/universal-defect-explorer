@@ -1,6 +1,6 @@
 import type { EditGeometrieById } from 'types/graphql'
 
-import { navigate, routes } from '@redwoodjs/router'
+import { back } from '@redwoodjs/router'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
@@ -16,6 +16,7 @@ export const QUERY = gql`
       rows
       columns
       pixels
+      partsPerSide
     }
   }
 `
@@ -40,7 +41,7 @@ export const Success = ({ geometrie }: CellSuccessProps<EditGeometrieById>) => {
     {
       onCompleted: () => {
         toast.success('Geometrie updated')
-        navigate(routes.geometries())
+        back()
       },
     }
   )
