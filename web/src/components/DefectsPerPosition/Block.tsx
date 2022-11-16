@@ -16,7 +16,7 @@ export const Block = ({
   const backgroundColor = count ? getColor(+count) : undefined
 
   return (
-    <div
+    <button
       className={`flex justify-evenly rounded-sm p-1 text-lg ${
         onSetPos ? 'cursor-pointer' : ''
       } ${
@@ -29,6 +29,6 @@ export const Block = ({
       <span className="flex-grow text-center">
         {count ? <b>{count}</b> : ''}
       </span>
-    </div>
+    </button>
   )
 }
