@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import type { Prisma } from '@prisma/client'
 import { db } from 'api/src/lib/db'
-
 import { subHours } from 'date-fns'
 
 export default async () => {
