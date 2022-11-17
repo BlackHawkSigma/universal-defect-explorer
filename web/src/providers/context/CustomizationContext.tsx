@@ -14,9 +14,7 @@ const CustomizationContext =
 const CustomizationProvider = ({ doubleSidedSkids = null, children }) => {
   const value = React.useMemo(
     () =>
-      doubleSidedSkids
-        ? { ...defaultValue, doubleSidedSkids }
-        : { ...defaultValue },
+      doubleSidedSkids !== null ? { doubleSidedSkids } : { ...defaultValue },
     [doubleSidedSkids]
   )
 
