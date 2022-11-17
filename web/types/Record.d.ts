@@ -4,7 +4,7 @@ export type Record = {
   datum: string
   auslauf: string
   bezeichnung: string
-  lack: string
+  lack?: Maybe<string>
   skid?: Maybe<number>
   skidseite?: Maybe<number>
   skidposition?: Maybe<number>

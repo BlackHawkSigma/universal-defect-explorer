@@ -3,7 +3,7 @@ export const schema = gql`
     bezeichnung: String!
     datum: DateTime!
     auslauf: DateTime!
-    lack: String!
+    lack: String
     skid: Int
     skidseite: Int
     skidposition: Int
