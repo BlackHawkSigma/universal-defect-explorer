@@ -1,4 +1,4 @@
-// import type { Prisma } from '@prisma/client'
+import type { QueryResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
@@ -7,7 +7,7 @@ interface FehlerInTimeframeArgs {
   end: Date
 }
 
-export const fehlerInTimeframe = async ({
+export const fehlerInTimeframe: QueryResolvers['fehlerInTimeframe'] = async ({
   start,
   end,
 }: FehlerInTimeframeArgs) => {
