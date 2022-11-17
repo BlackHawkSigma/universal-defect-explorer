@@ -30,7 +30,9 @@ describe('AuswertungArtikelCell', () => {
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success list={standard().list} />)
+      render(
+        <Success list={standard().list} geometrie={standard().geometrie} />
+      )
     }).not.toThrow()
   })
 })

@@ -16,6 +16,7 @@ export const hasRole = ({ roles }) => {
   return roles !== undefined
 }
 
-export const requireAuth = ({ _roles }) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const requireAuth = ({ roles }) => {
   return isAuthenticated()
 }

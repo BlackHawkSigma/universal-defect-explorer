@@ -1,11 +1,6 @@
-import type { FindGeometrieByName } from 'types/graphql'
-
 import { image } from 'src/components/Grid/Grid.mock'
 
-import type { AuswertungArtikelCellProps } from './AuswertungArtikelCell'
-
-export const standard = (): AuswertungArtikelCellProps &
-  FindGeometrieByName => {
+export const standard = () => {
   return {
     list: [],
     geometrie: {
@@ -19,8 +14,7 @@ export const standard = (): AuswertungArtikelCellProps &
   }
 }
 
-export const noGeometrie = (): AuswertungArtikelCellProps &
-  FindGeometrieByName => {
+export const noGeometrie = () => {
   return {
     list: [],
     geometrie: {
