@@ -1,6 +1,4 @@
-import type { EditArtikelById } from 'types/graphql'
-
-export const standard = (): EditArtikelById => {
+export const standard = () => {
   return {
     artikel: {
       id: 42,
