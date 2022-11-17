@@ -6,7 +6,7 @@ export type Record = {
   bezeichnung: string
   lack?: Maybe<string>
   skid?: Maybe<number>
-  skidseite?: Maybe<number>
+  skidseite?: Maybe<string>
   skidposition?: Maybe<string>
   fehlerText: string
   fehlerOrt?: string

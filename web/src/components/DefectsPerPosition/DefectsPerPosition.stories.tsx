@@ -4,6 +4,7 @@ import DefectsPerPosition, {
 
 const args: DefectsPerPositionProps = {
   partsPerSide: 6,
+  sides: ['1', '2'],
   sumPerSide: new Map(),
   sumPerPosition: new Map(),
 }
@@ -25,8 +26,8 @@ export const sample = () => {
         {...args}
         {...{
           sumPerSide: new Map([
-            [1, 4],
-            [2, 4],
+            ['1', 4],
+            ['2', 4],
           ]),
           sumPerPosition: new Map([
             [1, 2],
@@ -45,7 +46,8 @@ export const longText = () => {
       <DefectsPerPosition
         {...args}
         {...{
-          sumPerSide: new Map([[1, 4_000_000]]),
+          partsPerSide: 4,
+          sumPerSide: new Map([['1', 4_000_000]]),
           sumPerPosition: new Map([[6, 'This is a very long label']]),
         }}
       />

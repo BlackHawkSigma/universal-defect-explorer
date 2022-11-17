@@ -15,6 +15,8 @@ type Props = {
 const DefectsPerPositionContainer = ({ list, geometrie }: Props) => {
   const { doubleSidedSkids } = React.useContext(CustomizationContext)
 
+  const sides = ['B', 'A']
+
   const validList = list
     .map((d) => ({ ...d, skidposition: +d.skidposition }))
     .filter((d) => !isNaN(d.skidposition))
@@ -51,6 +53,7 @@ const DefectsPerPositionContainer = ({ list, geometrie }: Props) => {
       )}
       <DefectsPerPosition
         partsPerSide={geometrie.partsPerSide}
+        sides={sides}
         sumPerSide={sumPerSide}
         sumPerPosition={sumPerPosition}
       />
