@@ -1,8 +1,8 @@
 type SideProps = {
-  side: number
+  side: string
   count?: number
-  activeSide?: number
-  onSetSide?: (side: number) => void
+  activeSide?: string
+  onSetSide?: (side: string) => void
   children: JSX.Element[]
 }
 

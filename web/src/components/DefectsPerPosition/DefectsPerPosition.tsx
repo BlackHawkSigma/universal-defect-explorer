@@ -10,16 +10,18 @@ import { Side } from './Side'
 
 export type DefectsPerPositionProps = {
   partsPerSide: number
+  sides: string[]
   sumPerPosition: Map<number, string | number>
-  sumPerSide: Map<number, number>
+  sumPerSide: Map<string, number>
   activePos?: number
-  activeSide?: number
+  activeSide?: string
   onSetPos?: (position: number) => void
-  onSetSide?: (side: number) => void
+  onSetSide?: (side: string) => void
 }
 
 const DefectsPerPosition = ({
   partsPerSide,
+  sides,
   sumPerSide,
   sumPerPosition,
   activePos,
@@ -40,8 +42,8 @@ const DefectsPerPosition = ({
       {doubleSidedSkids ? (
         <div className="mt-2 mb-5 grid min-w-[260px] grid-cols-2 gap-2 bg-white p-2 shadow-md">
           <Side
-            side={1}
-            count={sumPerSide.get(1)}
+            side={sides[0]}
+            count={sumPerSide.get(sides[0])}
             activeSide={activeSide}
             onSetSide={onSetSide}
           >
@@ -63,8 +65,8 @@ const DefectsPerPosition = ({
           </Side>
 
           <Side
-            side={2}
-            count={sumPerSide.get(2)}
+            side={sides[1]}
+            count={sumPerSide.get(sides[1])}
             activeSide={activeSide}
             onSetSide={onSetSide}
           >

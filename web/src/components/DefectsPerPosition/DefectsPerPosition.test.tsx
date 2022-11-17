@@ -7,6 +7,7 @@ import DefectsPerPosition from './DefectsPerPosition'
 
 const args = {
   partsPerSide: 6,
+  sides: ['1', '2'],
   sumPerSide: new Map(),
   sumPerPosition: new Map(),
 }
