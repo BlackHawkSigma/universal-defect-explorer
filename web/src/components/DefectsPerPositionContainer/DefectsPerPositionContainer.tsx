@@ -15,14 +15,18 @@ type Props = {
 const DefectsPerPositionContainer = ({ list, geometrie }: Props) => {
   const { doubleSidedSkids } = React.useContext(CustomizationContext)
 
-  const sumPerPosition = rollup<Record, number, number>(
-    list,
+  const validList = list
+    .map((d) => ({ ...d, skidposition: +d.skidposition }))
+    .filter((d) => !isNaN(d.skidposition))
+
+  const sumPerPosition = rollup(
+    validList,
     (v) => v.length,
     (d) => d.skidposition
   )
 
-  const sumPerSide = rollup<Record, number, number>(
-    list,
+  const sumPerSide = rollup(
+    validList,
     (v) => v.length,
     (d) => d.skidseite
   )
