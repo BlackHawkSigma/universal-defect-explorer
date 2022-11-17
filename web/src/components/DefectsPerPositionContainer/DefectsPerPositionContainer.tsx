@@ -39,24 +39,31 @@ const DefectsPerPositionContainer = ({ list, geometrie }: Props) => {
 
   return (
     <div>
-      {overflow && (
-        <div className="text-center bg-orange-300 text-lg rounded p-1">
-          overflow
+      {overflow ? (
+        <div className="bg-orange-300 rounded py-1">
+          <span className="text-center text-lg block">overflow</span>
+          <DefectsPerPosition
+            partsPerSide={geometrie.partsPerSide}
+            sides={sides}
+            sumPerSide={sumPerSide}
+            sumPerPosition={sumPerPosition}
+          />
           <Link
             to={routes.editGeometrie({ id: geometrie.id })}
             target="_blank"
-            className="rw-button rw-button-small"
+            className="rw-button rw-button-small mx-1"
           >
-            bearbeiten
+            Geometrie bearbeiten
           </Link>
         </div>
+      ) : (
+        <DefectsPerPosition
+          partsPerSide={geometrie.partsPerSide}
+          sides={sides}
+          sumPerSide={sumPerSide}
+          sumPerPosition={sumPerPosition}
+        />
       )}
-      <DefectsPerPosition
-        partsPerSide={geometrie.partsPerSide}
-        sides={sides}
-        sumPerSide={sumPerSide}
-        sumPerPosition={sumPerPosition}
-      />
     </div>
   )
 }
