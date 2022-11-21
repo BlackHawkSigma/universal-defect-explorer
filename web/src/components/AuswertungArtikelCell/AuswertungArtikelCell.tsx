@@ -5,6 +5,7 @@ import { Record } from 'types/Record'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import DefectsPerPositionContainer from 'src/components/DefectsPerPositionContainer'
+import DefectsPerSkidContainer from 'src/components/DefectsPerSkidContainer/DefectsPerSkidContainer'
 import GridContainer from 'src/components/GridContainer'
 
 export type AuswertungArtikelCellProps = {
@@ -49,9 +50,10 @@ export const Success = ({
   geometrie,
 }: CellSuccessProps<FindGeometrieByName> & AuswertungArtikelCellProps) => {
   return (
-    <div className="flex gap-2 flex-wrap items-start justify-center">
+    <div className="flex gap-4 flex-wrap items-start justify-center">
       <GridContainer list={list} geometrie={geometrie} />
       <DefectsPerPositionContainer list={list} geometrie={geometrie} />
+      <DefectsPerSkidContainer list={list} />
     </div>
   )
 }

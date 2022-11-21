@@ -1,6 +1,6 @@
 import { max, rollup } from 'd3'
 import type { FindGeometrieByName } from 'types/graphql'
-import { Record } from 'types/Record'
+import type { Record } from 'types/Record'
 
 import { Link, routes } from '@redwoodjs/router'
 
