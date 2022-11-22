@@ -9,7 +9,11 @@ const skids = new Map([
 ])
 
 export const generated = () => {
-  return <DefectsPerSkid skids={skids} />
+  return (
+    <div className="w-56">
+      <DefectsPerSkid skids={skids} />
+    </div>
+  )
 }
 
 export const clickable = () => {
@@ -17,7 +21,11 @@ export const clickable = () => {
     action(`Skid ${skid} selected`)
     console.log(skid)
   }
-  return <DefectsPerSkid skids={skids} onClick={onClick} />
+  return (
+    <div className="w-56">
+      <DefectsPerSkid skids={skids} onClick={onClick} />
+    </div>
+  )
 }
 
 export default { title: 'Components/DefectsPerSkid' }

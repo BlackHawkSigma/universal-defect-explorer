@@ -10,6 +10,10 @@ export const standard = (): FehlerInTimeframe => {
         auslauf: new Date().toISOString(),
         fehlerText: 'Lack nicht deckend',
         lack: 'Bunt',
+        skid: 117,
+        skidposition: '2',
+        skidseite: 'B',
+        fehlerOrt: 'F0302',
       },
     ],
   }
