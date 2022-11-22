@@ -101,7 +101,7 @@ const Canvas = ({
 
   return (
     <canvas
-      className="shadow-lg mx-auto"
+      className="mx-auto"
       style={styles}
       width={canvasWidth}
       height={canvasHeight}

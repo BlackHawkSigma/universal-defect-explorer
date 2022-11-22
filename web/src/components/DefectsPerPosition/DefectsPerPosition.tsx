@@ -38,9 +38,12 @@ const DefectsPerPosition = ({
   // const getPercent = getPercentFor(maxValue || 0)
 
   return (
-    <>
+    <div className="p-1 border rounded shadow">
+      <h4 className="text-center font-heading font-semibold text-lg">
+        Position
+      </h4>
       {doubleSidedSkids ? (
-        <div className="mt-2 mb-5 grid min-w-[260px] grid-cols-2 gap-2 bg-white p-2 shadow-md">
+        <div className="grid min-w-[260px] grid-cols-2 gap-2 bg-white">
           <Side
             side={sides[0]}
             count={sumPerSide.get(sides[0])}
@@ -88,7 +91,7 @@ const DefectsPerPosition = ({
           </Side>
         </div>
       ) : (
-        <div className="mt-2 mb-5 min-w-[130px] bg-white p-2 shadow-xl">
+        <div className="min-w-[130px] bg-white">
           <div className="flex flex-col gap-1">
             {[...Array(partsPerSide)].map((_empty, index) => {
               const pos = partsPerSide - index
@@ -107,7 +110,7 @@ const DefectsPerPosition = ({
           </div>
         </div>
       )}
-    </>
+    </div>
   )
 }
 

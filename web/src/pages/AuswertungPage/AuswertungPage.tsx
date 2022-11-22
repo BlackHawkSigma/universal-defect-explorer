@@ -24,8 +24,8 @@ const AuswertungPage = () => {
         /* you should un-comment description and add a unique description, 155 characters or less
         You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
-      <div className="mt-4 mx-4">
-        <h1 className="mb-6 text-center text-3xl font-heading">Auswertung</h1>
+      <div className="m-2 lg:m-4">
+        <h1 className="mb-2 text-center text-3xl font-heading">Auswertung</h1>
         <div>
           <TimeframeSelector
             initialTimeframe={setInitalTime(new Date())}
@@ -33,7 +33,7 @@ const AuswertungPage = () => {
             onChange={setTimeframe}
           />
         </div>
-        <main className="mx-auto pt-4 px-12 bg-white shadow rounded-b">
+        <main className="mx-auto">
           <FehlersCell
             start={timeframe.start.toISOString()}
             end={timeframe.end.toISOString()}
