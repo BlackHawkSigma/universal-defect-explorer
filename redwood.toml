@@ -7,10 +7,10 @@
 
 [web]
   title = "Defect Explorer - ${PLANT_NAME}"
-  port = 8910
+  port = "{PORT:8910}"
   apiUrl = "/api"
   includeEnvironmentVariables = ["PLANT_NAME","SIDES_PER_SKID", "NODE_ENV"] # any ENV vars that should be available to the web side, see https://redwoodjs.com/docs/environment-variables#web
 [api]
-  port = 8911
+  port = "{PORT:8911}"
 [browser]
   open = true
