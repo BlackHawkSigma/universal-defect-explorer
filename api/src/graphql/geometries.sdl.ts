@@ -27,6 +27,7 @@ export const schema = gql`
     rows: Int!
     columns: Int!
     pixels: Int!
+    partsPerSide: Int!
   }
 
   input UpdateGeometrieInput {
