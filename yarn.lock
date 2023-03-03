@@ -20600,12 +20600,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-icons@npm:4.3.1":
-  version: 4.3.1
-  resolution: "react-icons@npm:4.3.1"
+"react-icons@npm:4.8.0":
+  version: 4.8.0
+  resolution: "react-icons@npm:4.8.0"
   peerDependencies:
     react: "*"
-  checksum: 08ee89dcfd5f134631b1e8c322541c30c70119c0fada0f61ed1a1cb044c8c31d7144ae24586b14b548b79d0e1d0dc2210845156b4f2b7184c898f845c3203d79
+  checksum: fd8e6656ce863ca739e079a321fe122bcf21708270ddac4ce32b7e1f333a9957f97eca08f58c4837057e23355749a9b80569978a67adc734cb4a1dfdc506ba3f
   languageName: node
   linkType: hard
 
@@ -24435,7 +24435,7 @@ __metadata:
     react-datepicker: 4.3.0
     react-dom: 17.0.2
     react-i18next: ^11.17.4
-    react-icons: 4.3.1
+    react-icons: 4.8.0
     tailwindcss: 3.2.7
   languageName: unknown
   linkType: soft
