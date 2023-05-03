@@ -1923,7 +1923,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.5, @babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.5, @babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.20.6, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.0, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.21.5
   resolution: "@babel/runtime@npm:7.21.5"
   dependencies:
@@ -15383,12 +15383,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^21.8.11":
-  version: 21.8.11
-  resolution: "i18next@npm:21.8.11"
+"i18next@npm:^22.0.0":
+  version: 22.4.15
+  resolution: "i18next@npm:22.4.15"
   dependencies:
-    "@babel/runtime": ^7.17.2
-  checksum: bdd92de662d4ae8ad762059a8d99653aaae5f4bb1c8ae21fe76dd75dbcbddc623ebbeba95e57966a68462d498996f00665098166c8d262a4d87ac7f93aab1589
+    "@babel/runtime": ^7.20.6
+  checksum: 695f951ab853f0809a216c52d88209571de253f8c087f11079712fa0422be60715b09072863259d5450fb23a2d35cb0a09bbc48773d9a7dc108ce1652a33e1fb
   languageName: node
   linkType: hard
 
@@ -25330,7 +25330,7 @@ __metadata:
     canvas: ^2.9.1
     d3: 6.7
     i18n: ^0.15.0
-    i18next: ^21.8.11
+    i18next: ^22.0.0
     i18next-browser-languagedetector: ^6.1.4
     postcss: 8.4.6
     postcss-loader: 6.2.1
