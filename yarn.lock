@@ -8281,7 +8281,7 @@ __metadata:
     "@redwoodjs/api": ^5.0.3
     "@redwoodjs/api-server": ^5.0.3
     "@redwoodjs/graphql-server": ^5.0.3
-    date-fns: 2.26.0
+    date-fns: 2.30.0
   languageName: unknown
   linkType: soft
 
@@ -11679,14 +11679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:2.26.0":
-  version: 2.26.0
-  resolution: "date-fns@npm:2.26.0"
-  checksum: ccec3cf2da95c04216200b3823c1d9344cabfe4f0498d807dc038aeffcc549dd73f5e10914006a7c4faa883edc0eac766db65cbac9757443d2c5c31b6cb6ca24
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^2.0.1, date-fns@npm:^2.24.0, date-fns@npm:^2.29.3":
+"date-fns@npm:2.30.0, date-fns@npm:^2.0.1, date-fns@npm:^2.24.0, date-fns@npm:^2.29.3":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
