@@ -28,5 +28,5 @@
     "start": "yarn rw serve"
   },
   "version": "2.2.0",
-  "packageManager": "yarn@3.2.1"
+  "packageManager": "yarn@3.5.1"
 }
