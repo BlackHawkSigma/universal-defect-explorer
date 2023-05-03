@@ -18741,7 +18741,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.2.0, nanoid@npm:^3.3.1, nanoid@npm:^3.3.6":
+"nanoid@npm:^3.3.1, nanoid@npm:^3.3.6":
   version: 3.3.6
   resolution: "nanoid@npm:3.3.6"
   bin:
@@ -20645,14 +20645,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.6":
-  version: 8.4.6
-  resolution: "postcss@npm:8.4.6"
+"postcss@npm:8.4.23, postcss@npm:^8.2.15, postcss@npm:^8.4.19, postcss@npm:^8.4.21, postcss@npm:^8.4.23":
+  version: 8.4.23
+  resolution: "postcss@npm:8.4.23"
   dependencies:
-    nanoid: ^3.2.0
+    nanoid: ^3.3.6
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 0a7ffac250d87776f3c27c9d5e9b0c9edf5fba710655d4be2a79956fff1629beb4a0239a2896ce4d26b2732f810ab6f74c629f8a85f78fa68efe66f31bd6fd2f
+  checksum: 35c2e26496be286a63706a0b8240fc4d2075a746466df530989208f60ea33cbc80c89420221cffb7d4fdd605afc385993f5f60302447e3047a7c0a8756b6471d
   languageName: node
   linkType: hard
 
@@ -20663,17 +20663,6 @@ __metadata:
     picocolors: ^0.2.1
     source-map: ^0.6.1
   checksum: fd27ee808c0d02407582cccfad4729033e2b439d56cd45534fb39aaad308bb35a290f3b7db5f2394980e8756f9381b458a625618550808c5ff01a125f51efc53
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.2.15, postcss@npm:^8.4.19, postcss@npm:^8.4.21, postcss@npm:^8.4.23":
-  version: 8.4.23
-  resolution: "postcss@npm:8.4.23"
-  dependencies:
-    nanoid: ^3.3.6
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: 35c2e26496be286a63706a0b8240fc4d2075a746466df530989208f60ea33cbc80c89420221cffb7d4fdd605afc385993f5f60302447e3047a7c0a8756b6471d
   languageName: node
   linkType: hard
 
@@ -25332,7 +25321,7 @@ __metadata:
     i18n: ^0.15.0
     i18next: ^22.0.0
     i18next-browser-languagedetector: ^6.1.4
-    postcss: 8.4.6
+    postcss: 8.4.23
     postcss-loader: 6.2.1
     prop-types: 15.7.2
     react: 18.2.0
