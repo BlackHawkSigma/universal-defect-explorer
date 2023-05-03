@@ -32,7 +32,7 @@
   "devDependencies": {
     "@types/d3": "6.7",
     "@types/react-datepicker": "4.11.2",
-    "autoprefixer": "10.4.2",
+    "autoprefixer": "10.4.14",
     "canvas": "^2.9.1",
     "postcss": "8.4.6",
     "postcss-loader": "6.2.1",
