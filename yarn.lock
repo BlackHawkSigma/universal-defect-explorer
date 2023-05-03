@@ -9133,14 +9133,14 @@ __metadata:
   linkType: hard
 
 "canvas@npm:^2.9.1":
-  version: 2.9.1
-  resolution: "canvas@npm:2.9.1"
+  version: 2.11.2
+  resolution: "canvas@npm:2.11.2"
   dependencies:
     "@mapbox/node-pre-gyp": ^1.0.0
-    nan: ^2.15.0
+    nan: ^2.17.0
     node-gyp: latest
     simple-get: ^3.0.3
-  checksum: 4c90624530c070e6d0882eb0ca5fdb88378307c726c61b21350453f1c94aab004e04b11f6e2107ac8f61fbbe7f7438da03b9f561b93b78e425bedf45ce1eb074
+  checksum: 943368798ad1b66b18633aa34b6181e1038dac5433fc9727cd07be35f0a633f572b60d9edb95f5ff90b6a9128e86d5312035f91a2934101c73185b15d906230a
   languageName: node
   linkType: hard
 
@@ -18045,12 +18045,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nan@npm:^2.12.1, nan@npm:^2.15.0":
+"nan@npm:^2.12.1":
   version: 2.16.0
   resolution: "nan@npm:2.16.0"
   dependencies:
     node-gyp: latest
   checksum: 95204e4ed2970c0411735d866b0a71f30625e9ce598d2f7c2dfc2145dcd4e8e48dda26fda2587657f91e96973044353d300a9a6d259079b342fa4b30548aa8fa
+  languageName: node
+  linkType: hard
+
+"nan@npm:^2.17.0":
+  version: 2.17.0
+  resolution: "nan@npm:2.17.0"
+  dependencies:
+    node-gyp: latest
+  checksum: 4a231a62dba025f4c4fa814c1e6ffeb450c5cd0852b780f19fe4ea22b86ba0f1f394406dfd628c67fb7f0987e982fa230da1fbd3632258f927b8defd7046c1ad
   languageName: node
   linkType: hard
 
