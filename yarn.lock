@@ -15403,8 +15403,8 @@ __metadata:
   linkType: hard
 
 "i18n@npm:^0.15.0":
-  version: 0.15.0
-  resolution: "i18n@npm:0.15.0"
+  version: 0.15.1
+  resolution: "i18n@npm:0.15.1"
   dependencies:
     "@messageformat/core": ^3.0.0
     debug: ^4.3.3
@@ -15412,7 +15412,7 @@ __metadata:
     make-plural: ^7.0.0
     math-interval-parser: ^2.0.1
     mustache: ^4.2.0
-  checksum: 32401b150fdf19ae511b5d677aff7c3696f8f46eef7128b158ea2c2274dd8d53e1bdb1cd4345e74fee9430a2bdf775e9a16c5d49b72d1379c26c28bec6adcde9
+  checksum: 7215c2c9608c471da17961d0af7069f952fb7b8c7a596e0d691021db06a5a4024ea497da7718b4d3a2f50213dd55a720470fb141f983f758252f1f4b93f92acc
   languageName: node
   linkType: hard
 
