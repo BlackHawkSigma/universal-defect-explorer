@@ -21196,9 +21196,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:4.11.0":
-  version: 4.11.0
-  resolution: "react-datepicker@npm:4.11.0"
+"react-datepicker@npm:4.12.0":
+  version: 4.12.0
+  resolution: "react-datepicker@npm:4.12.0"
   dependencies:
     "@popperjs/core": ^2.9.2
     classnames: ^2.2.6
@@ -21209,7 +21209,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: 9670698e1c74bec618b5afe0e6f96ac4da8744cedfbebc07f16b936f7d13c756a1f82c0e676d96dc6a68a132b0bb09a7724f68e3332585457c15a68a1d00351f
+  checksum: 2713be4672c9e3454de9096ac152eae7931baafe71c7ffe21f06b946f877b67cbfb59b6af255dd471f265156e4c132c8ae977f11e4390325aedb7965a1f2305c
   languageName: node
   linkType: hard
 
@@ -25289,7 +25289,7 @@ __metadata:
     postcss-loader: 6.2.1
     prop-types: 15.8.1
     react: 18.2.0
-    react-datepicker: 4.11.0
+    react-datepicker: 4.12.0
     react-dom: 18.2.0
     react-i18next: ^11.17.4
     react-icons: 4.8.0
