@@ -2540,10 +2540,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/comfortaa@npm:4.5.11":
-  version: 4.5.11
-  resolution: "@fontsource/comfortaa@npm:4.5.11"
-  checksum: 8c01babe8ce77bced226881c4f2967b6e0592312d38b056adcee633918a7b2a09142a7405e2daf60d3fe6ec54c1eebb8bdb7e92766f91e9094f3f0b284055085
+"@fontsource/comfortaa@npm:5.0.2":
+  version: 5.0.2
+  resolution: "@fontsource/comfortaa@npm:5.0.2"
+  checksum: 6e196c7bda37bea377e1cd6de3bebe5b16cf1315cc7a1ef9984a66aab031d2d8b579f851b507a8fb9f6e51120b10620d812fc0fd4ef0b4ea91f14e0a29aabed0
   languageName: node
   linkType: hard
 
@@ -25278,7 +25278,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@fontsource/comfortaa": 4.5.11
+    "@fontsource/comfortaa": 5.0.2
     "@fontsource/libre-franklin": 4.5.11
     "@redwoodjs/forms": 5.0.5
     "@redwoodjs/router": 5.0.5
