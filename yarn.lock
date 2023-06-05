@@ -15417,11 +15417,11 @@ __metadata:
   linkType: hard
 
 "i18next-browser-languagedetector@npm:^7.0.0":
-  version: 7.0.1
-  resolution: "i18next-browser-languagedetector@npm:7.0.1"
+  version: 7.0.2
+  resolution: "i18next-browser-languagedetector@npm:7.0.2"
   dependencies:
     "@babel/runtime": ^7.19.4
-  checksum: 9a90b7d7054c3d4246df3b5f3a7fa64b7799393905cb884fbc0d82aff977fd81e0e0f9e3ad09822962b69de5ff3e6f7e758837f98d05e10c730facf55820adb9
+  checksum: a8c05288ca9bcdbb7cd69406c3577b82c790ef59cd4c8dcec7bb7ce1e19253a7e13e4099050683c35b357ebd1e366d9506b2a0bdf7b406f107f8d6f1b7bc55ee
   languageName: node
   linkType: hard
 
