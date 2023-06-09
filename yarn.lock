@@ -2662,14 +2662,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource-variable/comfortaa@npm:^5.0.2":
+"@fontsource-variable/comfortaa@npm:5.0.2":
   version: 5.0.2
   resolution: "@fontsource-variable/comfortaa@npm:5.0.2"
   checksum: 38d29b3700c7bd7de6f5fb0f03e70b7827631a32a27b09c31da16efdc5eed3b07d0a280c716cec1474cb732d9c94ae8de33ba2cc5a84377b839aabeef5e9fc74
   languageName: node
   linkType: hard
 
-"@fontsource-variable/libre-franklin@npm:^5.0.3":
+"@fontsource-variable/libre-franklin@npm:5.0.3":
   version: 5.0.3
   resolution: "@fontsource-variable/libre-franklin@npm:5.0.3"
   checksum: f454db65e9faed818456dc8708f22364ad8cdeca345d59d3d9707c1aa310501b401820468ee0cdb9617e4a7a28577bf24316483cb9439a9706bded78fe94445d
@@ -6690,7 +6690,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/d3@npm:6.7":
+"@types/d3@npm:6.7.5":
   version: 6.7.5
   resolution: "@types/d3@npm:6.7.5"
   dependencies:
@@ -9938,7 +9938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"canvas@npm:^2.9.1":
+"canvas@npm:2.11.2":
   version: 2.11.2
   resolution: "canvas@npm:2.11.2"
   dependencies:
@@ -11723,7 +11723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3@npm:6.7":
+"d3@npm:6.7.0":
   version: 6.7.0
   resolution: "d3@npm:6.7.0"
   dependencies:
@@ -15414,7 +15414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18n@npm:^0.15.0":
+"i18n@npm:0.15.1":
   version: 0.15.1
   resolution: "i18n@npm:0.15.1"
   dependencies:
@@ -15428,7 +15428,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-browser-languagedetector@npm:^7.0.0":
+"i18next-browser-languagedetector@npm:7.0.2":
   version: 7.0.2
   resolution: "i18next-browser-languagedetector@npm:7.0.2"
   dependencies:
@@ -15437,7 +15437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^22.0.0":
+"i18next@npm:22.5.1":
   version: 22.5.1
   resolution: "i18next@npm:22.5.1"
   dependencies:
@@ -21395,7 +21395,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:^12.0.0":
+"react-i18next@npm:12.3.1":
   version: 12.3.1
   resolution: "react-i18next@npm:12.3.1"
   dependencies:
@@ -25351,26 +25351,26 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@fontsource-variable/comfortaa": ^5.0.2
-    "@fontsource-variable/libre-franklin": ^5.0.3
+    "@fontsource-variable/comfortaa": 5.0.2
+    "@fontsource-variable/libre-franklin": 5.0.3
     "@redwoodjs/forms": 5.3.0
     "@redwoodjs/router": 5.3.0
     "@redwoodjs/web": 5.3.0
-    "@types/d3": 6.7
+    "@types/d3": 6.7.5
     "@types/react-datepicker": 4.11.2
     autoprefixer: 10.4.14
-    canvas: ^2.9.1
-    d3: 6.7
-    i18n: ^0.15.0
-    i18next: ^22.0.0
-    i18next-browser-languagedetector: ^7.0.0
+    canvas: 2.11.2
+    d3: 6.7.0
+    i18n: 0.15.1
+    i18next: 22.5.1
+    i18next-browser-languagedetector: 7.0.2
     postcss: 8.4.24
     postcss-loader: 7.3.2
     prop-types: 15.8.1
     react: 18.2.0
     react-datepicker: 4.12.0
     react-dom: 18.2.0
-    react-i18next: ^12.0.0
+    react-i18next: 12.3.1
     react-icons: 4.9.0
     tailwindcss: 3.3.2
   languageName: unknown
