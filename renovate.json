@@ -1,8 +1,11 @@
 {
-  "timezone": "Europe/Berlin",
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Europe/Berlin",
   "extends": [
-    "config:base",
-    "schedule:earlyMondays"
+    "config:js-app",
+    "schedule:earlyMondays",
+    ":automergeBranch",
+    ":automergeMinor",
+    ":maintainLockFilesWeekly"
   ]
 }
