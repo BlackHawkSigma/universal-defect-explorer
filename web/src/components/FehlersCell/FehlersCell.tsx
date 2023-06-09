@@ -21,6 +21,11 @@ export const QUERY = gql`
       fehlerText
       fehlerOrt
     }
+
+    sumByGeometrie(start: $start, end: $end) {
+      bezeichnung
+      sum
+    }
   }
 `
 
@@ -49,6 +54,7 @@ export const Failure = ({ error }: CellFailureProps) => (
 
 export const Success = ({
   fehlerInTimeframe: fehler,
+  sumByGeometrie,
 }: CellSuccessProps<FehlerInTimeframe>) => {
-  return <Auswertung list={fehler} />
+  return <Auswertung list={fehler} sumByGeometrie={sumByGeometrie} />
 }

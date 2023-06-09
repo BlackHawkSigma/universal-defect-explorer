@@ -1,5 +1,6 @@
 import { useReducer } from 'react'
 
+import type { SumByGeometrie } from 'types/graphql'
 import type { Record } from 'types/Record'
 
 import AuswertungArtikelCell from 'src/components/AuswertungArtikelCell'
@@ -30,9 +31,10 @@ const filterReducer = (state: Filter, action: FilterAction): Filter => {
 
 export type AuswertungProps = {
   list: Record[]
+  sumByGeometrie: SumByGeometrie[]
 }
 
-const Auswertung = ({ list }: AuswertungProps) => {
+const Auswertung = ({ list, sumByGeometrie }: AuswertungProps) => {
   const [filter, setFilter] = useReducer(filterReducer, initialFilter)
 
   const filteredList = list.filter(
@@ -52,6 +54,7 @@ const Auswertung = ({ list }: AuswertungProps) => {
         <h3 className="text-xl font-bold font-content">nach Artikel</h3>
         <Artikel
           list={list}
+          sums={sumByGeometrie}
           filter={filter}
           setFilter={(filter) => setFilter(filter)}
         />

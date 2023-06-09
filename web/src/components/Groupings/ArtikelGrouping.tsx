@@ -1,3 +1,6 @@
+import { descending } from 'd3'
+import { t } from 'i18next'
+import type { SumByGeometrie } from 'types/graphql'
 import type { Record } from 'types/Record'
 
 import type { Filter, FilterAction } from '../Auswertung/Auswertung'
@@ -6,22 +9,33 @@ import { groupByArtikel, groupByFehler } from './groupData'
 
 export type GroupingProps = {
   list: Record[]
+  sums: SumByGeometrie[]
   filter: Filter
   setFilter: (payload: FilterAction) => void
 }
 
-const ArtikelGrouping = ({ list, filter, setFilter }: GroupingProps) => {
+const ArtikelGrouping = ({ list, filter, setFilter, sums }: GroupingProps) => {
   const first = groupByArtikel(list)
 
-  const data = first.map(([toplevel, records]) => {
-    const second = groupByFehler(records)
-    const count = second.reduce(
-      (acc, [_label, current]) => acc + current.length,
-      0
-    )
+  const data = first
+    .map(([toplevel, records]) => {
+      const second = groupByFehler(records)
+      const count = second.reduce(
+        (acc, [_label, current]) => acc + current.length,
+        0
+      )
+      const sum = sums.find((d) => d.bezeichnung === toplevel).sum
+      const percent = count / sum
 
-    return { toplevel, count, records: second }
-  })
+      const secondRecords = second.map(([label, entries]) => ({
+        label,
+        count: entries.length,
+        percent: entries.length / sum,
+      }))
+
+      return { toplevel, count, records: secondRecords, sum, percent }
+    })
+    .sort((a, b) => descending(a.percent, b.percent))
 
   const handleToplevel = (artikel: string) =>
     setFilter({ type: 'setArtikel', artikel })
@@ -32,7 +46,7 @@ const ArtikelGrouping = ({ list, filter, setFilter }: GroupingProps) => {
 
   return (
     <div className="overflow-y-scroll">
-      {data.map(({ toplevel, count, records }) => (
+      {data.map(({ toplevel, count, records, percent }) => (
         <details key={toplevel}>
           <summary>
             <span
@@ -44,22 +58,22 @@ const ArtikelGrouping = ({ list, filter, setFilter }: GroupingProps) => {
               onKeyDown={() => handleToplevel(toplevel)}
               onClick={() => handleToplevel(toplevel)}
             >
-              {count}x {toplevel}
+              {t('intlPercent', { val: percent })} {toplevel} ({count})
             </span>
           </summary>
           <ol>
-            {records.map(([secondlevel, records]) => (
-              <li key={secondlevel}>
+            {records.map(({ label, percent, count }) => (
+              <li key={label}>
                 <span
                   className={
-                    secondlevel === filter.fehler ? 'font-bold' : 'font-thin'
+                    label === filter.fehler ? 'font-bold' : 'font-thin'
                   }
                   role={'button'}
                   tabIndex={0}
-                  onKeyDown={() => handleSecondlevel(toplevel, secondlevel)}
-                  onClick={() => handleSecondlevel(toplevel, secondlevel)}
+                  onKeyDown={() => handleSecondlevel(toplevel, label)}
+                  onClick={() => handleSecondlevel(toplevel, label)}
                 >
-                  {records.length}x {secondlevel}
+                  {t('intlPercent', { val: percent })} {label} ({count})
                 </span>
               </li>
             ))}

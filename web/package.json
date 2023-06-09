@@ -18,7 +18,7 @@
     "@redwoodjs/forms": "5.3.0",
     "@redwoodjs/router": "5.3.0",
     "@redwoodjs/web": "5.3.0",
-    "d3": "6.7",
+    "d3": "^6.7.0",
     "i18n": "^0.15.0",
     "i18next": "^22.0.0",
     "i18next-browser-languagedetector": "^7.0.0",

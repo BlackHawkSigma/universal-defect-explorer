@@ -8395,6 +8395,7 @@ __metadata:
     "@redwoodjs/api": 5.3.0
     "@redwoodjs/api-server": 5.3.0
     "@redwoodjs/graphql-server": 5.3.0
+    d3: ^6.7.0
     date-fns: 2.30.0
   languageName: unknown
   linkType: soft
@@ -11723,7 +11724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"d3@npm:6.7":
+"d3@npm:^6.7.0":
   version: 6.7.0
   resolution: "d3@npm:6.7.0"
   dependencies:
@@ -25360,7 +25361,7 @@ __metadata:
     "@types/react-datepicker": 4.11.2
     autoprefixer: 10.4.14
     canvas: ^2.9.1
-    d3: 6.7
+    d3: ^6.7.0
     i18n: ^0.15.0
     i18next: ^22.0.0
     i18next-browser-languagedetector: ^7.0.0
