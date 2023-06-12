@@ -8,5 +8,8 @@
   "[prisma]": {
     "editor.formatOnSave": true
   },
-  "typescript.tsserver.experimental.enableProjectDiagnostics": false
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  "files.readonlyInclude": {
+    ".redwood/**": true
+  }
 }
