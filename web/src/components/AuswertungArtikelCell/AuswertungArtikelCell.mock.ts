@@ -28,7 +28,7 @@ export const noGeometrie = () => {
   }
 }
 
-mockGraphQLQuery('FindGeometrieByName', (variables, { ctx }) => {
-  ctx.delay(500) // pause for 1.5 seconds
+mockGraphQLQuery('FindGeometrieByName', (_variables, { ctx }) => {
+  ctx.delay(100)
   return standard()
 })

@@ -16,6 +16,7 @@ export const standard = (): FehlerInTimeframe => {
         fehlerOrt: 'F0302',
       },
     ],
+    sumByGeometrie: [{ bezeichnung: 'Test', sum: 20 }],
   }
 }
 
