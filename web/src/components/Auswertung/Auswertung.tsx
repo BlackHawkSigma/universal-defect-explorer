@@ -1,5 +1,6 @@
 import { useReducer } from 'react'
 
+import { t } from 'i18next'
 import type { SumByGeometrie } from 'types/graphql'
 import type { Record } from 'types/Record'
 
@@ -42,6 +43,11 @@ const Auswertung = ({ list, sumByGeometrie }: AuswertungProps) => {
       bezeichnung === filter.artikel && fehlerText === filter.fehler
   )
 
+  const sumProduced = sumByGeometrie.reduce(
+    (accu, current) => accu + current.sum,
+    0
+  )
+
   return (
     <div className="grid grid-cols-6 gap-5 justify-items-stretch">
       <div className="col-span-full">
@@ -51,7 +57,9 @@ const Auswertung = ({ list, sumByGeometrie }: AuswertungProps) => {
       </div>
 
       <div className="flex flex-col max-h-[500px]">
-        <h3 className="text-xl font-bold font-content">nach Artikel</h3>
+        <h3 className="text-xl font-bold font-content">
+          nach Artikel ({list.length} Stück)
+        </h3>
         <Artikel
           list={list}
           sums={sumByGeometrie}
@@ -65,9 +73,12 @@ const Auswertung = ({ list, sumByGeometrie }: AuswertungProps) => {
       </div>
 
       <div className="flex flex-col max-h-[500px]">
-        <h3 className="text-xl font-bold font-content">nach Fehler</h3>
+        <h3 className="text-xl font-bold font-content">
+          nach Fehler {t('intlPercent', { val: list.length / sumProduced })}
+        </h3>
         <Fehler
           list={list}
+          sumProduced={sumProduced}
           filter={filter}
           setFilter={(filter) => setFilter(filter)}
         />

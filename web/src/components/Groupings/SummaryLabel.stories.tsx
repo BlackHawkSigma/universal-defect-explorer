@@ -1,5 +1,5 @@
 import SummaryLabel from './SummaryLabel'
-import { standard, withPercent } from './SummaryLabel.mock'
+import { standard, withPercent, withoutEuros } from './SummaryLabel.mock'
 
 export const Default = () => {
   return (
@@ -8,10 +8,19 @@ export const Default = () => {
     </div>
   )
 }
+
 export const WithPercent = () => {
   return (
     <div className="w-96 shadow">
       <SummaryLabel {...withPercent()} />
+    </div>
+  )
+}
+
+export const WithoutEuros = () => {
+  return (
+    <div className="w-96 shadow">
+      <SummaryLabel {...withoutEuros()} />
     </div>
   )
 }

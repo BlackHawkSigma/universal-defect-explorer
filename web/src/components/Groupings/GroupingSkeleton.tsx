@@ -26,53 +26,51 @@ const GroupingSkeleton = ({
   }
 
   return (
-    <div className="w-80">
-      <ol>
-        {list.map(({ alphaItem, betaList }) => (
-          <li key={alphaItem.label}>
-            <button
-              className="text-left w-full"
-              onClick={() => handleClick(alphaItem.label)}
+    <ol>
+      {list.map(({ alphaItem, betaList }) => (
+        <li key={alphaItem.label}>
+          <button
+            className="text-left w-full"
+            onClick={() => handleClick(alphaItem.label)}
+          >
+            <div
+              className={`m-1 hover:brightness-75 ${
+                alphaFilter === alphaItem.label
+                  ? 'bg-po-blue text-white'
+                  : 'bg-gray-200'
+              }`}
             >
-              <div
-                className={`m-1 hover:brightness-75 ${
-                  alphaFilter === alphaItem.label
-                    ? 'bg-po-blue text-white'
-                    : 'bg-gray-200'
-                }`}
-              >
-                <SummaryLabel {...alphaItem} />
-              </div>
-            </button>
+              <SummaryLabel {...alphaItem} />
+            </div>
+          </button>
 
-            {isOpen && alphaFilter === alphaItem.label && (
-              <div className="flex">
-                <div className="my-1 ml-1 w-2 rounded-full bg-po-blue" />
-                <ol className="grow">
-                  {betaList.map((item) => (
-                    <li
-                      key={item.label}
-                      className={`m-1 hover:brightness-75 ${
-                        betaFilter === item.label
-                          ? 'bg-po-blue text-white'
-                          : 'bg-gray-200'
-                      }`}
+          {isOpen && alphaFilter === alphaItem.label && (
+            <div className="flex">
+              <div className="my-1 ml-1 w-2 rounded-full bg-po-blue" />
+              <ol className="grow">
+                {betaList.map((item) => (
+                  <li
+                    key={item.label}
+                    className={`m-1 hover:brightness-75 ${
+                      betaFilter === item.label
+                        ? 'bg-po-blue text-white'
+                        : 'bg-gray-200'
+                    }`}
+                  >
+                    <button
+                      className="text-left w-full"
+                      onClick={() => updateFilter('beta', item.label)}
                     >
-                      <button
-                        className="text-left w-full"
-                        onClick={() => updateFilter('beta', item.label)}
-                      >
-                        <SummaryLabel {...item} />
-                      </button>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            )}
-          </li>
-        ))}
-      </ol>
-    </div>
+                      <SummaryLabel {...item} />
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+        </li>
+      ))}
+    </ol>
   )
 }
 

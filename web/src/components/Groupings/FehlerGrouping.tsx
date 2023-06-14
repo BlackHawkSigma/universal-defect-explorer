@@ -1,69 +1,62 @@
+import { descending } from 'd3'
 import type { Record } from 'types/Record'
 
 import type { Filter, FilterAction } from '../Auswertung/Auswertung'
 
 import { groupByArtikel, groupByFehler } from './groupData'
+import GroupingSkeleton from './GroupingSkeleton'
 
 export type FehlerGroupingProps = {
   list: Record[]
+  sumProduced: number
   filter: Filter
   setFilter: (payload: FilterAction) => void
 }
 
-const FehlerGrouping = ({ list, filter, setFilter }: FehlerGroupingProps) => {
+const FehlerGrouping = ({
+  list,
+  sumProduced,
+  filter,
+  setFilter,
+}: FehlerGroupingProps) => {
   const first = groupByFehler(list)
 
-  const data = first.map(([toplevel, records]) => {
-    const second = groupByArtikel(records)
-    const count = second.reduce(
-      (acc, [_label, current]) => acc + current.length,
-      0
-    )
+  const data = first
+    .map(([label, records]) => {
+      const second = groupByArtikel(records)
+      const count = second.reduce(
+        (acc, [_label, current]) => acc + current.length,
+        0
+      )
+      const percent = count / sumProduced
 
-    return { toplevel, count, records: second }
-  })
-  const handleToplevel = (fehler: string) =>
-    setFilter({ type: 'setFehler', fehler })
+      const secondRecords = second.map(([label, entries]) => ({
+        label,
+        count: entries.length,
+        percent: entries.length / sumProduced,
+      }))
 
-  const handleSecondlevel = (fehler: string, artikel: string) => {
-    setFilter({ type: 'setArtikel', artikel })
-    setFilter({ type: 'setFehler', fehler })
+      return { alphaItem: { label, count, percent }, betaList: secondRecords }
+    })
+    .sort((a, b) => descending(a.alphaItem.percent, b.alphaItem.percent))
+
+  const handleUpdate = (level: 'alpha' | 'beta', label: string) => {
+    switch (level) {
+      case 'alpha':
+        return setFilter({ type: 'setFehler', fehler: label })
+      case 'beta':
+        return setFilter({ type: 'setArtikel', artikel: label })
+    }
   }
 
   return (
     <div className="overflow-y-scroll">
-      {data.map(({ toplevel, count, records }) => (
-        <details key={toplevel}>
-          <summary>
-            <span
-              className={toplevel === filter.fehler ? 'font-bold' : 'font-thin'}
-              role={'button'}
-              tabIndex={0}
-              onKeyDown={() => handleToplevel(toplevel)}
-              onClick={() => handleToplevel(toplevel)}
-            >
-              {count}x {toplevel}
-            </span>
-          </summary>
-          <ol>
-            {records.map(([secondlevel, records]) => (
-              <li key={secondlevel}>
-                <span
-                  className={
-                    secondlevel === filter.artikel ? 'font-bold' : 'font-thin'
-                  }
-                  role={'button'}
-                  tabIndex={0}
-                  onKeyDown={() => handleSecondlevel(toplevel, secondlevel)}
-                  onClick={() => handleSecondlevel(toplevel, secondlevel)}
-                >
-                  {records.length}x {secondlevel}
-                </span>
-              </li>
-            ))}
-          </ol>
-        </details>
-      ))}
+      <GroupingSkeleton
+        list={data}
+        alphaFilter={filter.fehler}
+        betaFilter={filter.artikel}
+        updateFilter={handleUpdate}
+      />
     </div>
   )
 }

@@ -9,6 +9,14 @@ export const standard = () => {
 export const withPercent = () => {
   return {
     ...standard(),
-    percent: '14,8%',
+    percent: 0.148,
+  }
+}
+
+export const withoutEuros = () => {
+  return {
+    count: 13,
+    label: 'Test',
+    percent: 0.258,
   }
 }

@@ -17,35 +17,37 @@ export const Default = () => {
   }
 
   return (
-    <GroupingSkeleton
-      list={[
-        {
-          alphaItem: { label: 'Artikel 1', count: 15, euros: '243,78€' },
-          betaList: [
-            { ...standard(), label: 'Fehler 1' },
-            { ...withPercent(), label: 'Fehler 2' },
-            { ...standard(), label: 'Fehler 3' },
-          ],
-        },
-        {
-          alphaItem: { ...withPercent(), label: 'Artikel 2' },
-          betaList: [
-            { ...standard(), label: 'Fehler 1' },
-            { ...withPercent(), label: 'Fehler 2' },
-          ],
-        },
-        {
-          alphaItem: { ...standard(), label: 'Artikel 3' },
-          betaList: [
-            { ...standard(), label: 'Fehler 1' },
-            { ...standard(), label: 'Fehler 3' },
-          ],
-        },
-      ]}
-      alphaFilter={alphaFilter}
-      betaFilter={betaFilter}
-      updateFilter={handleClick}
-    />
+    <div className="w-80">
+      <GroupingSkeleton
+        list={[
+          {
+            alphaItem: { label: 'Artikel 1', count: 15, euros: '243,78€' },
+            betaList: [
+              { ...standard(), label: 'Fehler 1' },
+              { ...withPercent(), label: 'Fehler 2' },
+              { ...standard(), label: 'Fehler 3' },
+            ],
+          },
+          {
+            alphaItem: { ...withPercent(), label: 'Artikel 2' },
+            betaList: [
+              { ...standard(), label: 'Fehler 1' },
+              { ...withPercent(), label: 'Fehler 2' },
+            ],
+          },
+          {
+            alphaItem: { ...standard(), label: 'Artikel 3' },
+            betaList: [
+              { ...standard(), label: 'Fehler 1' },
+              { ...standard(), label: 'Fehler 3' },
+            ],
+          },
+        ]}
+        alphaFilter={alphaFilter}
+        betaFilter={betaFilter}
+        updateFilter={handleClick}
+      />
+    </div>
   )
 }
 
