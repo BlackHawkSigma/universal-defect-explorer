@@ -4,63 +4,63 @@ import SummaryLabel, { SummaryLabelProps } from './SummaryLabel'
 
 type GroupingSkeletonProps = {
   list: {
-    topLevel: SummaryLabelProps
-    secondLevelList: SummaryLabelProps[]
+    alphaItem: SummaryLabelProps
+    betaList: SummaryLabelProps[]
   }[]
-  filterLevel1: string
-  filterLevel2: string
-  updateFilter(level: 'alpha' | 'bravo', label: string): void
+  alphaFilter: string
+  betaFilter: string
+  updateFilter(level: 'alpha' | 'beta', label: string): void
 }
 
 const GroupingSkeleton = ({
   list,
-  filterLevel1,
-  filterLevel2,
+  alphaFilter: alphaFilter,
+  betaFilter: betaFilter,
   updateFilter,
 }: GroupingSkeletonProps) => {
   const [isOpen, setIsOpen] = useState(true)
 
   const handleClick = (label: string) => {
     updateFilter('alpha', label)
-    filterLevel1 === label ? setIsOpen((d) => !d) : setIsOpen(true)
+    alphaFilter === label ? setIsOpen((d) => !d) : setIsOpen(true)
   }
 
   return (
     <div className="w-80">
       <ol>
-        {list.map((alpha) => (
-          <li key={alpha.topLevel.label}>
+        {list.map(({ alphaItem, betaList }) => (
+          <li key={alphaItem.label}>
             <button
               className="text-left w-full"
-              onClick={() => handleClick(alpha.topLevel.label)}
+              onClick={() => handleClick(alphaItem.label)}
             >
               <div
                 className={`m-1 hover:brightness-75 ${
-                  filterLevel1 === alpha.topLevel.label
+                  alphaFilter === alphaItem.label
                     ? 'bg-po-blue text-white'
                     : 'bg-gray-200'
                 }`}
               >
-                <SummaryLabel {...alpha.topLevel} />
+                <SummaryLabel {...alphaItem} />
               </div>
             </button>
 
-            {isOpen && filterLevel1 === alpha.topLevel.label && (
+            {isOpen && alphaFilter === alphaItem.label && (
               <div className="flex">
                 <div className="my-1 ml-1 w-2 rounded-full bg-po-blue" />
                 <ol className="grow">
-                  {alpha.secondLevelList.map((item) => (
+                  {betaList.map((item) => (
                     <li
                       key={item.label}
                       className={`m-1 hover:brightness-75 ${
-                        filterLevel2 === item.label
+                        betaFilter === item.label
                           ? 'bg-po-blue text-white'
                           : 'bg-gray-200'
                       }`}
                     >
                       <button
                         className="text-left w-full"
-                        onClick={() => updateFilter('bravo', item.label)}
+                        onClick={() => updateFilter('beta', item.label)}
                       >
                         <SummaryLabel {...item} />
                       </button>
