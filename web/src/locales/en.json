@@ -12,5 +12,6 @@
   "keine Grafik vorhanden": "couldn't find an image",
   "lade Raster ...": "loading grid ...",
   "Speichern": "save",
-  "zuordnen": "link"
+  "zuordnen": "link",
+  "intlPercent": "{{val, number(style: 'percent'; minimumFractionDigits: 1)}}"
 }

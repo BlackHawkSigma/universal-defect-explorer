@@ -1,4 +1,5 @@
 {
   "Codes gefunden_one": "einen Code gefunden",
-  "Codes gefunden_other": "{{count}} Codes gefunden"
+  "Codes gefunden_other": "{{count}} Codes gefunden",
+  "intlPercent": "{{val, number(style: 'percent'; minimumFractionDigits: 1)}}"
 }

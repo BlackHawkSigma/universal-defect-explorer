@@ -26,7 +26,7 @@ export const QUERY = gql`
 `
 
 const Placeholder = ({ text }: { text: string }) => (
-  <div className="flex justify-center items-center shadow-lg m-auto w-[700px] h-[420px]">
+  <div className="m-auto flex h-[420px] w-[700px] items-center justify-center shadow-lg">
     <div className="text-4xl">{text}</div>
   </div>
 )
@@ -50,7 +50,7 @@ export const Success = ({
   geometrie,
 }: CellSuccessProps<FindGeometrieByName> & AuswertungArtikelCellProps) => {
   return (
-    <div className="flex gap-4 flex-wrap items-start justify-center">
+    <div className="flex flex-wrap items-start justify-center gap-4">
       <GridContainer list={list} geometrie={geometrie} />
       <DefectsPerPositionContainer list={list} geometrie={geometrie} />
       <DefectsPerSkidContainer list={list} />

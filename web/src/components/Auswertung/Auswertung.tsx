@@ -1,5 +1,7 @@
 import { useReducer } from 'react'
 
+import { t } from 'i18next'
+import type { SumByGeometrie } from 'types/graphql'
 import type { Record } from 'types/Record'
 
 import AuswertungArtikelCell from 'src/components/AuswertungArtikelCell'
@@ -30,9 +32,10 @@ const filterReducer = (state: Filter, action: FilterAction): Filter => {
 
 export type AuswertungProps = {
   list: Record[]
+  sumByGeometrie: SumByGeometrie[]
 }
 
-const Auswertung = ({ list }: AuswertungProps) => {
+const Auswertung = ({ list, sumByGeometrie }: AuswertungProps) => {
   const [filter, setFilter] = useReducer(filterReducer, initialFilter)
 
   const filteredList = list.filter(
@@ -40,18 +43,26 @@ const Auswertung = ({ list }: AuswertungProps) => {
       bezeichnung === filter.artikel && fehlerText === filter.fehler
   )
 
+  const sumProduced = sumByGeometrie.reduce(
+    (accu, current) => accu + current.sum,
+    0
+  )
+
   return (
-    <div className="grid grid-cols-6 gap-5 justify-items-stretch">
+    <div className="grid grid-cols-6 justify-items-stretch gap-5">
       <div className="col-span-full">
-        <h2 className="text-2xl text-center font-heading">
+        <h2 className="font-heading text-center text-2xl">
           {filter.artikel} - {filter.fehler}
         </h2>
       </div>
 
-      <div className="flex flex-col max-h-[500px]">
-        <h3 className="text-xl font-bold font-content">nach Artikel</h3>
+      <div className="flex max-h-[500px] flex-col rounded border p-1 shadow">
+        <h3 className="font-heading text-center text-lg font-semibold">
+          nach Artikel ({list.length} Stück)
+        </h3>
         <Artikel
           list={list}
+          sums={sumByGeometrie}
           filter={filter}
           setFilter={(filter) => setFilter(filter)}
         />
@@ -61,10 +72,13 @@ const Auswertung = ({ list }: AuswertungProps) => {
         <AuswertungArtikelCell name={filter.artikel} list={filteredList} />
       </div>
 
-      <div className="flex flex-col max-h-[500px]">
-        <h3 className="text-xl font-bold font-content">nach Fehler</h3>
+      <div className="flex max-h-[500px] flex-col rounded border p-1 shadow">
+        <h3 className="font-heading text-center text-lg font-semibold">
+          nach Fehler {t('intlPercent', { val: list.length / sumProduced })}
+        </h3>
         <Fehler
           list={list}
+          sumProduced={sumProduced}
           filter={filter}
           setFilter={(filter) => setFilter(filter)}
         />

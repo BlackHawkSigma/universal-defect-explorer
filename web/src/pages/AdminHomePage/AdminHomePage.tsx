@@ -11,13 +11,13 @@ const AdminHomePage = () => {
         You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
 
-      <p className="text-lg font-heading">verfügbare Funktionen</p>
+      <p className="font-heading text-lg">verfügbare Funktionen</p>
 
       <ul>
-        <li className="underline text-blue-500 font-content">
+        <li className="font-content text-blue-500 underline">
           <Link to={routes.allcodes()}>Alle Codes auflisten</Link>
         </li>
-        <li className="underline text-blue-500 font-content">
+        <li className="font-content text-blue-500 underline">
           <Link to={routes.geometries()}>Geometrien bearbeiten</Link>
         </li>
       </ul>

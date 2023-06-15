@@ -39,7 +39,7 @@ const FehlerTable = ({ list }: FehlerTablePros) => {
           {list.map((row: Record, index) => (
             <tr
               key={index}
-              className="text-center hover:brightness-75 odd:bg-gray-100 even:bg-gray-200"
+              className="text-center odd:bg-gray-100 even:bg-gray-200 hover:brightness-75"
             >
               <td>{timeTag(row.auslauf)}</td>
               <td>{timeTag(row.datum)}</td>

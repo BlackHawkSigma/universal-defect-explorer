@@ -13,7 +13,7 @@ const DefectsPerSkid = ({ skids, onClick }: DefectsPerSkidProps) => {
   const clickable = onClick !== undefined
 
   return (
-    <div className="p-1 border rounded shadow w-32">
+    <div className="w-32 rounded border p-1 shadow">
       <table className="w-full table-auto text-lg">
         <caption className="font-heading font-semibold">Skid IDs</caption>
         <thead className="text-center">
@@ -32,7 +32,7 @@ const DefectsPerSkid = ({ skids, onClick }: DefectsPerSkidProps) => {
                   key={skid}
                   className={`${
                     clickable ? 'cursor-pointer' : ''
-                  } bg-white hover:brightness-75 border-b border-b-white`}
+                  } border-b border-b-white bg-white hover:brightness-75`}
                   style={{ backgroundColor }}
                   onClick={() => onClick(skid)}
                 >

@@ -11,7 +11,7 @@ export type GridContainerProps = {
 }
 
 const Placeholder = ({ text }: { text: string }) => (
-  <div className="flex justify-center items-center shadow-lg m-auto w-[700px] h-[420px]">
+  <div className="m-auto flex h-[420px] w-[700px] items-center justify-center shadow-lg">
     <div className="text-4xl">{text}</div>
   </div>
 )
@@ -25,7 +25,7 @@ const GridContainer = ({
   const data = convertRaw(list)
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex items-center justify-center">
       {image === '' ? (
         <Placeholder text={t('keine Grafik vorhanden')} />
       ) : (
