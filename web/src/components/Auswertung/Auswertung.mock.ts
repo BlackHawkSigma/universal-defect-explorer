@@ -5,7 +5,7 @@ export const standart = (): AuswertungProps => {
     list: [
       {
         datum: new Date().toISOString(),
-        bezeichnung: 'Test',
+        bezeichnung: 'Maske',
         auslauf: new Date().toISOString(),
         fehlerText: 'Lack nicht deckend',
         lack: 'Bunt',
@@ -16,7 +16,7 @@ export const standart = (): AuswertungProps => {
       },
       {
         datum: new Date().toISOString(),
-        bezeichnung: 'Test',
+        bezeichnung: 'Maske',
         auslauf: new Date().toISOString(),
         fehlerText: 'Lack nicht deckend',
         lack: 'Bunt',
@@ -25,7 +25,18 @@ export const standart = (): AuswertungProps => {
         skidseite: 'B',
         fehlerOrt: 'F0304',
       },
+      {
+        datum: new Date().toISOString(),
+        bezeichnung: 'Maske',
+        auslauf: new Date().toISOString(),
+        fehlerText: 'Deckfehler',
+        lack: 'Blau',
+        skid: 3,
+        skidposition: '1',
+        skidseite: 'B',
+        fehlerOrt: 'F0501',
+      },
     ],
-    sumByGeometrie: [{ bezeichnung: 'Test', sum: 20 }],
+    sumByGeometrie: [{ bezeichnung: 'Maske', sum: 22 }],
   }
 }
