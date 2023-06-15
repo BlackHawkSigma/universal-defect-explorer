@@ -40,8 +40,8 @@ const DefectsPerPositionContainer = ({ list, geometrie }: Props) => {
   return (
     <div>
       {overflow ? (
-        <div className="bg-orange-300 rounded py-1">
-          <span className="text-center text-lg block">overflow</span>
+        <div className="rounded bg-orange-300 py-1">
+          <span className="block text-center text-lg">overflow</span>
           <DefectsPerPosition
             partsPerSide={geometrie.partsPerSide}
             sides={sides}

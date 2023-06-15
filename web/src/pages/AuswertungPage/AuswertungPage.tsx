@@ -25,7 +25,7 @@ const AuswertungPage = () => {
         You can look at this documentation for best practices : https://developers.google.com/search/docs/advanced/appearance/good-titles-snippets */
       />
       <div className="m-2 lg:m-4">
-        <h1 className="mb-2 text-center text-3xl font-heading">Auswertung</h1>
+        <h1 className="font-heading mb-2 text-center text-3xl">Auswertung</h1>
         <div>
           <TimeframeSelector
             initialTimeframe={setInitalTime(new Date())}

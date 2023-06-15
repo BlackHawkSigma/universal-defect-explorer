@@ -38,8 +38,8 @@ const DefectsPerPosition = ({
   // const getPercent = getPercentFor(maxValue || 0)
 
   return (
-    <div className="p-1 border rounded shadow">
-      <h4 className="text-center font-heading font-semibold text-lg">
+    <div className="rounded border p-1 shadow">
+      <h4 className="font-heading text-center text-lg font-semibold">
         Position
       </h4>
       {doubleSidedSkids ? (

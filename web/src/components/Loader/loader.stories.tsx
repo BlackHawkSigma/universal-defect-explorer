@@ -10,7 +10,7 @@ export default {
 } as Meta
 
 export const Dots: Story = () => (
-  <div className="w-64 h-64 shadow-2xl">
+  <div className="h-64 w-64 shadow-2xl">
     <Loader />
   </div>
 )

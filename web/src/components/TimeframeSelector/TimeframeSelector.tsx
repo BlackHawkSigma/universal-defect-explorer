@@ -27,7 +27,7 @@ const TimeframeSelector = ({
       <div className="flex space-x-1">
         <label htmlFor="start">von</label>
         <DatePicker
-          className="border rounded border-gray-400 disabled:opacity-50"
+          className="rounded border border-gray-400 disabled:opacity-50"
           disabled={disabled}
           locale="de"
           dateFormat="dd.MM.yyyy HH:mm"
@@ -47,7 +47,7 @@ const TimeframeSelector = ({
       <div className="flex space-x-1">
         <label htmlFor="end">bis</label>
         <DatePicker
-          className="border rounded border-gray-400 disabled:opacity-50"
+          className="rounded border border-gray-400 disabled:opacity-50"
           disabled={disabled}
           locale="de"
           dateFormat="dd.MM.yyyy HH:mm"
@@ -65,7 +65,7 @@ const TimeframeSelector = ({
       </div>
 
       <button
-        className="rw-button rw-button-green disabled:opacity-50 disabled:pointer-events-none"
+        className="rw-button rw-button-green disabled:pointer-events-none disabled:opacity-50"
         disabled={disabled}
         onClick={() => onChange({ start, end })}
       >

@@ -30,7 +30,7 @@ const GroupingSkeleton = ({
       {list.map(({ alphaItem, betaList }) => (
         <li key={alphaItem.label}>
           <button
-            className="text-left w-full"
+            className="w-full text-left"
             onClick={() => handleClick(alphaItem.label)}
           >
             <div
@@ -46,12 +46,12 @@ const GroupingSkeleton = ({
 
           {isOpen && alphaFilter === alphaItem.label && (
             <div className="relative">
-              <div className="my-1 ml-1 w-2 rounded-full bg-po-blue absolute top-0 bottom-0" />
+              <div className="bg-po-blue absolute bottom-0 top-0 my-1 ml-1 w-2 rounded-full" />
               <ol className="ml-3">
                 {betaList.map((item) => (
                   <li key={item.label}>
                     <button
-                      className="text-left w-full"
+                      className="w-full text-left"
                       onClick={() => updateFilter('beta', item.label)}
                     >
                       <div

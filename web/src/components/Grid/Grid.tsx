@@ -17,8 +17,8 @@ const Grid = (props: GridProps) => {
   const [active, setActive] = useState<Selection | undefined>(undefined)
 
   return (
-    <div className="p-1 border rounded shadow">
-      <h4 className="font-semibold font-heading text-lg text-center">
+    <div className="rounded border p-1 shadow">
+      <h4 className="font-heading text-center text-lg font-semibold">
         {t('Bauteil')}
       </h4>
       <Canvas
