@@ -56,8 +56,8 @@ const Auswertung = ({ list, sumByGeometrie }: AuswertungProps) => {
         </h2>
       </div>
 
-      <div className="flex max-h-[500px] flex-col">
-        <h3 className="font-content text-xl font-bold">
+      <div className="flex max-h-[500px] flex-col rounded border p-1 shadow">
+        <h3 className="font-heading text-center text-lg font-semibold">
           nach Artikel ({list.length} Stück)
         </h3>
         <Artikel
@@ -72,8 +72,8 @@ const Auswertung = ({ list, sumByGeometrie }: AuswertungProps) => {
         <AuswertungArtikelCell name={filter.artikel} list={filteredList} />
       </div>
 
-      <div className="flex max-h-[500px] flex-col">
-        <h3 className="font-content text-xl font-bold">
+      <div className="flex max-h-[500px] flex-col rounded border p-1 shadow">
+        <h3 className="font-heading text-center text-lg font-semibold">
           nach Fehler {t('intlPercent', { val: list.length / sumProduced })}
         </h3>
         <Fehler

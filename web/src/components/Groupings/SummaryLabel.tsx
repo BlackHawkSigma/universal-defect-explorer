@@ -11,7 +11,7 @@ const SummaryLabel = ({ count, label, euros, percent }: SummaryLabelProps) => {
   const percentString = t('intlPercent', { val: percent })
 
   return (
-    <div className="pb-1 pl-1 pr-2">
+    <div className="pb-1 pl-1 pr-2 shadow">
       <p className="truncate text-base font-semibold" title={label}>
         {label}
       </p>
