@@ -59,7 +59,9 @@ export const sumByGeometrie: QueryResolvers['sumByGeometrie'] = async ({
 
         return {
           bezeichnung:
-            artikel.Geometrie?.Bezeichnung ?? artikel.artikelbezeichnung,
+            artikel?.Geometrie?.Bezeichnung ??
+            artikel?.artikelbezeichnung ??
+            row.artikelcode,
           sum: sum(Object.values(row._sum)),
         }
       })

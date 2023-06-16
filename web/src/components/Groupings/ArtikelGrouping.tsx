@@ -24,7 +24,7 @@ const ArtikelGrouping = ({ list, filter, setFilter, sums }: GroupingProps) => {
         (acc, [_label, current]) => acc + current.length,
         0
       )
-      const sum = sums.find((d) => d.bezeichnung === label).sum
+      const sum = sums.find((d) => d.bezeichnung === label)?.sum ?? 0
       const percent = count / sum
 
       const secondRecords = second.map(([label, entries]) => ({
