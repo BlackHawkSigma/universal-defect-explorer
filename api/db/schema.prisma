@@ -12,8 +12,8 @@ model Buchung {
   sid                Int         @id @default(autoincrement()) @db.UnsignedInt
   datum              DateTime    @db.DateTime(0)
   uhrzeit            DateTime    @db.Time(0)
-  artikelcode        String?     @db.VarChar(13)
-  artikelbezeichnung String      @default("") @db.VarChar(50)
+  artikelcode        String      @db.VarChar(13)
+  artikelbezeichnung String      @db.VarChar(50)
   farbton            String?     @db.VarChar(25)
   skidseite          String?     @db.VarChar(1)
   lackierposition    String?     @db.VarChar(5)
@@ -24,13 +24,13 @@ model Buchung {
   fehlerart_code     Int?        @db.UnsignedSmallInt
   fehlerort_code     String?     @db.VarChar(5)
   personalnummer     String?     @db.VarChar(60)
-  skid               Int?        @default(0) @db.UnsignedInt
+  skid               Int?        @db.UnsignedInt
   barcode            String?     @db.VarChar(20)
   artikelart         String?     @db.VarChar(20)
   auslaufzeit        DateTime    @db.DateTime(0)
   Fahrweg            Int?
   FehlerText         FehlerText? @relation(fields: [fehlerart_code], references: [fehlerart_code])
-  Artikel            Artikel?    @relation(fields: [artikelcode], references: [artikelcode])
+  Artikel            Artikel     @relation(fields: [artikelcode], references: [artikelcode])
 
   @@index([barcode], name: "barcode_index")
   @@index([datum], name: "datum_index")

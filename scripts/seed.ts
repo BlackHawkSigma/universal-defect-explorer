@@ -20,13 +20,7 @@ export default async () => {
     Promise.all(
       data.map(async (item) => {
         const record = await db.buchung.create({
-          data: {
-            datum: item.datum,
-            uhrzeit: item.uhrzeit,
-            artikelcode: item.artikelcode,
-            artikelbezeichnung: item.artikelbezeichnung,
-            auslaufzeit: item.auslaufzeit,
-          },
+          data: { ...item },
         })
         console.log(record)
       })
