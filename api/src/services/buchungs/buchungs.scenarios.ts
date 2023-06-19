@@ -27,6 +27,7 @@ export const standard = defineScenario<
         uhrzeit: '2021-10-02T09:00:41Z',
         auslaufzeit: '2021-10-02T08:00:41Z',
         io_poliert: 5,
+        artikelbezeichnung: 'Front_Rot',
         Artikel: {
           create: {
             artikelcode: '123',
@@ -42,6 +43,7 @@ export const standard = defineScenario<
         uhrzeit: '2021-10-02T09:00:41Z',
         auslaufzeit: '2021-10-02T08:00:41Z',
         ausschuss: 2,
+        artikelbezeichnung: 'Heck_Rot',
         Artikel: {
           create: {
             artikelcode: '456',

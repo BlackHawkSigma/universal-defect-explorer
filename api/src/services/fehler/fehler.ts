@@ -2,15 +2,10 @@ import type { QueryResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
-interface FehlerInTimeframeArgs {
-  start: Date
-  end: Date
-}
-
 export const fehlerInTimeframe: QueryResolvers['fehlerInTimeframe'] = async ({
   start,
   end,
-}: FehlerInTimeframeArgs) => {
+}) => {
   const raw = await db.buchung.findMany({
     include: { Artikel: { include: { Geometrie: true } }, FehlerText: true },
     where: {
@@ -34,7 +29,7 @@ export const fehlerInTimeframe: QueryResolvers['fehlerInTimeframe'] = async ({
       skid: row.skid,
       skidseite: row.skidseite,
       skidposition: row.lackierposition,
-      fehlerText: row.FehlerText.fehlerart_text,
+      fehlerText: row.FehlerText?.fehlerart_text ?? 'n/a',
       fehlerOrt: row.fehlerort_code,
     }
   })

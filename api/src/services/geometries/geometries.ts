@@ -1,56 +1,69 @@
-import type { Prisma } from '@prisma/client'
+import {
+  GeometrieRelationResolvers,
+  MutationResolvers,
+  QueryResolvers,
+} from 'types/graphql'
 
-import type { ResolverArgs } from '@redwoodjs/graphql-server'
+import { removeNulls } from '@redwoodjs/api'
 
 import { db } from 'src/lib/db'
 
-export const geometries = () => {
+export const geometries: QueryResolvers['geometries'] = () => {
   return db.geometrie.findMany()
 }
 
-export const geometrieById = ({ id }: Prisma.GeometrieWhereUniqueInput) => {
+export const geometrieById: QueryResolvers['geometrieById'] = ({ id }) => {
   return db.geometrie.findUnique({
     where: { id },
     include: { Codes: true },
   })
 }
 
-export const geometrieByName = ({
+export const geometrieByName: QueryResolvers['geometrieByName'] = ({
   Bezeichnung,
-}: Prisma.GeometrieWhereInput) => {
+}) => {
   return db.geometrie.findFirst({
     where: { Bezeichnung },
     include: { Codes: true },
   })
 }
-interface CreateGeometrieArgs {
-  input: Prisma.GeometrieCreateInput
-}
 
-export const createGeometrie = ({ input }: CreateGeometrieArgs) => {
+export const createGeometrie: MutationResolvers['createGeometrie'] = ({
+  input,
+}) => {
   return db.geometrie.create({
     data: input,
   })
 }
 
-interface UpdateGeometrieArgs extends Prisma.GeometrieWhereUniqueInput {
-  input: Prisma.GeometrieUpdateInput
-}
-
-export const updateGeometrie = ({ id, input }: UpdateGeometrieArgs) => {
+export const updateGeometrie: MutationResolvers['updateGeometrie'] = ({
+  id,
+  input,
+}) => {
   return db.geometrie.update({
-    data: input,
+    data: removeNulls(input),
     where: { id },
   })
 }
 
-export const deleteGeometrie = ({ id }: Prisma.GeometrieWhereUniqueInput) => {
+export const deleteGeometrie: MutationResolvers['deleteGeometrie'] = ({
+  id,
+}) => {
   return db.geometrie.delete({
     where: { id },
   })
 }
 
-export const Geometrie = {
-  Codes: (_obj, { root }: ResolverArgs<ReturnType<typeof geometrieById>>) =>
-    db.geometrie.findUnique({ where: { id: root.id } }).Codes(),
+export const Geometrie: GeometrieRelationResolvers = {
+  Codes: async (_obj, { root }) => {
+    const maybeCodes = await db.geometrie
+      .findUnique({ where: { id: root.id } })
+      .Codes()
+
+    if (!maybeCodes) {
+      throw new Error('Could not resolve codes')
+    }
+
+    return maybeCodes
+  },
 }

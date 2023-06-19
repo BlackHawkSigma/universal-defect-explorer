@@ -3,7 +3,7 @@ import type { QueryResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
-export const getAllCodes = () => {
+export const getAllCodes: QueryResolvers['getAllCodes'] = () => {
   return db.buchung.findMany({
     select: {
       artikelcode: true,

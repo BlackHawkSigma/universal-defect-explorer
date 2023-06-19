@@ -1,25 +1,24 @@
-import type { Prisma } from '@prisma/client'
+import { MutationResolvers, QueryResolvers } from 'types/graphql'
 
 import { db } from 'src/lib/db'
 
-export const artikels = () => {
+export const artikels: QueryResolvers['artikels'] = () => {
   return db.artikel.findMany({
-    include: { Geometrie: true },
+    include: { Geometrie: { include: { Codes: true } } },
   })
 }
 
-export const artikel = ({ id }: Prisma.ArtikelWhereUniqueInput) => {
+export const artikel: QueryResolvers['artikel'] = ({ id }) => {
   return db.artikel.findUnique({
     where: { id },
-    include: { Geometrie: true },
+    include: { Geometrie: { include: { Codes: true } } },
   })
 }
 
-interface SetArtikelGeometrieArgs extends Prisma.ArtikelWhereUniqueInput {
-  input: Prisma.ArtikelUpdateInput
-}
-
-export const setArtikelGeometrie = ({ id, input }: SetArtikelGeometrieArgs) => {
+export const setArtikelGeometrie: MutationResolvers['setArtikelGeometrie'] = ({
+  id,
+  input,
+}) => {
   return db.artikel.update({
     data: input,
     where: { id },

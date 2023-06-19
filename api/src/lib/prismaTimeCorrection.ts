@@ -33,9 +33,11 @@ const correctToUTC = (param: Prisma.MiddlewareParams) => {
   if (!param) return
 
   for (const key of Object.keys(param)) {
+    // @ts-expect-error well...
     const value = param[key]
 
     if (value instanceof Date) {
+      // @ts-expect-error ...still no idea
       param[key] = toUTCTime(value)
     } else if (Object(value) === value) {
       correctToUTC(value)

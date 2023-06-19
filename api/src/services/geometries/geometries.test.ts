@@ -22,7 +22,14 @@ describe('geometries', () => {
 
   scenario('creates a geometrie', async () => {
     const result = await createGeometrie({
-      input: { Bezeichnung: 'String', image: '' },
+      input: {
+        Bezeichnung: 'String',
+        image: '',
+        columns: 5,
+        rows: 5,
+        pixels: 55,
+        partsPerSide: 3,
+      },
     })
 
     expect(result.Bezeichnung).toEqual('String')
@@ -30,6 +37,8 @@ describe('geometries', () => {
 
   scenario('updates a geometrie', async (scenario: StandardScenario) => {
     const original = await geometrieById({ id: scenario.geometrie.one.id })
+    if (!original) throw new Error('no geometrie found')
+
     const result = await updateGeometrie({
       id: original.id,
       input: { Bezeichnung: 'String2' },
