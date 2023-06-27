@@ -3,9 +3,14 @@
   "timezone": "Europe/Berlin",
   "extends": [
     "config:js-app",
-    "schedule:earlyMondays",
+    "helpers:disableTypesNodeMajor",
     ":automergeBranch",
     ":automergeMinor",
     ":maintainLockFilesWeekly"
+  ],
+  "schedule": [
+    "after 4pm every weekday",
+    "before 7am every weekday",
+    "every weekend"
   ]
 }
