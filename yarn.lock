@@ -21520,9 +21520,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:4.12.0":
-  version: 4.12.0
-  resolution: "react-datepicker@npm:4.12.0"
+"react-datepicker@npm:4.14.1":
+  version: 4.14.1
+  resolution: "react-datepicker@npm:4.14.1"
   dependencies:
     "@popperjs/core": ^2.9.2
     classnames: ^2.2.6
@@ -21533,7 +21533,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: 2713be4672c9e3454de9096ac152eae7931baafe71c7ffe21f06b946f877b67cbfb59b6af255dd471f265156e4c132c8ae977f11e4390325aedb7965a1f2305c
+  checksum: 5e3a9f4129a43fc492662b9539870f5b9fead5b6c533264ab0ca0dfd7872427a8c5f275140c67646bee51d0b02b9cc969f1c67f91a87dfa47ee163d0a612299c
   languageName: node
   linkType: hard
 
@@ -25601,7 +25601,7 @@ __metadata:
     prettier-plugin-tailwindcss: 0.3.0
     prop-types: 15.8.1
     react: 18.2.0
-    react-datepicker: 4.12.0
+    react-datepicker: 4.14.1
     react-dom: 18.2.0
     react-i18next: 13.0.1
     react-icons: 4.9.0
