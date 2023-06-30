@@ -15,9 +15,9 @@
   "dependencies": {
     "@fontsource-variable/comfortaa": "5.0.3",
     "@fontsource-variable/libre-franklin": "5.0.4",
-    "@redwoodjs/forms": "5.4.0",
-    "@redwoodjs/router": "5.4.0",
-    "@redwoodjs/web": "5.4.0",
+    "@redwoodjs/forms": "5.4.1",
+    "@redwoodjs/router": "5.4.1",
+    "@redwoodjs/web": "5.4.1",
     "d3": "6.7.0",
     "i18n": "0.15.1",
     "i18next": "23.2.6",
