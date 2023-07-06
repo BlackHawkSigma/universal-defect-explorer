@@ -1,6 +1,7 @@
 import { rollups, sum } from 'd3'
 import type { QueryResolvers } from 'types/graphql'
 
+import { env } from 'src/env'
 import { db } from 'src/lib/db'
 
 export const getAllCodes: QueryResolvers['getAllCodes'] = () => {
@@ -10,6 +11,7 @@ export const getAllCodes: QueryResolvers['getAllCodes'] = () => {
       artikelbezeichnung: true,
     },
     distinct: ['artikelcode', 'artikelbezeichnung'],
+    where: { Fahrweg: { notIn: env.EXCLUDE_FAHRWEG } },
   })
 }
 
@@ -23,7 +25,10 @@ export const sumsByCode: QueryResolvers['sumsByCode'] = ({ start, end }) =>
         nacharbeit: true,
         ausschuss: true,
       },
-      where: { datum: { gte: start, lt: end } },
+      where: {
+        datum: { gte: start, lt: end },
+        Fahrweg: { notIn: env.EXCLUDE_FAHRWEG },
+      },
     })
     .then((rows) =>
       rows.map((row) => ({
@@ -49,7 +54,10 @@ export const sumByGeometrie: QueryResolvers['sumByGeometrie'] = async ({
         nacharbeit: true,
         ausschuss: true,
       },
-      where: { datum: { gte: start, lt: end } },
+      where: {
+        datum: { gte: start, lt: end },
+        Fahrweg: { notIn: env.EXCLUDE_FAHRWEG },
+      },
     })
     .then((rows) =>
       rows.map((row) => {

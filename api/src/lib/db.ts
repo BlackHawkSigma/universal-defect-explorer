@@ -5,6 +5,8 @@ import { PrismaClient } from '@prisma/client'
 
 import { emitLogLevels, handlePrismaLogging } from '@redwoodjs/api/logger'
 
+import { env } from 'src/env'
+
 import { logger } from './logger'
 import { afterMiddleware, beforeMiddleware } from './prismaTimeCorrection'
 
@@ -16,7 +18,7 @@ export const db = new PrismaClient({
 })
 
 /** Add middleware to transform dates */
-if (process.env.DATABASE_TIMEZONE !== 'UTC') {
+if (env.DATABASE_TIMEZONE !== 'UTC') {
   db.$use(async (params, next) => {
     const before = beforeMiddleware(params)
     const result = await next(before)
