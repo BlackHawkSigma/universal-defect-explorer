@@ -1,5 +1,6 @@
 import type { QueryResolvers } from 'types/graphql'
 
+import { env } from 'src/env'
 import { db } from 'src/lib/db'
 
 export const fehlerInTimeframe: QueryResolvers['fehlerInTimeframe'] = async ({
@@ -13,6 +14,7 @@ export const fehlerInTimeframe: QueryResolvers['fehlerInTimeframe'] = async ({
         { datum: { gte: start } },
         { datum: { lt: end } },
         { fehlerart_code: { not: null } },
+        { Fahrweg: { notIn: env.EXCLUDE_FAHRWEG } },
       ],
     },
   })
