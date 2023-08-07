@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Meta, Story } from '@storybook/react'
+import { StoryFn, Meta } from '@storybook/react'
 
 import Loader from './loader'
 
@@ -9,7 +9,7 @@ export default {
   component: Loader,
 } as Meta
 
-export const Dots: Story = () => (
+export const Dots: StoryFn = () => (
   <div className="h-64 w-64 shadow-2xl">
     <Loader />
   </div>
