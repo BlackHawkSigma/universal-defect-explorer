@@ -29,6 +29,10 @@ model Buchung {
   artikelart         String?     @db.VarChar(20)
   auslaufzeit        DateTime    @db.DateTime(0)
   Fahrweg            Int?
+  vonProzess         String?     @map("VonProzess") @db.VarChar(10)
+  nachProzess        String?     @map("NachProzess") @db.VarChar(10)
+  vonArbeitsplatz    String?     @map("VonArbeitsplatz") @db.VarChar(10)
+  nachArbeitsplatz   String?     @map("NachArbeitsplatz") @db.VarChar(10)
   FehlerText         FehlerText? @relation(fields: [fehlerart_code], references: [fehlerart_code])
   Artikel            Artikel     @relation(fields: [artikelcode], references: [artikelcode])
 
