@@ -6,6 +6,9 @@ import { CustomizationProvider } from 'src/providers/context/CustomizationContex
 import Routes from 'src/Routes'
 import './i18n'
 
+import '@fontsource-variable/comfortaa'
+import '@fontsource-variable/libre-franklin'
+
 import './scaffold.css'
 import './index.css'
 
