@@ -4,6 +4,9 @@ import { I18nextProvider } from 'react-i18next'
 import i18n from 'web/src/i18n'
 import { CustomizationProvider } from 'web/src/providers/context/CustomizationContext'
 
+import '@fontsource-variable/comfortaa'
+import '@fontsource-variable/libre-franklin'
+
 import '../src/scaffold.css'
 
 /** @type { import("@storybook/csf").GlobalTypes } */

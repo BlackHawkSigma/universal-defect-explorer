@@ -8,8 +8,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      heading: 'Comfortaa',
-      content: 'Franklin Gothic Book, Libre Franklin',
+      heading: 'Comfortaa Variable',
+      content: 'Franklin Gothic Book, Libre Franklin Variable',
     },
   },
   plugins: [],
