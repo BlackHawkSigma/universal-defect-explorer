@@ -15603,12 +15603,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:23.4.1":
-  version: 23.4.1
-  resolution: "i18next@npm:23.4.1"
+"i18next@npm:23.4.4":
+  version: 23.4.4
+  resolution: "i18next@npm:23.4.4"
   dependencies:
     "@babel/runtime": ^7.22.5
-  checksum: 2984a413502b54a79af68f16830e745cb89fa6d11f461c9d61b730242b18a2001b3170450ab98c1973f169162e5b277a47c675ea83997330c14cfd27b7250a5d
+  checksum: 7b52190ef5a2f3328eaae9d0841d0817127a04888bad7c74ec9b580947b3284eea3a3002db31cb5060d315bd86c65dae52997452f5a5f7457efc376a75fa2bb7
   languageName: node
   linkType: hard
 
@@ -24670,7 +24670,7 @@ __metadata:
     canvas: 2.11.2
     d3: 6.7.0
     i18n: 0.15.1
-    i18next: 23.4.1
+    i18next: 23.4.4
     i18next-browser-languagedetector: 7.1.0
     postcss: 8.4.27
     postcss-loader: 7.3.3
