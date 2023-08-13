@@ -15,9 +15,9 @@
   "dependencies": {
     "@fontsource-variable/comfortaa": "5.0.8",
     "@fontsource-variable/libre-franklin": "5.0.9",
-    "@redwoodjs/forms": "6.0.5",
-    "@redwoodjs/router": "6.0.5",
-    "@redwoodjs/web": "6.0.5",
+    "@redwoodjs/forms": "6.0.6",
+    "@redwoodjs/router": "6.0.6",
+    "@redwoodjs/web": "6.0.6",
     "d3": "6.7.0",
     "i18n": "0.15.1",
     "i18next": "23.4.4",
@@ -30,7 +30,7 @@
     "react-icons": "4.10.1"
   },
   "devDependencies": {
-    "@redwoodjs/vite": "6.0.5",
+    "@redwoodjs/vite": "6.0.6",
     "@types/d3": "6.7.5",
     "@types/react-datepicker": "4.15.0",
     "autoprefixer": "10.4.14",
