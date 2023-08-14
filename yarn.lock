@@ -9306,12 +9306,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:10.4.14":
-  version: 10.4.14
-  resolution: "autoprefixer@npm:10.4.14"
+"autoprefixer@npm:10.4.15":
+  version: 10.4.15
+  resolution: "autoprefixer@npm:10.4.15"
   dependencies:
-    browserslist: ^4.21.5
-    caniuse-lite: ^1.0.30001464
+    browserslist: ^4.21.10
+    caniuse-lite: ^1.0.30001520
     fraction.js: ^4.2.0
     normalize-range: ^0.1.2
     picocolors: ^1.0.0
@@ -9320,7 +9320,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 66ce961b86acd2a46e05ac1eece8657b3d9edfd2ee3abddd6cfcb32755e6865409f57acf11fe05990d6f166afda85a603678435916267a09652265cfff7b5706
+  checksum: 38f1eddd131c380b49cc664785635ee6505ef3e62140402b921a8d394fe99b74404689f9d0a27026791dc1683b59c08d99339178c48ba54e27d8f994a992b5b2
   languageName: node
   linkType: hard
 
@@ -10024,7 +10024,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.0.0, browserslist@npm:^4.14.5, browserslist@npm:^4.21.4, browserslist@npm:^4.21.5, browserslist@npm:^4.21.9":
+"browserslist@npm:^4.0.0, browserslist@npm:^4.14.5, browserslist@npm:^4.21.10, browserslist@npm:^4.21.4, browserslist@npm:^4.21.9":
   version: 4.21.10
   resolution: "browserslist@npm:4.21.10"
   dependencies:
@@ -10293,10 +10293,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001464, caniuse-lite@npm:^1.0.30001517":
+"caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001517":
   version: 1.0.30001519
   resolution: "caniuse-lite@npm:1.0.30001519"
   checksum: 563008248cb7f3746dba1f72ae300140e30f7cf6c0f8becd94fd8923b481cad85a08818b5c1462bb94f11e7afdc3c69ada75113db36483aa551c000a00e97733
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001520":
+  version: 1.0.30001520
+  resolution: "caniuse-lite@npm:1.0.30001520"
+  checksum: 48daf0d55e72e343f09fe17cbd47303a5bf4d65f6ec08ef68cc998c4fed073c9789d710e296496140e8179138dccb4667b786e260ca5451e1663786ef889db3b
   languageName: node
   linkType: hard
 
@@ -24663,7 +24670,7 @@ __metadata:
     "@redwoodjs/web": 6.0.6
     "@types/d3": 6.7.5
     "@types/react-datepicker": 4.15.0
-    autoprefixer: 10.4.14
+    autoprefixer: 10.4.15
     canvas: 2.11.2
     d3: 6.7.0
     i18n: 0.15.1
