@@ -3,6 +3,8 @@ name: RedwoodJS CI
 on:
   pull_request:
     branches: ['main']
+  push:
+    branches: ['main']
 
 env:
   DATABASE_URL: mysql://user:password@localhost:3306/universal
