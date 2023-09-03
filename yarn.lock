@@ -21106,9 +21106,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-i18next@npm:13.2.1":
-  version: 13.2.1
-  resolution: "react-i18next@npm:13.2.1"
+"react-i18next@npm:13.2.2":
+  version: 13.2.2
+  resolution: "react-i18next@npm:13.2.2"
   dependencies:
     "@babel/runtime": ^7.22.5
     html-parse-stringify: ^3.0.1
@@ -21120,7 +21120,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 7d943bb6d23e29875e90776cf02b21fcac3bd6a053460b0fdd00418c577251d76bcf0468ba3baf46717a6db97d01ebfd38af26a6cbeaedc2f4f5106f268fd673
+  checksum: 846e73130414989304c395c247cec8371ec25b5a0284588c913542741ce0cc33b4681d573980c64320138601d08a2ddec5042dc6f841e48a575e3f11ab83a368
   languageName: node
   linkType: hard
 
@@ -24866,7 +24866,7 @@ __metadata:
     react: 18.2.0
     react-datepicker: 4.16.0
     react-dom: 18.2.0
-    react-i18next: 13.2.1
+    react-i18next: 13.2.2
     react-icons: 4.10.1
     tailwindcss: 3.3.3
   languageName: unknown
