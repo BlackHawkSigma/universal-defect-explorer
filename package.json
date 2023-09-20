@@ -8,8 +8,8 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/cli-storybook": "6.2.2",
-    "@redwoodjs/core": "6.2.2"
+    "@redwoodjs/cli-storybook": "6.2.3",
+    "@redwoodjs/core": "6.2.3"
   },
   "eslintConfig": {
     "extends": "@redwoodjs/eslint-config",
