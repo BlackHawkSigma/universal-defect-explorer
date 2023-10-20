@@ -7774,15 +7774,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-datepicker@npm:4.19.0":
-  version: 4.19.0
-  resolution: "@types/react-datepicker@npm:4.19.0"
+"@types/react-datepicker@npm:4.19.1":
+  version: 4.19.1
+  resolution: "@types/react-datepicker@npm:4.19.1"
   dependencies:
     "@popperjs/core": ^2.9.2
     "@types/react": "*"
     date-fns: ^2.0.1
     react-popper: ^2.2.5
-  checksum: 7a55e23c3e3f16526bc9e47b2c10a56a4008b6b16fe7abd8d444e43e152b0d5e6a1316cebf53d4a524d39d45759d02e487465cd543371822f938c847ddd03973
+  checksum: 0d30ad280fe79be73972b4140c98be0f46329fc7adc4b42f3e4234fcb2cef2712580ba5b24fbd4421cccde9950cf86729ae7990cf065170354cd3f8e7b92ded0
   languageName: node
   linkType: hard
 
@@ -20975,9 +20975,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:4.20.0":
-  version: 4.20.0
-  resolution: "react-datepicker@npm:4.20.0"
+"react-datepicker@npm:4.21.0":
+  version: 4.21.0
+  resolution: "react-datepicker@npm:4.21.0"
   dependencies:
     "@popperjs/core": ^2.11.8
     classnames: ^2.2.6
@@ -20988,7 +20988,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: faf96c00199c37dcdf9135ddb45f9613cbd6fcc222d5dceb64f49b66772550ed92d2ab2bc0eabd74cfcb08e2cb6bfcc08783c38d975bfe2674265fd89e854110
+  checksum: 47fb0f275f514df8b90055a6ded348d979a949a251955f2acd9acb9c25b70953ad6883217beb271814af9ecfd228d70c4b4ba4fa6d838473056ab7f442b1161f
   languageName: node
   linkType: hard
 
@@ -24870,7 +24870,7 @@ __metadata:
     "@redwoodjs/vite": 6.3.2
     "@redwoodjs/web": 6.3.2
     "@types/d3": 6.7.7
-    "@types/react-datepicker": 4.19.0
+    "@types/react-datepicker": 4.19.1
     autoprefixer: 10.4.16
     canvas: 2.11.2
     d3: 6.7.0
@@ -24882,7 +24882,7 @@ __metadata:
     prettier-plugin-tailwindcss: 0.4.1
     prop-types: 15.8.1
     react: 18.2.0
-    react-datepicker: 4.20.0
+    react-datepicker: 4.21.0
     react-dom: 18.2.0
     react-i18next: 13.3.0
     react-icons: 4.11.0
