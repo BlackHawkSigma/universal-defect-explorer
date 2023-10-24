@@ -16,7 +16,7 @@
     "root": true
   },
   "engines": {
-    "node": "=18.x",
+    "node": "=20.9.0",
     "yarn": "3.x"
   },
   "prisma": {
