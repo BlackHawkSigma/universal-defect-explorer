@@ -17184,7 +17184,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^1.17.1, jiti@npm:^1.18.2":
+"jiti@npm:^1.17.1, jiti@npm:^1.18.2, jiti@npm:^1.19.1":
   version: 1.20.0
   resolution: "jiti@npm:1.20.0"
   bin:
@@ -23368,19 +23368,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.3.3":
-  version: 3.3.3
-  resolution: "tailwindcss@npm:3.3.3"
+"tailwindcss@npm:3.3.5":
+  version: 3.3.5
+  resolution: "tailwindcss@npm:3.3.5"
   dependencies:
     "@alloc/quick-lru": ^5.2.0
     arg: ^5.0.2
     chokidar: ^3.5.3
     didyoumean: ^1.2.2
     dlv: ^1.1.3
-    fast-glob: ^3.2.12
+    fast-glob: ^3.3.0
     glob-parent: ^6.0.2
     is-glob: ^4.0.3
-    jiti: ^1.18.2
+    jiti: ^1.19.1
     lilconfig: ^2.1.0
     micromatch: ^4.0.5
     normalize-path: ^3.0.0
@@ -23397,7 +23397,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: c2435382cd27522a988aaba7e7d98a5ac20f4b3cb5049deb0c58d128302e4158bcca5e7bffbdc97927b6eedba45f0ca1abe76cbae8041e2c3fb3e1c001fe44d2
+  checksum: a57c0a9cdba9db19097e34e25b7e4690fab43f31ba200afc3bb9635a03036ca93e9884a17b616fb8a2486d57d2ecc9a06862ce4685b3ace57f7a67436e7594a0
   languageName: node
   linkType: hard
 
@@ -24908,7 +24908,7 @@ __metadata:
     react-dom: 18.2.0
     react-i18next: 13.3.1
     react-icons: 4.11.0
-    tailwindcss: 3.3.3
+    tailwindcss: 3.3.5
   languageName: unknown
   linkType: soft
 
