@@ -17,7 +17,7 @@
   },
   "engines": {
     "node": "=20.x",
-    "yarn": "3.x"
+    "yarn": "4.x"
   },
   "prisma": {
     "seed": "yarn rw exec seed"
@@ -30,5 +30,5 @@
     "storybook": "yarn rw storybook"
   },
   "version": "2.2.0",
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@4.0.1"
 }
