@@ -7797,15 +7797,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-datepicker@npm:4.19.1":
-  version: 4.19.1
-  resolution: "@types/react-datepicker@npm:4.19.1"
+"@types/react-datepicker@npm:4.19.2":
+  version: 4.19.2
+  resolution: "@types/react-datepicker@npm:4.19.2"
   dependencies:
     "@popperjs/core": "npm:^2.9.2"
     "@types/react": "npm:*"
     date-fns: "npm:^2.0.1"
     react-popper: "npm:^2.2.5"
-  checksum: 0d30ad280fe79be73972b4140c98be0f46329fc7adc4b42f3e4234fcb2cef2712580ba5b24fbd4421cccde9950cf86729ae7990cf065170354cd3f8e7b92ded0
+  checksum: 487847056f8ab7b26aef6d16102f524696adfe0dc927f15a81545812f3cf5365149b37d4670eb1a96e5c97664f910e7b3038d6bc2f3cbaa04ad391cc26a6f5f2
   languageName: node
   linkType: hard
 
@@ -24881,7 +24881,7 @@ __metadata:
     "@redwoodjs/vite": "npm:6.3.2"
     "@redwoodjs/web": "npm:6.3.2"
     "@types/d3": "npm:6.7.7"
-    "@types/react-datepicker": "npm:4.19.1"
+    "@types/react-datepicker": "npm:4.19.2"
     autoprefixer: "npm:10.4.16"
     canvas: "npm:2.11.2"
     d3: "npm:6.7.0"
