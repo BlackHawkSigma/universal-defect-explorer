@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@redwoodjs/api": "6.3.2",
-    "@redwoodjs/api-server": "6.3.2",
-    "@redwoodjs/graphql-server": "6.3.2",
+    "@redwoodjs/api": "6.3.3",
+    "@redwoodjs/api-server": "6.3.3",
+    "@redwoodjs/graphql-server": "6.3.3",
     "d3": "6.7.0",
     "date-fns": "2.30.0",
     "zod": "3.22.4"
