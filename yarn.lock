@@ -7362,9 +7362,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/d3@npm:6.7.7":
-  version: 6.7.7
-  resolution: "@types/d3@npm:6.7.7"
+"@types/d3@npm:6.7.8":
+  version: 6.7.8
+  resolution: "@types/d3@npm:6.7.8"
   dependencies:
     "@types/d3-array": "npm:^2"
     "@types/d3-axis": "npm:^2"
@@ -7396,7 +7396,7 @@ __metadata:
     "@types/d3-timer": "npm:^2"
     "@types/d3-transition": "npm:^2"
     "@types/d3-zoom": "npm:^2"
-  checksum: b6713129f3b1032d97915f4f0f8ae23fcc9c9d4843d56ba01d1208c25220ac17d9065d65afdbe629c76b4e89be84b749b71eaf8ac67722427b3c6664091302c2
+  checksum: 57c373550e1636c7ba7ae3cdca2131404d731ac0c28811c8ead600c585ec26937b80fddcf250b5d7220c1885b2b2d28d0fac27a31a4ab1185d759b00a98e9b3b
   languageName: node
   linkType: hard
 
@@ -24880,7 +24880,7 @@ __metadata:
     "@redwoodjs/router": "npm:6.3.2"
     "@redwoodjs/vite": "npm:6.3.2"
     "@redwoodjs/web": "npm:6.3.2"
-    "@types/d3": "npm:6.7.7"
+    "@types/d3": "npm:6.7.8"
     "@types/react-datepicker": "npm:4.19.2"
     autoprefixer: "npm:10.4.16"
     canvas: "npm:2.11.2"
