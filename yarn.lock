@@ -8746,7 +8746,7 @@ __metadata:
     "@redwoodjs/api-server": "npm:6.5.1"
     "@redwoodjs/graphql-server": "npm:6.5.1"
     d3: "npm:6.7.0"
-    date-fns: "npm:2.30.0"
+    date-fns: "npm:3.0.6"
     zod: "npm:3.22.4"
   languageName: unknown
   linkType: soft
@@ -11759,7 +11759,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:2.30.0, date-fns@npm:^2.0.1, date-fns@npm:^2.30.0":
+"date-fns@npm:3.0.6":
+  version: 3.0.6
+  resolution: "date-fns@npm:3.0.6"
+  checksum: ca6ac81aca623fd6d12a43da59cc216e13a75a2eecf7fac692654524fca625e073f5cd36951ef0deac9621ead564eb06b4c3723f77b34e86f21ca3c0c3b32ff7
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.0.1, date-fns@npm:^2.30.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
