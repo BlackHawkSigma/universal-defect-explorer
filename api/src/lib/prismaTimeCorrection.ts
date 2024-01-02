@@ -1,7 +1,7 @@
 import type { Prisma } from '@prisma/client'
-import addMinutes from 'date-fns/addMinutes'
-import parseISO from 'date-fns/parseISO'
-import subMinutes from 'date-fns/subMinutes'
+import { addMinutes } from 'date-fns/addMinutes'
+import { parseISO } from 'date-fns/parseISO'
+import { subMinutes } from 'date-fns/subMinutes'
 
 const toLocalTime = (date: Date | string): Date => {
   const time = date instanceof Date ? date : parseISO(date)
