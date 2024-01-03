@@ -32,7 +32,7 @@
   "devDependencies": {
     "@redwoodjs/vite": "6.6.0",
     "@types/d3": "6.7.8",
-    "@types/react-datepicker": "4.19.4",
+    "@types/react-datepicker": "4.19.5",
     "autoprefixer": "10.4.16",
     "canvas": "2.11.2",
     "postcss": "8.4.32",
