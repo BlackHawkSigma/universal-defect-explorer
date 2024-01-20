@@ -7,7 +7,7 @@
     "@redwoodjs/api-server": "6.6.2",
     "@redwoodjs/graphql-server": "6.6.2",
     "d3": "6.7.0",
-    "date-fns": "3.2.0",
+    "date-fns": "3.3.0",
     "zod": "3.22.4"
   }
 }
