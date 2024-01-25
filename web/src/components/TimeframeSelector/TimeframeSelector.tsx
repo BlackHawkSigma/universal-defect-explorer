@@ -29,6 +29,7 @@ const TimeframeSelector = ({
         <label htmlFor="start">von</label>
         <DatePicker
           className="rounded border border-gray-400 disabled:opacity-50"
+          popperPlacement="bottom-start"
           disabled={disabled}
           locale="de"
           dateFormat="dd.MM.yyyy HH:mm"
@@ -49,6 +50,7 @@ const TimeframeSelector = ({
         <label htmlFor="end">bis</label>
         <DatePicker
           className="rounded border border-gray-400 disabled:opacity-50"
+          popperPlacement="bottom-start"
           disabled={disabled}
           locale="de"
           dateFormat="dd.MM.yyyy HH:mm"
