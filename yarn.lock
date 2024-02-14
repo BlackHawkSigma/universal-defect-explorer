@@ -4234,13 +4234,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.9.2":
-  version: 2.11.8
-  resolution: "@popperjs/core@npm:2.11.8"
-  checksum: 10c0/4681e682abc006d25eb380d0cf3efc7557043f53b6aea7a5057d0d1e7df849a00e281cd8ea79c902a35a414d7919621fc2ba293ecec05f413598e0b23d5a1e63
-  languageName: node
-  linkType: hard
-
 "@prisma/client@npm:5.7.0":
   version: 5.7.0
   resolution: "@prisma/client@npm:5.7.0"
@@ -7512,15 +7505,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-datepicker@npm:4.19.6":
-  version: 4.19.6
-  resolution: "@types/react-datepicker@npm:4.19.6"
+"@types/react-datepicker@npm:6.0.0":
+  version: 6.0.0
+  resolution: "@types/react-datepicker@npm:6.0.0"
   dependencies:
-    "@popperjs/core": "npm:^2.9.2"
+    "@floating-ui/react": "npm:^0.26.2"
     "@types/react": "npm:*"
-    date-fns: "npm:^2.0.1"
-    react-popper: "npm:^2.2.5"
-  checksum: 10c0/bd3f8266fb8b2f03e361857bc17c789083791ee4c79a812476d0f021d3551236d6581d48b9acd0063571835537eb3465f4029728446dd0b98ff7c1ad4395b628
+    date-fns: "npm:^3.3.1"
+  checksum: 10c0/eb35e4d1c03ab0d85d325bd71ab83108919512bac17050605648f4b282ff34d7723bdfca8d044356ace1b4efe3579f4dd3596d583290db1cfdd08e95340a54a9
   languageName: node
   linkType: hard
 
@@ -11924,7 +11916,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.0.1, date-fns@npm:^2.30.0":
+"date-fns@npm:^2.30.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
@@ -20935,7 +20927,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:^3.0.1, react-fast-compare@npm:^3.2.0":
+"react-fast-compare@npm:^3.2.0":
   version: 3.2.2
   resolution: "react-fast-compare@npm:3.2.2"
   checksum: 10c0/0bbd2f3eb41ab2ff7380daaa55105db698d965c396df73e6874831dbafec8c4b5b08ba36ff09df01526caa3c61595247e3269558c284e37646241cba2b90a367
@@ -21041,20 +21033,6 @@ __metadata:
     react: ^15.5.x || ^16.x || ^17.x || ^18.x
     react-dom: ^15.5.x || ^16.x || ^17.x || ^18.x
   checksum: 10c0/2013471d03965e3c89ead649063bda246a8e9ba72b7be1dbf00642c6c8a34a0142e951b1db3cf73ac53f34f459b772132eff6f7b89f4cde51c35740be6617161
-  languageName: node
-  linkType: hard
-
-"react-popper@npm:^2.2.5":
-  version: 2.3.0
-  resolution: "react-popper@npm:2.3.0"
-  dependencies:
-    react-fast-compare: "npm:^3.0.1"
-    warning: "npm:^4.0.2"
-  peerDependencies:
-    "@popperjs/core": ^2.0.0
-    react: ^16.8.0 || ^17 || ^18
-    react-dom: ^16.8.0 || ^17 || ^18
-  checksum: 10c0/23f93540537ca4c035425bb8d5e51b11131fbc921d7ac1d041d0ae557feac8c877f3a012d36b94df8787803f52ed81e6df9257ac9e58719875f7805518d6db3f
   languageName: node
   linkType: hard
 
@@ -24618,15 +24596,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"warning@npm:^4.0.2":
-  version: 4.0.3
-  resolution: "warning@npm:4.0.3"
-  dependencies:
-    loose-envify: "npm:^1.0.0"
-  checksum: 10c0/aebab445129f3e104c271f1637fa38e55eb25f968593e3825bd2f7a12bd58dc3738bb70dc8ec85826621d80b4acfed5a29ebc9da17397c6125864d72301b937e
-  languageName: node
-  linkType: hard
-
 "watchpack-chokidar2@npm:^2.0.1":
   version: 2.0.1
   resolution: "watchpack-chokidar2@npm:2.0.1"
@@ -24712,7 +24681,7 @@ __metadata:
     "@redwoodjs/vite": "npm:6.6.4"
     "@redwoodjs/web": "npm:6.6.4"
     "@types/d3": "npm:6.7.8"
-    "@types/react-datepicker": "npm:4.19.6"
+    "@types/react-datepicker": "npm:6.0.0"
     autoprefixer: "npm:10.4.17"
     canvas: "npm:2.11.2"
     d3: "npm:6.7.0"
