@@ -7531,14 +7531,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-datepicker@npm:6.0.2":
-  version: 6.0.2
-  resolution: "@types/react-datepicker@npm:6.0.2"
+"@types/react-datepicker@npm:6.0.3":
+  version: 6.0.3
+  resolution: "@types/react-datepicker@npm:6.0.3"
   dependencies:
     "@floating-ui/react": "npm:^0.26.2"
     "@types/react": "npm:*"
     date-fns: "npm:^3.3.1"
-  checksum: 10c0/7a542be7abed157e4697668c9e4b7018ba7d40b701cc70d23c71045411451440a4234dc6470000b7671adaa8c4a4dd5243acd2887a75b01283aaab434977dcea
+  checksum: 10c0/4479e694284c4663194aea1a9bb139964847c8e030436e57b0419bd8d28747714a6493f42c12ad3ef89965c443954b933953fefe1548ce908573c8d2b44a88ab
   languageName: node
   linkType: hard
 
@@ -24771,7 +24771,7 @@ __metadata:
     "@redwoodjs/vite": "npm:6.6.4"
     "@redwoodjs/web": "npm:6.6.4"
     "@types/d3": "npm:6.7.8"
-    "@types/react-datepicker": "npm:6.0.2"
+    "@types/react-datepicker": "npm:6.0.3"
     autoprefixer: "npm:10.4.18"
     canvas: "npm:2.11.2"
     d3: "npm:6.7.0"
