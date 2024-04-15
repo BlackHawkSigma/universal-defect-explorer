@@ -21011,9 +21011,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-datepicker@npm:6.7.0":
-  version: 6.7.0
-  resolution: "react-datepicker@npm:6.7.0"
+"react-datepicker@npm:6.7.1":
+  version: 6.7.1
+  resolution: "react-datepicker@npm:6.7.1"
   dependencies:
     "@floating-ui/react": "npm:^0.26.2"
     clsx: "npm:^2.1.0"
@@ -21023,7 +21023,7 @@ __metadata:
   peerDependencies:
     react: ^16.9.0 || ^17 || ^18
     react-dom: ^16.9.0 || ^17 || ^18
-  checksum: 10c0/2b44939f001ad4ca326e1c38dd4ed5a64ba0eae869621709f2871f49fbc58b726aec6cc7d8aab118bb69715e3e3e3cf6d97c5e0887277aa5016672e147aa964b
+  checksum: 10c0/9029c358254ef011e3a6b82fd542a87efa30a67b7aa2814178d28354e2b18f69b863861fb852f236a91be57a0b684455c9127c87232b7ed2f4fae6737e3248e6
   languageName: node
   linkType: hard
 
@@ -24856,7 +24856,7 @@ __metadata:
     prettier-plugin-tailwindcss: "npm:0.4.1"
     prop-types: "npm:15.8.1"
     react: "npm:18.2.0"
-    react-datepicker: "npm:6.7.0"
+    react-datepicker: "npm:6.7.1"
     react-dom: "npm:18.2.0"
     react-i18next: "npm:14.1.0"
     react-icons: "npm:5.0.1"
