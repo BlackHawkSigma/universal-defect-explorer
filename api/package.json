@@ -8,6 +8,6 @@
     "@redwoodjs/graphql-server": "6.6.4",
     "d3": "6.7.0",
     "date-fns": "3.6.0",
-    "zod": "3.23.7"
+    "zod": "3.23.8"
   }
 }
