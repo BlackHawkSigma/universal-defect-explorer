@@ -1,5 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "timezone": "Europe/Berlin",
-  "extends": [ "github>BlackHawkSigma/renovate-config" ]
+  "extends": [ "github>BlackHawkSigma/renovate-config" ],
+  "packageRules": [
+    {
+      "matchDatasources": [ "docker" ],
+      "matchPackageNames": [ "mysql" ],
+      "allowedVersions": "<= 5.7"
+    }
+  ]
 }
