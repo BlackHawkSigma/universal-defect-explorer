@@ -13,8 +13,8 @@
     ]
   },
   "dependencies": {
-    "@fontsource-variable/comfortaa": "5.0.20",
-    "@fontsource-variable/libre-franklin": "5.0.19",
+    "@fontsource-variable/comfortaa": "5.0.21",
+    "@fontsource-variable/libre-franklin": "5.0.20",
     "@redwoodjs/forms": "6.6.4",
     "@redwoodjs/router": "6.6.4",
     "@redwoodjs/web": "6.6.4",
