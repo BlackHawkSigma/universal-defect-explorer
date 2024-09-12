@@ -2553,17 +2553,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource-variable/comfortaa@npm:5.0.22":
-  version: 5.0.22
-  resolution: "@fontsource-variable/comfortaa@npm:5.0.22"
-  checksum: 10c0/f83d58fa62d943afcf902d6e162b431248b637b4f31e00f95734fb23189497cc769267aa567a5a93de34216f00c24ae263b8267765a71b726df99b9da4189c3a
+"@fontsource-variable/comfortaa@npm:5.1.0":
+  version: 5.1.0
+  resolution: "@fontsource-variable/comfortaa@npm:5.1.0"
+  checksum: 10c0/cb4c331f143c832839080b5cac805f52c574fc79a45ec4788caae2d6428936166d9d6b2b41b528766214f9cc176b9d0df4c660e09085818d2e863e75427d9104
   languageName: node
   linkType: hard
 
-"@fontsource-variable/libre-franklin@npm:5.0.21":
-  version: 5.0.21
-  resolution: "@fontsource-variable/libre-franklin@npm:5.0.21"
-  checksum: 10c0/57002c9a7de94beab101a2f2babb665c3210372bb4102aab1110717af2712b3181c8ac7b0ca76335a24a035de94e187389f9e928c022f5fa5a85ea25475fc214
+"@fontsource-variable/libre-franklin@npm:5.1.0":
+  version: 5.1.0
+  resolution: "@fontsource-variable/libre-franklin@npm:5.1.0"
+  checksum: 10c0/3e4b6ab643d2fe8a3e2398d073adbc0b66801dedab20465f33829afb43cb5a34fb898b64487c454d2f377b984456bf16af4ddac2804a534a80b4f89406f82819
   languageName: node
   linkType: hard
 
@@ -25099,8 +25099,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@fontsource-variable/comfortaa": "npm:5.0.22"
-    "@fontsource-variable/libre-franklin": "npm:5.0.21"
+    "@fontsource-variable/comfortaa": "npm:5.1.0"
+    "@fontsource-variable/libre-franklin": "npm:5.1.0"
     "@redwoodjs/forms": "npm:6.6.4"
     "@redwoodjs/router": "npm:6.6.4"
     "@redwoodjs/vite": "npm:6.6.4"
