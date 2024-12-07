@@ -15863,12 +15863,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next-browser-languagedetector@npm:8.0.0":
-  version: 8.0.0
-  resolution: "i18next-browser-languagedetector@npm:8.0.0"
+"i18next-browser-languagedetector@npm:8.0.1":
+  version: 8.0.1
+  resolution: "i18next-browser-languagedetector@npm:8.0.1"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
-  checksum: 10c0/08a7c747ec18a0743b54390a0b42836d814b15fb49c92b90c259298e6a6e7e001ff9df99d0fd308283a34fceea53b4d9053aa1695a37f696bc04160017bbb524
+  checksum: 10c0/159c362ab816b02e805cdb99131de5fa898124a7671e162a79497618b7ca36d2def06e855d30944304c5a75bb1fe285ad06a126c708e574142d1563d7092c63e
   languageName: node
   linkType: hard
 
@@ -25100,7 +25100,7 @@ __metadata:
     d3: "npm:6.7.0"
     i18n: "npm:0.15.1"
     i18next: "npm:23.16.8"
-    i18next-browser-languagedetector: "npm:8.0.0"
+    i18next-browser-languagedetector: "npm:8.0.1"
     postcss: "npm:8.4.49"
     postcss-loader: "npm:8.1.1"
     prettier-plugin-tailwindcss: "npm:0.4.1"
