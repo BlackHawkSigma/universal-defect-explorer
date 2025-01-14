@@ -19050,7 +19050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.7":
+"nanoid@npm:^3.3.7, nanoid@npm:^3.3.8":
   version: 3.3.8
   resolution: "nanoid@npm:3.3.8"
   bin:
@@ -20805,7 +20805,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.49, postcss@npm:^8.2.14, postcss@npm:^8.4.21, postcss@npm:^8.4.24, postcss@npm:^8.4.27, postcss@npm:^8.4.33, postcss@npm:^8.4.47":
+"postcss@npm:8.5.1":
+  version: 8.5.1
+  resolution: "postcss@npm:8.5.1"
+  dependencies:
+    nanoid: "npm:^3.3.8"
+    picocolors: "npm:^1.1.1"
+    source-map-js: "npm:^1.2.1"
+  checksum: 10c0/c4d90c59c98e8a0c102b77d3f4cac190f883b42d63dc60e2f3ed840f16197c0c8e25a4327d2e9a847b45a985612317dc0534178feeebd0a1cf3eb0eecf75cae4
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.2.14, postcss@npm:^8.4.21, postcss@npm:^8.4.24, postcss@npm:^8.4.27, postcss@npm:^8.4.33, postcss@npm:^8.4.47":
   version: 8.4.49
   resolution: "postcss@npm:8.4.49"
   dependencies:
@@ -25301,7 +25312,7 @@ __metadata:
     i18n: "npm:0.15.1"
     i18next: "npm:23.16.8"
     i18next-browser-languagedetector: "npm:8.0.2"
-    postcss: "npm:8.4.49"
+    postcss: "npm:8.5.1"
     postcss-loader: "npm:8.1.1"
     prettier-plugin-tailwindcss: "npm:0.4.1"
     prop-types: "npm:15.8.1"
